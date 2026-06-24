@@ -167,9 +167,26 @@
 <header class="fixed top-0 left-0 right-0 z-50 glass-nav h-20 border-b border-outline-variant/20 flex items-center shadow-sm">
   <nav class="flex justify-between items-center w-full px-6 md:px-10 max-w-[1280px] mx-auto">
     <!-- Logo -->
-    <a href="index.html" class="flex items-center gap-2 group cursor-pointer">
-      <span class="material-symbols-outlined text-primary text-3xl font-bold transition-transform group-hover:scale-110">electric_bolt</span>
-      <span class="text-xl md:text-2xl font-bold tracking-tight text-on-background">InnoVibe Mobility</span>
+    <a href="index.html" class="flex items-center gap-3 group cursor-pointer">
+      <!-- SVG Logo Icon -->
+      <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logo-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#0891b2" />
+            <stop offset="100%" stop-color="#22c55e" />
+          </linearGradient>
+        </defs>
+        <path d="M50 80 C15 50 15 20 32 15 C43 12 50 24 50 24 C50 24 57 12 68 15 C85 20 85 50 50 80 Z" fill="none" stroke="url(#logo-grad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M53 28 L38 48 H48 L45 68 L58 46 H48 Z" fill="url(#logo-grad)" />
+      </svg>
+      <!-- Logo Text -->
+      <div class="flex flex-col">
+        <div class="flex items-baseline font-extrabold tracking-tight leading-none text-lg md:text-xl">
+          <span class="text-[#0F172A]">InnoVibe</span>
+          <span class="text-[#0F172A] ml-1">Care</span><span class="text-[#0891b2]">.EV</span>
+        </div>
+        <span class="text-[8px] md:text-[9px] text-[#475569] font-medium tracking-wide mt-1">Your EV, Our Expert Care</span>
+      </div>
     </a>
 
     <!-- Desktop Navigation Links -->
@@ -739,9 +756,26 @@
   <div class="max-w-[1280px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
     <!-- Brand Info -->
     <div class="space-y-6">
-      <a href="index.html" class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-blue-400 text-3xl font-bold">electric_bolt</span>
-        <span class="text-xl md:text-2xl font-bold tracking-tight text-white">InnoVibe Mobility</span>
+      <a href="index.html" class="flex items-center gap-3 group">
+        <!-- SVG Logo Icon -->
+        <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="footer-logo-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0891b2" />
+              <stop offset="100%" stop-color="#22c55e" />
+            </linearGradient>
+          </defs>
+          <path d="M50 80 C15 50 15 20 32 15 C43 12 50 24 50 24 C50 24 57 12 68 15 C85 20 85 50 50 80 Z" fill="none" stroke="url(#footer-logo-grad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M53 28 L38 48 H48 L45 68 L58 46 H48 Z" fill="url(#footer-logo-grad)" />
+        </svg>
+        <!-- Logo Text -->
+        <div class="flex flex-col">
+          <div class="flex items-baseline font-extrabold tracking-tight leading-none text-lg md:text-xl">
+            <span class="text-white">InnoVibe</span>
+            <span class="text-white ml-1">Care</span><span class="text-[#0891b2]">.EV</span>
+          </div>
+          <span class="text-[8px] md:text-[9px] text-slate-400 font-medium tracking-wide mt-1">Your EV, Our Expert Care</span>
+        </div>
       </a>
       <p class="text-sm text-slate-400 leading-relaxed">
         India's leading electric vehicle service provider with comprehensive EV solutions across the nation. Precision engineering for the electric era.
