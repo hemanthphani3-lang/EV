@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>InnoVibe Mobility | EV Insights &amp; Updates</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "text-secondary": "#475569",
+                        "surface-container": "#eceef0",
+                        "surface": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "text-primary": "#0F172A",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "primary-container": "#2563eb",
+                        "on-surface-variant": "#434655",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-primary": "#ffffff",
+                        "outline": "#737686",
+                        "primary": "#004ac6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcd",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-lowest": "#ffffff",
+                        "border": "#E2E8F0",
+                        "surface-bright": "#f7f9fb",
+                        "success": "#10B981",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "inverse-primary": "#b4c5ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "secondary": "#565e74",
+                        "tertiary": "#943700",
+                        "on-surface": "#191c1e",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#bc4800",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "secondary-container": "#dae2fd",
+                        "on-primary-fixed": "#00174b",
+                        "surface-elevated": "#FFFFFF",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-container": "#eeefff",
+                        "surface-tint": "#0053db",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-tertiary-container": "#ffede6",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "outline-variant": "#c3c6d7",
+                        "on-secondary-container": "#5c647a",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-low": "#f2f4f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.25rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "page-margin-tablet": "40px",
+                        "stack-lg": "24px",
+                        "page-margin-desktop": "80px",
+                        "page-margin-mobile": "20px",
+                        "gutter": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-xl-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+                        "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-lg": ["20px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #f7f9fb; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .card-hover { transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.4s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 74, 198, 0.04); }
+        .editorial-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -2px rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(0,0,0,0.03); }
+        .text-balance { text-wrap: balance; }
+    </style>
+</head>
+<body class="text-text-primary">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface-container-lowest/80 backdrop-blur-md font-label-lg text-label-lg docked full-width top-0 sticky z-50 border-b border-border dark:border-outline-variant shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center w-full px-page-margin-mobile md:px-page-margin-desktop py-4 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-2">
+<span class="font-display-xl-mobile text-headline-md tracking-tight text-text-primary dark:text-on-primary-fixed font-bold">InnoVibe Mobility</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-text-secondary dark:text-on-surface-variant hover:text-text-primary transition-colors duration-200" href="#">Home</a>
+<a class="text-text-secondary dark:text-on-surface-variant hover:text-text-primary transition-colors duration-200" href="#">Booking</a>
+<a class="text-text-secondary dark:text-on-surface-variant hover:text-text-primary transition-colors duration-200" href="#">Membership</a>
+<a class="text-text-secondary dark:text-on-surface-variant hover:text-text-primary transition-colors duration-200" href="#">About Us</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary pb-1" href="#">Blog</a>
+<a class="text-text-secondary dark:text-on-surface-variant hover:text-text-primary transition-colors duration-200" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-text-secondary hover:text-primary transition-colors">search</button>
+<button class="hidden md:block bg-text-primary text-on-primary px-6 py-2.5 rounded-full font-label-lg transition-all active:scale-95 active:opacity-80">Book Service</button>
+<button class="md:hidden material-symbols-outlined text-text-primary">menu</button>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- Hero Section -->
+<section class="relative pt-24 pb-16 px-page-margin-mobile md:px-page-margin-desktop overflow-hidden">
+
+<div class="max-w-[1280px] mx-auto text-center">
+<span class="text-primary font-label-lg tracking-widest uppercase mb-4 block">INNOVIBE KNOWLEDGE HUB</span>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-text-primary mb-6 text-balance">EV Insights &amp; Future Mobility</h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto mb-10 text-balance">Stay informed with the latest trends, innovations, maintenance guides, battery insights, and electric mobility updates from India's leader in EV care.</p>
+<div class="flex flex-wrap justify-center gap-3">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-lg shadow-lg shadow-primary/20">All Topics</button>
+<button class="bg-surface-container text-text-secondary hover:bg-surface-variant px-6 py-2 rounded-full font-label-lg transition-colors">Electric Vehicle</button>
+<button class="bg-surface-container text-text-secondary hover:bg-surface-variant px-6 py-2 rounded-full font-label-lg transition-colors">Battery Technology</button>
+<button class="bg-surface-container text-text-secondary hover:bg-surface-variant px-6 py-2 rounded-full font-label-lg transition-colors">Repair Guides</button>
+<button class="bg-surface-container text-text-secondary hover:bg-surface-variant px-6 py-2 rounded-full font-label-lg transition-colors">Engineering</button>
+</div>
+</div>
+</section>
+<!-- Featured Article -->
+<section class="py-12 px-page-margin-mobile md:px-page-margin-desktop">
+<div class="max-w-[1280px] mx-auto">
+<div class="bg-white rounded-3xl overflow-hidden border border-border shadow-xl hover:shadow-2xl transition-shadow duration-500 flex flex-col md:flex-row min-h-[500px]">
+<div class="md:w-1/2 relative group overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, ultra-high-resolution photograph of a sleek, modern electric scooter being serviced in a pristine, laboratory-like repair facility. The lighting is soft and diffused with cool blue and white tones, reflecting off metallic surfaces. The atmosphere is professional, technologically advanced, and reflects the premium engineering of InnoVibe Mobility's service centers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM9ZlkBcf8lfxfh7xycuqn9wX44eHZ-A2_W09O-w9VssDCZ88uSFJLcTCRfN9YyW21woJkgtMuvupgGIuyLIQL7Glm07xo_pQEnZJX4hW6k017oujiuLADT7mQykUsXYplZUYqfzD8CcZQ8bfo6T0m2YpYm6HahevXrsDxMupb-liv8fVc_ptC4cG2BakII6KAwO3dhOchZJOSum1Y-RXlWRROtqnP8xoHhCLO-FkCIUiHQEuXkNZbesIzM33IDPqbboYp8H6qo8rL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-primary-container/10 text-primary px-3 py-1 rounded-md font-label-md">Featured Story</span>
+<span class="text-text-secondary font-label-md uppercase tracking-wider">Nov 14, 2025</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-text-primary mb-6 leading-tight">The Innovibe Difference: Where Electric Scooter Repair Meets Cutting-Edge Technology</h2>
+<p class="font-body-md text-body-md text-text-secondary mb-8 line-clamp-3">The humble but essential electric scooter is at the heart of urban mobility. Discover how we're redefining maintenance through AI-driven diagnostics and specialized engineering teams.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary">SA</div>
+<span class="font-label-lg text-text-primary">Super Admin</span>
+</div>
+<a class="group flex items-center gap-2 font-label-lg text-primary" href="#">
+                                READ ARTICLE
+                                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Search & Filter Bar (Sticky) -->
+<section class="sticky top-[72px] z-40 py-6 bg-surface/90 backdrop-blur-md border-y border-border">
+<div class="max-w-[1280px] mx-auto px-page-margin-mobile md:px-page-margin-desktop flex flex-col md:flex-row items-center gap-6">
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-white border border-border rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-body-md" placeholder="Search insights, guides, or news..." type="text"/>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<span class="hidden md:block font-label-lg text-text-secondary whitespace-nowrap">Filter by:</span>
+<select class="flex-1 md:flex-none py-3 px-6 bg-white border border-border rounded-xl font-label-lg outline-none cursor-pointer focus:ring-2 focus:ring-primary/20">
+<option>Newest First</option>
+<option>Oldest First</option>
+<option>Most Popular</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Article Grid -->
+<section class="py-16 px-page-margin-mobile md:px-page-margin-desktop bg-white/50">
+<div class="max-w-[1280px] mx-auto">
+<div class="flex justify-between items-end mb-12">
+<h3 class="font-headline-md text-headline-md text-text-primary">Latest Articles</h3>
+<span class="font-label-lg text-text-secondary">Showing 5 articles</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Article 2 -->
+<article class="group bg-white rounded-2xl border border-border overflow-hidden card-hover editorial-shadow">
+<div class="h-56 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close up high-tech view of a modern electric car chassis made of advanced lightweight materials like carbon fiber and high-strength aluminum. The image has a clean, industrial-chic aesthetic with precise detailing and a bright, airy feel, illuminated by studio lighting that emphasizes the engineering complexity and modern materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBikGnx3jGfx7w6HP_OKARa4-KnE_XG-kvNtMy9jkCeASdE6boAxl1nN2sjj2FPqXWVrwipNduzbP6DzBoM6edYc--Ijb72zroOI6H3KsQna37hkq9snGr9rGmLY7OfND5WQOWAdifmj2YrCbaeUfmem9-EkP9WwgHzgOu1OH4jvtv2w8BLV_ZgMZDrbhjS9wp2CBjlOpNMUPhCbKo0-j8JRd5n9VE9FmwdUpoFYoBsdLLZWlTu6PNVYqZJuBI8oZAz3iUOhX14g_F-"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-surface-container text-primary font-label-md px-2 py-0.5 rounded">Electric Vehicle</span>
+<span class="text-text-secondary font-label-md">• Nov 14, 2025</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-text-primary text-[22px] leading-snug mb-3 group-hover:text-primary transition-colors">EV Engineering Spotlight: How New Materials are Making Cars Lighter</h4>
+<p class="font-body-md text-body-md text-text-secondary mb-6 line-clamp-2">The revolution in electric vehicles is a total engineering overhaul. Explore how graphene and advanced composites are extending range.</p>
+<div class="flex items-center justify-between border-t border-border pt-4">
+<span class="font-label-md text-text-secondary">Super Admin</span>
+<a class="font-label-lg text-primary flex items-center gap-1 group/btn" href="#">
+                                    Read <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="group bg-white rounded-2xl border border-border overflow-hidden card-hover editorial-shadow">
+<div class="h-56 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Detailed macro photograph of a high-capacity electric vehicle battery pack with visible cooling tubes and intricate electronic connectors. The lighting is sophisticated, with a subtle blue bioluminescent glow emerging from the cells, creating a sense of powerful energy and futuristic technology. The background is a clean, dark-themed engineering workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaiAN8YcFusG7uxDcpFKGKIV5WFTeBp-8_Pqo1jyceJzmNVUs-qL49gNc4WX9Tm1wPE8zsHd_PF1gFoPpEB2cFU0TGcjZtQ7TQZRsgzVOYwTMOO63drDhEkuCUUbcc0ceA5yJhDUCaUQK5EiAZpfPncgv_EDklgH8ud0G-8BcRpg5iLIsIWs3fGWngaBX0zl6Pd9MZy_3vY5d-L4F68sWiKIVl8Ywl-HdwcGTGUBz8G98fUXvW88xQNfgK1Wn4T0csPnfd3-J2-Wwf"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-surface-container text-primary font-label-md px-2 py-0.5 rounded">Electric Vehicle</span>
+<span class="text-text-secondary font-label-md">• Nov 12, 2025</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-text-primary text-[22px] leading-snug mb-3 group-hover:text-primary transition-colors">Stop Guessing, Start Driving: Why EV Care is Your Battery's Best Friend</h4>
+<p class="font-body-md text-body-md text-text-secondary mb-6 line-clamp-2">As electric vehicles (EVs) gain traction in the automotive world, their battery health becomes the single most important factor for longevity.</p>
+<div class="flex items-center justify-between border-t border-border pt-4">
+<span class="font-label-md text-text-secondary">Super Admin</span>
+<a class="font-label-lg text-primary flex items-center gap-1 group/btn" href="#">
+                                    Read <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Article 4 -->
+<article class="group bg-white rounded-2xl border border-border overflow-hidden card-hover editorial-shadow">
+<div class="h-56 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist, top-down designer's sketch and schematic of a high-performance electric bike. The image blends digital rendering with hand-drawn architectural lines, showing internal motors and wiring. The aesthetic is clean, minimalist, and editorial, using a palette of white, light grey, and subtle electric blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0gdn2S8C9wDnJYSnjSNEdQ_dhrqGeu2C79u2jmTWJ1giuSmmh0fsmstszSPYQI7fdOAyombGqVa7eXnjGRm5QCOkGI4T3Bo8ClQRol8v1gobb_14ffZS1XpBEzNy-SW4__g0JY8-67l46pc5-7ag5y2Ju8BRCb4XxkUMeyjSEShdu64jNf-rPTyiQPrkYk-YwpY7Fcp72kOR8u6Dtn-ppm7WWRaFgLOcuyg5hWaOBm2e9TRyqGIRLjRrOc4V2uo2WSJ0ewBXhSy7S"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-surface-container text-primary font-label-md px-2 py-0.5 rounded">Electric Vehicle</span>
+<span class="text-text-secondary font-label-md">• Nov 11, 2025</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-text-primary text-[22px] leading-snug mb-3 group-hover:text-primary transition-colors">Lighter, Faster, Smarter: Inside the Engineering of Tomorrow's E-Bikes</h4>
+<p class="font-body-md text-body-md text-text-secondary mb-6 line-clamp-2">The market for electric two-wheelers is expanding at a rate never seen before, revolutionizing both urban commute and recreation.</p>
+<div class="flex items-center justify-between border-t border-border pt-4">
+<span class="font-label-md text-text-secondary">Super Admin</span>
+<a class="font-label-lg text-primary flex items-center gap-1 group/btn" href="#">
+                                    Read <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Article 5 -->
+<article class="group bg-white rounded-2xl border border-border overflow-hidden card-hover editorial-shadow">
+<div class="h-56 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A clean, minimalist 3D isometric illustration showing the cost breakdown of EV repairs compared to traditional internal combustion engines. Using stylized charts, 3D icons of electric motors, and a premium white and blue color scheme, the image conveys clarity, data transparency, and financial foresight in a modern, professional style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfn3mbDdWV9lS2n-XjUVF9606d5C-SzS_WJ1w-M839_N3OepSvU2nHrYSZzv0o29CUo1DB-STtOiSEIsPuvZkcsSl98KCaKi0n05LEOgHUikuvVfD9We7QeVg2TR0y5kP6cVZmmpqE_u399F0We586t6G8qQ6yzMqEDCA0OcB0qG0xK8b78tAVcxXtnFhK-tEIjGaMkr4KX4CBAQVwoN9pWsSGiI5TDBJhjEu0ocTrZySF-ROi7MBA9FgVezKZ_Uyhlj035ChhhvHQ"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-surface-container text-primary font-label-md px-2 py-0.5 rounded">Electric Vehicle</span>
+<span class="text-text-secondary font-label-md">• Nov 10, 2025</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-text-primary text-[22px] leading-snug mb-3 group-hover:text-primary transition-colors">Understanding Electric Vehicle Repair: Costs, Complexity, and Future Trends</h4>
+<p class="font-body-md text-body-md text-text-secondary mb-6 line-clamp-2">The most significant change to the automotive industry in our century is the move from the noisy combustion engine to silent electric power.</p>
+<div class="flex items-center justify-between border-t border-border pt-4">
+<span class="font-label-md text-text-secondary">Super Admin</span>
+<a class="font-label-lg text-primary flex items-center gap-1 group/btn" href="#">
+                                    Read <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-16 text-center">
+<button class="bg-white border border-border px-8 py-3 rounded-full font-label-lg text-text-primary hover:bg-surface-container transition-all active:scale-95 shadow-sm">Load More Insights</button>
+</div>
+</div>
+</section>
+<!-- EV Learning Section -->
+<section class="py-section-gap px-page-margin-mobile md:px-page-margin-desktop bg-surface-container-low">
+<div class="max-w-[1280px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-text-primary mb-4">Why EV Knowledge Matters</h2>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto">Mastering the electric transition requires more than just a car—it requires understanding the ecosystem.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-10 rounded-3xl border border-border flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl bg-primary-container/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-[32px]">battery_charging_full</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-[20px] mb-4">Battery Health</h4>
+<p class="font-body-md text-body-md text-text-secondary">Understand cycles, temperature management, and charging best practices to maximize battery lifespan.</p>
+</div>
+<div class="bg-white p-10 rounded-3xl border border-border flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl bg-success/10 flex items-center justify-center text-success mb-6">
+<span class="material-symbols-outlined text-[32px]">construction</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-[20px] mb-4">Smart Maintenance</h4>
+<p class="font-body-md text-body-md text-text-secondary">Learn why EVs require 30% less maintenance and how to care for specialized components effectively.</p>
+</div>
+<div class="bg-white p-10 rounded-3xl border border-border flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-container/10 flex items-center justify-center text-tertiary mb-6">
+<span class="material-symbols-outlined text-[32px]">rocket_launch</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-[20px] mb-4">Future Mobility</h4>
+<p class="font-body-md text-body-md text-text-secondary">From V2G (Vehicle-to-Grid) technology to autonomous features, stay ahead of the curve.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-section-gap px-page-margin-mobile md:px-page-margin-desktop">
+<div class="max-w-[1280px] mx-auto bg-text-primary rounded-3xl p-12 md:p-20 relative overflow-hidden">
+
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-white mb-6">Stay Ahead of the EV Revolution</h2>
+<p class="font-body-lg text-body-lg text-surface-container-highest/80 mb-10">Get curated insights, deep dives into new technologies, and exclusive maintenance tips delivered to your inbox every week.</p>
+<form class="flex flex-col md:flex-row gap-4">
+<input class="flex-1 px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:ring-2 focus:ring-primary focus:outline-none backdrop-blur-md" placeholder="Your work email" type="email"/>
+<button class="bg-white text-text-primary px-10 py-4 rounded-xl font-label-lg hover:bg-surface-bright transition-colors active:scale-95 whitespace-nowrap">Subscribe Now</button>
+</form>
+<p class="mt-6 text-white/40 font-label-md">Join 15,000+ EV enthusiasts. No spam, ever.</p>
+</div>
+</div>
+</section>
+<!-- Explore Topics Bento -->
+<section class="py-section-gap px-page-margin-mobile md:px-page-margin-desktop">
+<div class="max-w-[1280px] mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-text-primary mb-12">Explore by Interest</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<a class="group flex flex-col items-center justify-center p-8 bg-white border border-border rounded-2xl card-hover text-center" href="#">
+<span class="material-symbols-outlined text-[40px] text-primary mb-4">electric_car</span>
+<span class="font-label-lg text-text-primary">Vehicles</span>
+</a>
+<a class="group flex flex-col items-center justify-center p-8 bg-white border border-border rounded-2xl card-hover text-center" href="#">
+<span class="material-symbols-outlined text-[40px] text-tertiary mb-4">battery_full</span>
+<span class="font-label-lg text-text-primary">Batteries</span>
+</a>
+<a class="group flex flex-col items-center justify-center p-8 bg-white border border-border rounded-2xl card-hover text-center" href="#">
+<span class="material-symbols-outlined text-[40px] text-success mb-4">ev_station</span>
+<span class="font-label-lg text-text-primary">Charging</span>
+</a>
+<a class="group flex flex-col items-center justify-center p-8 bg-white border border-border rounded-2xl card-hover text-center" href="#">
+<span class="material-symbols-outlined text-[40px] text-primary mb-4">settings</span>
+<span class="font-label-lg text-text-primary">Repairs</span>
+</a>
+<a class="group flex flex-col items-center justify-center p-8 bg-white border border-border rounded-2xl card-hover text-center" href="#">
+<span class="material-symbols-outlined text-[40px] text-on-surface-variant mb-4">precision_manufacturing</span>
+<span class="font-label-lg text-text-primary">Engineering</span>
+</a>
+<a class="group flex flex-col items-center justify-center p-8 bg-white border border-border rounded-2xl card-hover text-center" href="#">
+<span class="material-symbols-outlined text-[40px] text-primary-container mb-4">auto_awesome</span>
+<span class="font-label-lg text-text-primary">Future Tech</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-gap px-page-margin-mobile md:px-page-margin-desktop text-center bg-white border-t border-border">
+<div class="max-w-[1280px] mx-auto">
+<h2 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-text-primary mb-8">Ready to Experience Better EV Ownership?</h2>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-text-primary text-white px-10 py-5 rounded-full font-label-lg text-lg hover:opacity-90 transition-all shadow-xl shadow-text-primary/10">Book Service</button>
+<button class="bg-white border-2 border-text-primary text-text-primary px-10 py-5 rounded-full font-label-lg text-lg hover:bg-surface-container transition-all">Explore Membership</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest font-body-md text-body-md full-width border-t border-border dark:border-outline-variant flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg w-full px-page-margin-mobile md:px-page-margin-desktop py-section-gap max-w-[1280px] mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-text-primary dark:text-on-surface mb-6">InnoVibe Mobility</div>
+<p class="text-text-secondary dark:text-on-surface-variant mb-8">India's leading electric vehicle service provider with comprehensive EV solutions across the nation. Precision engineering for the electric era.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-text-primary hover:text-primary transition-all duration-300" href="#">
+<i class="material-symbols-outlined">share</i>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-text-primary hover:text-primary transition-all duration-300" href="#">
+<i class="material-symbols-outlined">public</i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-lg text-text-primary dark:text-on-surface uppercase tracking-wider mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Home</a></li>
+<li><a class="text-text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">EV Services</a></li>
+<li><a class="text-text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">About</a></li>
+<li><a class="text-primary dark:text-primary-fixed underline decoration-2 underline-offset-4" href="#">Blog</a></li>
+<li><a class="text-text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-lg text-text-primary dark:text-on-surface uppercase tracking-wider mb-6">Head Office</h4>
+<address class="not-italic text-text-secondary dark:text-on-surface-variant space-y-4">
+<p>Gitam ITBI, VDA, Rushikonda,<br/>Visakhapatnam, AP - 530045</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+<a class="hover:text-primary transition-colors" href="mailto:contact@innovibemobily.com">contact@innovibemobily.com</a>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<a class="hover:text-primary transition-colors" href="tel:+919014336878">+91 9014336878</a>
+</div>
+</address>
+<div class="mt-6">
+<img class="h-10 cursor-pointer" data-alt="The Google Play Store download badge for a mobile application, featuring the recognizable white play icon on a dark background. The image is clean and follows official Google branding standards for app store buttons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOoinz55BUL_MH6ahbgjL1J8adHJl7-NOfV1K74V2xkRvk1FB39bLIRmypibLd-M-q_4-xiL4qu18I5rwKL7Z9hZJjGYI9OMplE4Kd5dplxZBQJ7WwQqQRuNgzDO11a27B9n-h7aafGA-ddMkUwbndib30vGaFdXkH2RaQth7VZkqwvUVCejPo51Ev27efKfiykUQNnHgcfz44IPr3H9Pck5SALMW9dYRNbHfb88tpTX1_WYtdnBnUUbHokZNDXTPONo9vdYFhUCmy"/>
+</div>
+</div>
+<div>
+<h4 class="font-label-lg text-text-primary dark:text-on-surface uppercase tracking-wider mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Cookie Settings</a></li>
+<li><a class="text-text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Press Kit</a></li>
+<li><a class="text-text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-page-margin-mobile md:px-page-margin-desktop py-8 border-t border-border dark:border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-text-secondary dark:text-on-surface-variant text-sm">© 2024 InnoVibe Mobility. All rights reserved. Precision engineering for the electric era.</p>
+<p class="text-text-secondary dark:text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                Quantum Secured By <a class="text-text-primary font-bold hover:text-primary transition-colors" href="#">Cryptopix.pvt.ltd</a>
+</p>
+</div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<a class="fixed bottom-8 right-8 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform z-50" href="#">
+<svg fill="white" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.008c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+</a>
+<script>
+        // Simple reveal animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('article, section > div > h2, .grid > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Support Hub | InnoVibe Care.EV</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#131b2e",
+                        "surface": "#faf8ff",
+                        "secondary-fixed": "#d5e3fc",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "tertiary-fixed": "#ffdbcd",
+                        "success-emerald": "#10B981",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#d5e3fc",
+                        "surface-container": "#eaedff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#131b2e",
+                        "on-primary-container": "#eeefff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary": "#943700",
+                        "on-tertiary-container": "#ffede6",
+                        "background": "#faf8ff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d2d9f4",
+                        "primary": "#004ac6",
+                        "inverse-on-surface": "#eef0ff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "inverse-primary": "#b4c5ff",
+                        "primary-container": "#2563eb",
+                        "outline-variant": "#c3c6d7",
+                        "surface-container-low": "#f2f3ff",
+                        "on-secondary-container": "#57657a",
+                        "on-surface-variant": "#434655",
+                        "tertiary-container": "#bc4800",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "border-subtle": "#E2E8F0",
+                        "secondary": "#515f74",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e2e7ff",
+                        "surface-tint": "#0053db",
+                        "inverse-surface": "#283044",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "surface-variant": "#dae2fd",
+                        "background-main": "#FFFFFF",
+                        "outline": "#737686",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-tertiary-fixed": "#360f00",
+                        "background-section": "#F8FAFC",
+                        "surface-bright": "#faf8ff",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "on-primary-fixed": "#00174b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "section-padding": "80px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "headline-xl": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; }
+        .hover-lift { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05); }
+        .glass-shadow { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-active .accordion-content { max-height: 500px; }
+        .accordion-active .accordion-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 shadow-sm bg-surface-container-lowest dark:bg-on-surface h-20">
+<nav class="flex justify-between items-center w-full px-8 h-full max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="text-headline-lg font-bold text-on-surface dark:text-surface">EV Support Hub</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Partners</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">FAQ</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 font-label-md" href="#">Contact Us</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container border-none rounded-full text-body-md focus:ring-2 focus:ring-primary w-64" placeholder="Search support..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:translate-y-[-2px] transition-all duration-200 active:scale-95">Get Help</button>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="bg-surface-container-lowest py-section-padding">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<span class="text-primary font-label-sm tracking-widest uppercase mb-4 block">CONTACT INNOVIBE</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 max-w-4xl mx-auto">Let's Build Better EV Experiences Together</h1>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Get support, book services, explore partnerships, or talk with our team. We're here to help you navigate the future of mobility.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container-high text-on-surface font-label-md hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">call</span> Call Now
+                    </button>
+<button class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container-high text-on-surface font-label-md hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">mail</span> Email Support
+                    </button>
+<button class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container-high text-on-surface font-label-md hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">location_on</span> Visit Us
+                    </button>
+<button class="flex items-center gap-2 px-6 py-3 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-md hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">electric_car</span> EV Support
+                    </button>
+</div>
+</div>
+</section>
+<!-- Contact Options Grid -->
+<section class="bg-background-section py-section-padding">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl border border-border-subtle hover-lift flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary-fixed rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">build</span>
+</div>
+<h3 class="font-headline-lg text-on-surface mb-2">Book a Service</h3>
+<p class="text-body-md text-on-surface-variant">Schedule maintenance or repairs for your electric two-wheeler.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl border border-border-subtle hover-lift flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">support_agent</span>
+</div>
+<h3 class="font-headline-lg text-on-surface mb-2">Customer Support</h3>
+<p class="text-body-md text-on-surface-variant">General assistance and troubleshooting for your EV experience.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl border border-border-subtle hover-lift flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl">handshake</span>
+</div>
+<h3 class="font-headline-lg text-on-surface mb-2">Business Partnerships</h3>
+<p class="text-body-md text-on-surface-variant">Explore B2B solutions and ecosystem collaboration opportunities.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl border border-border-subtle hover-lift flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">help</span>
+</div>
+<h3 class="font-headline-lg text-on-surface mb-2">General Inquiry</h3>
+<p class="text-body-md text-on-surface-variant">Have a question? We're ready to provide the answers you need.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Info & Map Section -->
+<section class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Left: Contact Details -->
+<div class="lg:w-5/12 space-y-6">
+<h2 class="font-headline-xl text-on-surface">Get In Touch</h2>
+<div class="p-6 bg-background-section rounded-2xl flex gap-4 border border-border-subtle">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-3 rounded-xl h-fit">location_on</span>
+<div>
+<h4 class="font-label-md text-on-surface mb-1">Our Headquarters</h4>
+<p class="text-body-md text-on-surface-variant">Gitam iTBI, VDA, Rushikonda, Visakhapatnam, AP - 530045.</p>
+</div>
+</div>
+<div class="p-6 bg-background-section rounded-2xl flex gap-4 border border-border-subtle">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-3 rounded-xl h-fit">mail</span>
+<div>
+<h4 class="font-label-md text-on-surface mb-1">Email Us</h4>
+<p class="text-body-md text-on-surface-variant">contact@innovibemobility.com</p>
+</div>
+</div>
+<div class="p-6 bg-background-section rounded-2xl flex gap-4 border border-border-subtle">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-3 rounded-xl h-fit">call</span>
+<div>
+<h4 class="font-label-md text-on-surface mb-1">Call Us</h4>
+<p class="text-body-md text-on-surface-variant">+91 9014336878</p>
+</div>
+</div>
+<div class="p-6 bg-background-section rounded-2xl flex gap-4 border border-border-subtle">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-3 rounded-xl h-fit">schedule</span>
+<div>
+<h4 class="font-label-md text-on-surface mb-1">Business Hours</h4>
+<p class="text-body-md text-on-surface-variant">Monday - Saturday: 9:00 AM - 6:00 PM</p>
+</div>
+</div>
+<div class="pt-4">
+<h4 class="font-label-md text-on-surface mb-4">Follow Our Journey</h4>
+<div class="flex gap-4">
+<a class="w-12 h-12 rounded-full border border-border-subtle flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-12 h-12 rounded-full border border-border-subtle flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">thumb_up</span></a>
+<a class="w-12 h-12 rounded-full border border-border-subtle flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">smart_display</span></a>
+<a class="w-12 h-12 rounded-full border border-border-subtle flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+<!-- Right: Map -->
+<div class="lg:w-7/12 min-h-[500px] rounded-3xl overflow-hidden border border-border-subtle relative">
+<div class="absolute inset-0 bg-cover bg-center" data-location="Visakhapatnam" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvQIR23cl9agYN5tgbceXFJpgJkOKMz78ofNfkFB1n91O_gjIiRoHupnV8OMavw-sFV06um5LIHwmhJTxbZzLCfrTgg_bCCH3xf0FmAnTrT0CCzu9hR5Hn3vfYqZF0zUuUEEB2gR6iSAE4qxZbrrekXh6_8p9bVNYmYqhNTwwF6BibE3Zo6YtuAL5mswag54gH182LBne9ygGSQVoZ20bN5IjyWfOIlxUVcXpgvzlcNwJpP2pHaGOXcCyc4p3knFkhP8Z0kYRBTzM')"></div>
+<div class="absolute bottom-6 right-6 bg-surface-container-lowest p-4 rounded-2xl shadow-xl border border-border-subtle">
+<p class="font-label-md text-on-surface">Visakhapatnam, Andhra Pradesh</p>
+<a class="text-primary text-label-sm hover:underline" href="#">Get Directions</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Message Form Section -->
+<section class="py-section-padding bg-background-section">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="max-w-4xl mx-auto bg-surface-container-lowest rounded-3xl p-10 border border-border-subtle shadow-lg">
+<div class="mb-8">
+<h2 class="font-headline-xl text-on-surface mb-2">Send Us A Message</h2>
+<p class="text-body-md text-on-surface-variant">Fill out the form below and our EV experts will get back to you shortly. <span class="text-primary font-medium">Typical response time: Within 24 hours.</span></p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-md text-on-surface ml-1">First Name</label>
+<input class="w-full px-4 py-3 rounded-xl border border-border-subtle focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" placeholder="e.g., John" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-md text-on-surface ml-1">Last Name</label>
+<input class="w-full px-4 py-3 rounded-xl border border-border-subtle focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" placeholder="e.g., Doe" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-md text-on-surface ml-1">Email Address</label>
+<input class="w-full px-4 py-3 rounded-xl border border-border-subtle focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" placeholder="john@example.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-md text-on-surface ml-1">Phone Number</label>
+<input class="w-full px-4 py-3 rounded-xl border border-border-subtle focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" placeholder="+91 00000 00000" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-label-md text-on-surface ml-1">Your Message</label>
+<textarea class="w-full px-4 py-3 rounded-xl border border-border-subtle focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" placeholder="How can we help you today?" rows="5"></textarea>
+</div>
+<button class="w-full md:w-auto px-10 py-4 bg-primary text-on-primary rounded-full font-headline-lg hover:translate-y-[-2px] transition-all duration-200 active:scale-95 flex items-center justify-center gap-2" type="submit">
+                            Send Message <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Why InnoVibe Features -->
+<section class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 bg-surface-container rounded-3xl border border-border-subtle text-center hover-lift">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">bolt</span>
+<h4 class="font-headline-lg text-on-surface mb-3">Fast Support</h4>
+<p class="text-body-md text-on-surface-variant">Get quick responses and immediate assistance for all your EV service needs.</p>
+</div>
+<div class="p-8 bg-surface-container rounded-3xl border border-border-subtle text-center hover-lift">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">engineering</span>
+<h4 class="font-headline-lg text-on-surface mb-3">Expert EV Assistance</h4>
+<p class="text-body-md text-on-surface-variant">Our technicians are certified experts in multi-brand electric vehicle architecture.</p>
+</div>
+<div class="p-8 bg-surface-container rounded-3xl border border-border-subtle text-center hover-lift">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">lan</span>
+<h4 class="font-headline-lg text-on-surface mb-3">Nationwide Network</h4>
+<p class="text-body-md text-on-surface-variant">Accessible support infrastructure across India's key urban and suburban hubs.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-padding bg-background-section">
+<div class="max-w-4xl mx-auto px-gutter">
+<div class="text-center mb-12">
+<h2 class="font-display-lg text-on-surface mb-4">Frequently Asked Questions</h2>
+<p class="text-body-lg text-on-surface-variant">QUICK ANSWERS TO COMMON QUESTIONS</p>
+</div>
+<div class="space-y-4">
+<!-- FAQ 1 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-border-subtle accordion-item cursor-pointer overflow-hidden" onclick="toggleAccordion(this)">
+<div class="p-6 flex justify-between items-center">
+<h4 class="font-headline-lg text-on-surface text-left">What Services Are Available From InnoVibe Care.EV Mobility?</h4>
+<span class="material-symbols-outlined accordion-icon transition-transform">expand_more</span>
+</div>
+<div class="accordion-content">
+<div class="p-6 pt-0 text-body-md text-on-surface-variant">
+                                InnoVibe Care.EV Mobility India Pvt Ltd offers electric two-wheeler servicing for multiple brands, available both at customers' homes and on the road for breakdowns or emergencies.
+                            </div>
+</div>
+</div>
+<!-- FAQ 2 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-border-subtle accordion-item cursor-pointer overflow-hidden" onclick="toggleAccordion(this)">
+<div class="p-6 flex justify-between items-center">
+<h4 class="font-headline-lg text-on-surface text-left">What Is The Starting Price For EV Two-Wheeler Service?</h4>
+<span class="material-symbols-outlined accordion-icon transition-transform">expand_more</span>
+</div>
+<div class="accordion-content">
+<div class="p-6 pt-0 text-body-md text-on-surface-variant">
+                                Pricing varies based on vehicle type and service package. Please contact our support team or check our booking portal for current introductory pricing and seasonal offers.
+                            </div>
+</div>
+</div>
+<!-- FAQ 3 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-border-subtle accordion-item cursor-pointer overflow-hidden" onclick="toggleAccordion(this)">
+<div class="p-6 flex justify-between items-center">
+<h4 class="font-headline-lg text-on-surface text-left">Which Types Of Vehicles Does InnoVibe Care.EV Mobility Service?</h4>
+<span class="material-symbols-outlined accordion-icon transition-transform">expand_more</span>
+</div>
+<div class="accordion-content">
+<div class="p-6 pt-0 text-body-md text-on-surface-variant">
+                                We specialize in all major brands of electric two-wheelers, including scooters and motorcycles, from standard urban models to high-performance electric bikes.
+                            </div>
+</div>
+</div>
+<!-- FAQ 4 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-border-subtle accordion-item cursor-pointer overflow-hidden" onclick="toggleAccordion(this)">
+<div class="p-6 flex justify-between items-center">
+<h4 class="font-headline-lg text-on-surface text-left">How Can I Contact Customer Support?</h4>
+<span class="material-symbols-outlined accordion-icon transition-transform">expand_more</span>
+</div>
+<div class="accordion-content">
+<div class="p-6 pt-0 text-body-md text-on-surface-variant">
+                                You can reach us via our hotline at +91 9014336878, email us at contact@innovibemobility.com, or use the message form on this page. We also offer live chat support during business hours.
+                            </div>
+</div>
+</div>
+<!-- FAQ 5 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-border-subtle accordion-item cursor-pointer overflow-hidden" onclick="toggleAccordion(this)">
+<div class="p-6 flex justify-between items-center">
+<h4 class="font-headline-lg text-on-surface text-left">How Do I Book A Service Appointment?</h4>
+<span class="material-symbols-outlined accordion-icon transition-transform">expand_more</span>
+</div>
+<div class="accordion-content">
+<div class="p-6 pt-0 text-body-md text-on-surface-variant">
+                                Booking is simple: select "Service Booking" in our navigation menu, choose your vehicle model and required service, select a time slot, and our mobile team will be dispatched to your location.
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-padding bg-on-surface text-surface overflow-hidden relative">
+<div class="absolute inset-0 opacity-10">
+
+</div>
+<div class="max-w-4xl mx-auto px-gutter text-center relative z-10">
+<h2 class="font-display-lg text-display-lg mb-6">Need Immediate EV Assistance?</h2>
+<p class="text-body-lg mb-10 text-outline-variant">Our rapid response team is standing by to help you get back on the road. Don't wait—get the expert support your electric vehicle deserves.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-headline-lg hover:scale-105 transition-all">Call Now</button>
+<button class="bg-surface text-on-surface px-10 py-4 rounded-full font-headline-lg hover:scale-105 transition-all">Book Service</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background-section dark:bg-on-secondary-fixed pt-16 pb-8">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+<!-- Brand -->
+<div class="space-y-6">
+<span class="text-headline-lg font-bold text-on-surface dark:text-surface">EV Support Hub</span>
+<p class="text-body-md text-on-surface-variant">India's leading electric vehicle service provider with comprehensive EV solutions across the nation.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#"><span class="material-symbols-outlined">thumb_up</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#"><span class="material-symbols-outlined">smart_display</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<!-- Links -->
+<div>
+<h4 class="font-headline-lg text-on-surface dark:text-surface mb-6">QUICK LINKS</h4>
+<ul class="space-y-4">
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md" href="#">Home</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md" href="#">EV Services</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md" href="#">About</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md" href="#">Blog</a></li>
+<li><a class="text-primary dark:text-primary-fixed font-semibold font-body-md" href="#">Contact</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div class="space-y-6">
+<h4 class="font-headline-lg text-on-surface dark:text-surface mb-6">HEAD OFFICE</h4>
+<p class="text-body-md text-on-surface-variant">Gitam iTBI, VDA, Rushikonda, Visakhapatnam, AP - 530045.</p>
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">mail</span> contact@innovibemobility.com
+                        </div>
+<div class="flex items-center gap-2 text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">call</span> +91 9014336878
+                        </div>
+</div>
+<div class="pt-4">
+<img class="h-12 w-auto cursor-pointer" data-alt="A clean, high-resolution rendering of the Google Play Store badge for mobile apps, styled in a modern tech-forward aesthetic with minimalist surroundings. The badge is set against a dark, premium background, consistent with a high-end corporate identity. The lighting is focused and professional, highlighting the clear typography of the badge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdEqYsVOoENHK5bH1UHwAPQ_dNDOKfwFS5lDvJz8UZ8RbAoy_7swgemXjlkzei6x0rzL7od3tVvQr0YREX48vThXEDaCffOqlpJwtWxDo9xN0JQjDETm2UjvV1NiBkIKJdnhyz7JKjyVjS7FEGO6UrdDi83_71YlThz5mSpi3k1nZJhddQRmWx00e71n976iPtbLZoHvdo-v1Ju5uaqFizpuhE6CEGAz6af6eegkBAENQA8v3Wrs54QX8_XHUVc7gC1kBmtJ5zeu0"/>
+</div>
+</div>
+</div>
+<div class="border-t border-border-subtle pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-secondary dark:text-secondary-fixed-dim">© 2024 Kinetic Clarity EV Hub. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-body-md text-secondary hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-body-md text-secondary hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-body-md text-secondary hover:text-primary transition-colors" href="#">Refund Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        function toggleAccordion(element) {
+            const isActive = element.classList.contains('accordion-active');
+            
+            // Close all accordions
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('accordion-active');
+            });
+
+            // Open clicked if it wasn't active
+            if (!isActive) {
+                element.classList.add('accordion-active');
+            }
+        }
+    </script>
+</body></html>

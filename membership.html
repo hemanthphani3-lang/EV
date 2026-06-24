@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Membership | InnoVibe Mobility</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind Configuration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-tertiary-fixed": "#002113",
+                "inverse-on-surface": "#eff1f3",
+                "surface-bright": "#f7f9fb",
+                "secondary-fixed-dim": "#b4c5ff",
+                "tertiary-fixed-dim": "#4edea3",
+                "secondary-container": "#316bf3",
+                "on-tertiary-container": "#009668",
+                "secondary": "#0051d5",
+                "inverse-primary": "#bec6e0",
+                "on-surface-variant": "#45464d",
+                "surface-tint": "#565e74",
+                "primary-container": "#131b2e",
+                "surface": "#f7f9fb",
+                "outline": "#76777d",
+                "on-primary-container": "#7c839b",
+                "primary-fixed-dim": "#bec6e0",
+                "text-primary": "#0F172A",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#002113",
+                "on-primary-fixed": "#131b2e",
+                "surface-dim": "#d8dadc",
+                "primary-fixed": "#dae2fd",
+                "text-secondary": "#475569",
+                "inverse-surface": "#2d3133",
+                "on-secondary-container": "#fefcff",
+                "error": "#ba1a1a",
+                "surface-variant": "#e0e3e5",
+                "on-secondary-fixed-variant": "#003ea8",
+                "surface-container-low": "#f2f4f6",
+                "on-secondary": "#ffffff",
+                "primary": "#000000",
+                "on-tertiary-fixed-variant": "#005236",
+                "border-subtle": "#E2E8F0",
+                "surface-container-high": "#e6e8ea",
+                "tertiary": "#000000",
+                "on-error": "#ffffff",
+                "on-background": "#191c1e",
+                "surface-white": "#FFFFFF",
+                "on-primary": "#ffffff",
+                "error-container": "#ffdad6",
+                "on-primary-fixed-variant": "#3f465c",
+                "on-error-container": "#93000a",
+                "on-secondary-fixed": "#00174b",
+                "surface-container-lowest": "#ffffff",
+                "background": "#f7f9fb",
+                "tertiary-fixed": "#6ffbbe",
+                "surface-container-highest": "#e0e3e5",
+                "on-surface": "#191c1e",
+                "outline-variant": "#c6c6cd",
+                "secondary-fixed": "#dbe1ff",
+                "surface-container": "#eceef0"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "stack-sm": "8px",
+                "gutter": "32px",
+                "section-padding-desktop": "120px",
+                "container-max": "1280px",
+                "section-padding-mobile": "64px",
+                "margin-mobile": "20px",
+                "stack-md": "16px",
+                "stack-lg": "24px"
+              },
+              "fontFamily": {
+                "display-lg": ["Inter"],
+                "headline-xl": ["Inter"],
+                "headline-lg": ["Inter"],
+                "label-md": ["Inter"],
+                "label-sm": ["Inter"],
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"]
+              },
+              "fontSize": {
+                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-xl": ["36px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "headline-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all 0.4s ease;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .pricing-card:hover {
+            box-shadow: 0px 4px 6px -1px rgba(15, 23, 42, 0.03), 0px 20px 25px -5px rgba(15, 23, 42, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-text-primary font-body-md overflow-x-hidden pt-20">
+
+<!-- Unified Toast Container -->
+<div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+<!-- Unified Header -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav h-20 border-b border-outline-variant/20 flex items-center shadow-sm">
+  <nav class="flex justify-between items-center w-full px-6 md:px-10 max-w-[1280px] mx-auto">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2 group cursor-pointer">
+      <span class="material-symbols-outlined text-[#004ac6] text-3xl font-bold transition-transform group-hover:scale-110">electric_bolt</span>
+      <span class="text-xl md:text-2xl font-bold tracking-tight text-[#0F172A]">InnoVibe Mobility</span>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Home</a>
+      <a href="services.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Services &amp; Bookings</a>
+      <a href="membership.html" class="text-[#004ac6] font-bold border-b-2 border-[#004ac6] pb-1 text-sm transition-all">Membership</a>
+      <a href="about.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">About Us</a>
+      <a href="blog.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Blog</a>
+      <a href="contact.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Contact Us</a>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="flex items-center gap-4">
+      <a href="services.html" class="hidden sm:inline-block bg-[#004ac6] hover:bg-[#2563eb] text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-95 transition-all">
+        Book Service
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 text-[#0F172A] hover:text-[#004ac6] transition-colors">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-outline-variant/20 flex flex-col p-6 gap-4 shadow-xl md:hidden transition-all duration-300 transform scale-y-95 origin-top">
+    <a href="index.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Home</a>
+    <a href="services.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Services &amp; Bookings</a>
+    <a href="membership.html" class="bg-blue-50 text-[#004ac6] font-bold py-2 px-3 rounded-lg transition-all">Membership</a>
+    <a href="about.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">About Us</a>
+    <a href="blog.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Blog</a>
+    <a href="contact.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Contact Us</a>
+    <a href="services.html" class="bg-[#004ac6] hover:bg-[#2563eb] text-white text-center py-3 rounded-xl font-semibold mt-2 shadow-lg transition-all">
+      Book Service
+    </a>
+  </div>
+</header>
+
+<main>
+<!-- Hero Section -->
+<section class="pt-32 pb-section-padding-mobile md:pb-section-padding-desktop px-margin-mobile md:px-gutter relative overflow-hidden bg-surface-white">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="reveal active">
+<span class="inline-block px-3 py-1 bg-secondary/10 text-secondary rounded-full font-label-sm text-label-sm mb-6">InnoVibe Membership</span>
+<h1 class="font-display-lg text-[48px] md:text-display-lg mb-8 leading-tight">Protect Your EV.<br/>Drive With Confidence.</h1>
+<p class="font-body-lg text-body-lg text-text-secondary mb-10 max-w-lg">Choose the plan that best fits your needs. Our comprehensive membership programs are designed for the modern electric vehicle enthusiast.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-secondary text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md text-center hover:shadow-lg transition-all flex items-center justify-center" href="#plans">Explore Plans</a>
+<a class="border border-border-subtle text-[#0F172A] px-8 py-4 rounded-lg font-label-md text-label-md text-center hover:bg-surface-container-low transition-all flex items-center justify-center" href="contact.html">Contact Team</a>
+</div>
+</div>
+<div class="reveal active flex justify-end">
+<div class="relative w-full aspect-video md:aspect-square max-w-lg rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Hero Illustration" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKzddy-OgM0xV1Dvo10yoNgDijSV1963d-WGelUSpaY_hBnCJCB7Wu9hFXNKQa4WyYCCFcBZvlEqD0129QjS2W-dZ1rFsnujdpuI0aV-5WT6nst4AX5p2rOnfrd9w7ltMynQB6GCGTHz8EacSpBJENun3mf-JVXQaj0hucFgetbhE-AHQMpaP46Z0gCZQjl-tfJejZg8ip5ej-nIfA_k9jXd3UHWADSnkVl7qLW5NoNTyd53m-Yv5GVrNOhybqowCBXfZwe4pw65OI"/>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
+</section>
+
+<!-- Value Prop Grid -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-xl text-headline-xl mb-4">More Than a Membership</h2>
+<p class="font-body-md text-body-md text-text-secondary">Exclusive benefits designed to simplify your EV lifecycle.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+<!-- Card 1 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[32px]">support_agent</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-3">Priority Support</h3>
+<p class="text-text-secondary">Skip the queue with our dedicated 24/7 VIP assistance line for all members.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[32px]">directions_car</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-3">Roadside Assistance</h3>
+<p class="text-text-secondary">Emergency charging and towing services anywhere, anytime across the country.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[32px]">build</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-3">Maintenance Benefits</h3>
+<p class="text-text-secondary">Scheduled checkups and predictive maintenance to keep your EV at peak performance.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[32px]">percent</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-3">Service Discounts</h3>
+<p class="text-text-secondary">Enjoy flat discounts on labor and genuine spare parts across our network.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[32px]">battery_charging_full</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-3">Battery Care</h3>
+<p class="text-text-secondary">Comprehensive battery diagnostics and health monitoring reporting quarterly.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[32px]">redeem</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-3">Exclusive Offers</h3>
+<p class="text-text-secondary">Partner perks from charging stations, lifestyle brands, and car accessories.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Pricing Plans Section -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-white" id="plans">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-xl text-headline-xl mb-4">Transparent Pricing</h2>
+<p class="font-body-md text-body-md text-text-secondary">Investment in your peace of mind.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch reveal">
+<!-- Lifetime Plan -->
+<div class="pricing-card bg-surface-white border border-border-subtle rounded-[24px] p-10 flex flex-col transition-all duration-300">
+<div class="mb-8">
+<h3 class="font-headline-lg text-headline-lg mb-2">Lifetime Plan</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-text-secondary line-through opacity-50">₹9999</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-display-lg text-[42px] leading-none">₹999</span>
+<span class="text-text-secondary">/ 120 months</span>
+</div>
+</div>
+<div class="space-y-4 mb-10 flex-grow">
+<div class="flex items-center gap-3 text-text-primary">
+<span class="material-symbols-outlined text-[#10B981]">check_circle</span>
+<span>10% Discount on Labour &amp; Parts</span>
+</div>
+<div class="flex items-center gap-3 text-text-primary">
+<span class="material-symbols-outlined text-[#10B981]">check_circle</span>
+<span>1 Free EV Service at Home</span>
+</div>
+<div class="flex items-center gap-3 text-text-primary">
+<span class="material-symbols-outlined text-[#10B981]">check_circle</span>
+<span>1 Free On-Road Assistance</span>
+</div>
+<div class="flex items-center gap-3 text-text-primary">
+<span class="material-symbols-outlined text-[#10B981]">check_circle</span>
+<span>1 Free Battery Diagnostic</span>
+</div>
+</div>
+<button data-plan="Lifetime Plan" class="choose-plan-btn w-full py-4 border border-border-subtle rounded-xl font-label-md hover:bg-primary-container hover:text-white transition-all">Choose Plan</button>
+</div>
+<!-- 3 Years Plan (Recommended) -->
+<div class="pricing-card bg-primary-container text-white border-2 border-secondary rounded-[24px] p-10 flex flex-col relative scale-105 shadow-2xl z-10 transition-all duration-300">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-label-sm font-bold uppercase tracking-wider">Recommended</div>
+<div class="mb-8">
+<h3 class="font-headline-lg text-headline-lg mb-2 text-white">3 Years Plan</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-on-primary-container line-through">₹4999</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-display-lg text-[42px] leading-none text-white">₹499</span>
+<span class="text-on-primary-container">/ 36 months</span>
+</div>
+</div>
+<div class="space-y-4 mb-10 flex-grow text-white">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span class="text-surface-variant">10% Discount on Labour &amp; Parts</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span class="text-surface-variant">1 Free EV Service at Home</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span class="text-surface-variant">1 Free On-Road Assistance</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span class="text-surface-variant">1 Free Battery Diagnostic</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span class="text-surface-variant">Priority Maintenance Queue</span>
+</div>
+</div>
+<button data-plan="3 Years Plan" class="choose-plan-btn w-full py-4 bg-secondary rounded-xl font-label-md hover:bg-secondary/90 transition-all text-white">Choose Plan</button>
+</div>
+<!-- 1 Year Plan -->
+<div class="pricing-card bg-surface-white border border-border-subtle rounded-[24px] p-10 flex flex-col transition-all duration-300">
+<div class="mb-8">
+<h3 class="font-headline-lg text-headline-lg mb-2">1 Year Plan</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-text-secondary line-through opacity-50">₹1999</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-display-lg text-[42px] leading-none">₹199</span>
+<span class="text-text-secondary">/ 12 months</span>
+</div>
+</div>
+<div class="space-y-4 mb-10 flex-grow">
+<div class="flex items-center gap-3 text-text-primary">
+<span class="material-symbols-outlined text-[#10B981]">check_circle</span>
+<span>10% Discount on Labour &amp; Parts</span>
+</div>
+<div class="flex items-center gap-3 text-text-primary">
+<span class="material-symbols-outlined text-[#10B981]">check_circle</span>
+<span>1 Free EV Service at Home</span>
+</div>
+<div class="flex items-center gap-3 text-text-primary">
+<span class="material-symbols-outlined text-[#10B981]">check_circle</span>
+<span>1 Free On-Road Assistance</span>
+</div>
+<div class="flex items-center gap-3 text-text-primary">
+<span class="material-symbols-outlined text-[#10B981]">check_circle</span>
+<span>1 Free Battery Diagnostic</span>
+</div>
+</div>
+<button data-plan="1 Year Plan" class="choose-plan-btn w-full py-4 border border-border-subtle rounded-xl font-label-md hover:bg-primary-container hover:text-white transition-all">Choose Plan</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Comparison Table -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface overflow-x-auto">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<h2 class="font-headline-xl text-headline-xl text-center mb-16 reveal">Compare Benefits</h2>
+<div class="bg-surface-white rounded-3xl overflow-hidden border border-border-subtle reveal">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-border-subtle text-text-primary">
+<th class="p-6 font-label-md text-label-md text-text-secondary uppercase">Benefit</th>
+<th class="p-6 font-label-md text-label-md text-text-secondary uppercase">1 Year Plan</th>
+<th class="p-6 font-label-md text-label-md text-text-secondary uppercase">3 Years Plan</th>
+<th class="p-6 font-label-md text-label-md text-text-secondary uppercase">Lifetime Plan</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle text-text-primary">
+<tr class="hover:bg-background transition-colors">
+<td class="p-6 font-body-md">Service Discount (Labor)</td>
+<td class="p-6">10%</td>
+<td class="p-6 font-bold text-secondary">10% + Bonus</td>
+<td class="p-6">10%</td>
+</tr>
+<tr class="hover:bg-background transition-colors bg-surface-container-lowest">
+<td class="p-6 font-body-md">Home Service Visits</td>
+<td class="p-6">1 / Year</td>
+<td class="p-6 font-bold text-secondary">3 / Year</td>
+<td class="p-6">Unlimited Basic</td>
+</tr>
+<tr class="hover:bg-background transition-colors">
+<td class="p-6 font-body-md">RSA Coverage</td>
+<td class="p-6">Standard</td>
+<td class="p-6 font-bold text-secondary">Premium 24/7</td>
+<td class="p-6">Premium 24/7</td>
+</tr>
+<tr class="hover:bg-background transition-colors bg-surface-container-lowest">
+<td class="p-6 font-body-md">Battery Diagnostics</td>
+<td class="p-6">Annual</td>
+<td class="p-6 font-bold text-secondary">Quarterly</td>
+<td class="p-6">On-Demand</td>
+</tr>
+<tr class="hover:bg-background transition-colors">
+<td class="p-6 font-body-md">Priority Scheduling</td>
+<td class="p-6 text-text-secondary">No</td>
+<td class="p-6 font-bold text-secondary">Yes</td>
+<td class="p-6 text-text-secondary font-bold">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+
+<!-- Cost Savings Showcase -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-primary-container text-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="reveal">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 text-white">Save as you drive.</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-12">The InnoVibe membership pays for itself within the first two services. Our members save an average of ₹12,000 annually.</p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<div class="text-white text-[40px] font-bold mb-1">₹5,000+</div>
+<div class="text-label-md text-on-primary-container">Annual Service Savings</div>
+</div>
+<div>
+<div class="text-white text-[40px] font-bold mb-1">35%</div>
+<div class="text-label-md text-on-primary-container">Efficiency Increase</div>
+</div>
+</div>
+</div>
+<div class="reveal grid grid-cols-1 gap-6">
+<div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
+<div class="flex justify-between items-center mb-6">
+<span class="text-label-md uppercase tracking-widest text-on-primary-container">Wallet Impact</span>
+<span class="material-symbols-outlined">trending_down</span>
+</div>
+<div class="h-32 flex items-end gap-2 mb-4">
+<div class="flex-1 bg-white/20 rounded-t-lg h-[40%]"></div>
+<div class="flex-1 bg-white/20 rounded-t-lg h-[60%]"></div>
+<div class="flex-1 bg-white/20 rounded-t-lg h-[50%]"></div>
+<div class="flex-1 bg-secondary rounded-t-lg h-[90%]"></div>
+</div>
+<p class="font-body-md text-surface-variant">Maintenance costs drastically reduced after membership activation.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Why Choose InnoVibe -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<h2 class="font-headline-xl text-headline-xl text-center mb-16 reveal">The InnoVibe Advantage</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+<!-- Card 1 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div>
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-[32px]">verified_user</span>
+</div>
+<h5 class="font-headline-lg text-headline-lg mb-3">Priority Service</h5>
+<p class="text-text-secondary text-sm leading-relaxed">Members get front-of-line access to all service centers and home bookings.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div>
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-[32px]">engineering</span>
+</div>
+<h5 class="font-headline-lg text-headline-lg mb-3">Expert Technicians</h5>
+<p class="text-text-secondary text-sm leading-relaxed">Certified EV specialists trained on the latest battery and drivetrain technology.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div>
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-[32px]">public</span>
+</div>
+<h5 class="font-headline-lg text-headline-lg mb-3">Nationwide Support</h5>
+<p class="text-text-secondary text-sm leading-relaxed">Seamless assistance in over 50+ cities across the country with a unified app experience.</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div>
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-[32px]">hub</span>
+</div>
+<h5 class="font-headline-lg text-headline-lg mb-3">Trusted Network</h5>
+<p class="text-text-secondary text-sm leading-relaxed">A curated list of partner garages and charging networks verified for high quality.</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div>
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-[32px]">health_and_safety</span>
+</div>
+<h5 class="font-headline-lg text-headline-lg mb-3">Battery Protection</h5>
+<p class="text-text-secondary text-sm leading-relaxed">Specialized monitoring to prevent degradation and maximize long-term resale value.</p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div>
+<div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-[32px]">savings</span>
+</div>
+<h5 class="font-headline-lg text-headline-lg mb-3">Long-Term Savings</h5>
+<p class="text-text-secondary text-sm leading-relaxed">Predictable maintenance costs through our comprehensive subscription model.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<h2 class="font-headline-xl text-headline-xl text-center mb-16 reveal">Trusted by EV Owners</h2>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal">
+<div class="bg-surface-white p-10 rounded-3xl shadow-sm border border-border-subtle flex flex-col">
+<div class="flex gap-1 text-[#F59E0B] mb-6">
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg italic text-text-primary mb-8">"InnoVibe has completely changed how I manage my Model 3. The home service is so convenient."</p>
+<div class="flex items-center gap-4 mt-auto">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close up high quality portrait of a happy modern professional man in his 30s smiling gently. Soft natural morning light in an urban glass building setting. Photorealistic, clean light mode aesthetic, blurred architectural background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBomucw0JgOuryEIFykaslhusbRt2ZDjKHzDmiQP7SlOXI49MBsxALEl_hwVoYHv8iSNflW5e3iLVT8WJxpoLbPjT9iXwOOb3C0FgN7SJaTXkViCM9vitlntuH4isNqsZMzwxZ43V2P-qKL1pM8zRBT53bG9jkP4cObTyL5Xibe0YNoQa1hEtlW8JC6LUx5KWSKV2GfzWgchf7CkInOoIlVC7vOFh0tFmt1sEpNET2rDT6rP-SxBiUGWGLGIxnadenpxalslVK7LgJW"/>
+</div>
+<div>
+<div class="font-bold">Rahul Sharma</div>
+<div class="text-label-sm text-text-secondary">Bangalore, IN</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-white p-10 rounded-3xl shadow-sm border border-border-subtle flex flex-col scale-105 z-10 lg:mt-0 mt-8">
+<div class="flex gap-1 text-[#F59E0B] mb-6">
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg italic text-text-primary mb-8">"The 3-year plan was a no-brainer. The savings on labor alone have already paid for the membership twice over."</p>
+<div class="flex items-center gap-4 mt-auto">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional woman in her late 20s with a bright smile, wearing business casual attire. Background is a bright and airy modern coworking space with plants and soft sunlight. High-fidelity photography style, premium and authentic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_EqUe5r59B58jTzUy4f-cseYyLmkbK47Oc27Ag7QOlvft5TErKbmqq0-lXkl7KCIvuAmko3VdU496jSbRPNsaPWWSIkOy5SfcreoOdxJmaSOKrIxEd_MU02Ep3UK_c4goCxfvPzaPM2dHr4xAkLdNoVWjWnOFVuZJNpIv8wVdMjTqqotfzw-ku3zbzI9AmXV82LxMVZj9BBYYMXjizVYnTWMzWYpyBu6LMFKM3tQrgHGwnQp8Am4Vj-xVW8cEFEVFjIX-pz22mNRs"/>
+</div>
+<div>
+<div class="font-bold">Ananya Patel</div>
+<div class="text-label-sm text-text-secondary">Mumbai, IN</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-white p-10 rounded-3xl shadow-sm border border-border-subtle flex flex-col lg:mt-0 mt-8">
+<div class="flex gap-1 text-[#F59E0B] mb-6">
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg italic text-text-primary mb-8">"Battery diagnostics provided by InnoVibe give me the data I need to ensure my car lasts for years."</p>
+<div class="flex items-center gap-4 mt-auto">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A middle-aged man with graying hair and glasses, wearing a premium polo shirt, looking confident. Set in a bright sunlit residential driveway with a sleek electric vehicle partially visible in the background. High-end lifestyle shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7h78c1MVkMc3BjuR4NGJbPEAYUQHxOfT42rfTRNJG6M_ymBuFlqR4Cw0jlG9NAShhiUQWt_8z8JGhyZrc9aBH51vf_nCoC4VvdtRizR6WDfQzX6NpPZpNg54ijPMBG9ibsMMiVTWQ9bVWd-CydqEfZYraccIN6YhPp0VHf5iipvIyLUfpWkB8oa1mCA2UkCA_KgI0o-5O3-3SEp3z5dBzjSiuLXMjH0U1CW203luT1va3WIPx3maEx1bUs8LBH7eVyBpC9FSX4_69"/>
+</div>
+<div>
+<div class="font-bold">Vikram Mehta</div>
+<div class="text-label-sm text-text-secondary">Delhi, IN</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-20 rounded-3xl overflow-hidden h-[400px] reveal relative shadow-2xl">
+<img alt="Happy EV Owners" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNmwh2Jw4jneW-VYi8L3geE0wb31TA2lzmOKlgaOUUJL_sy_SDJFI9pHdMbrYc7ME1HiLqQgDSc78rLcBsb5MXdfFG2-seZ1R6WjxHQvla3eWL7YNbDzt1aaN4GmHi-U2QwiRCXRGsMSmkQgH6H3U3N-A5EnXsdqbYg8PuFUIrMAUJCnSxQY156aCknsCq6mZtQGq73C7XUVOGOQBnTN3i20FIk5aaFbLtANsL__afSXUBl81wOSdhIIyo4iXcl4SwIBUu2buR0LqM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-12">
+<p class="text-white text-headline-xl max-w-2xl font-bold">Join 50,000+ EV owners driving with confidence.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ Accordion -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-white">
+<div class="max-w-3xl mx-auto px-margin-mobile md:px-gutter">
+<h2 class="font-headline-xl text-headline-xl text-center mb-16 reveal">Common Questions</h2>
+<div class="space-y-4 reveal">
+<!-- FAQ Item 1 -->
+<div class="border-b border-border-subtle py-4">
+<button class="w-full flex justify-between items-center text-left py-2 focus:outline-none" onclick="toggleAccordionFaq(this)">
+<span class="font-headline-lg text-[20px] text-text-primary">How do I join the membership?</span>
+<span class="material-symbols-outlined transition-transform duration-300 text-text-primary">chevron_right</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-surface/30 px-2 rounded-lg">
+<p class="py-4 text-text-secondary">Joining is simple. Click on any 'Join Now' button, select your plan, provide your vehicle identification number (VIN), and complete the secure payment. Your membership is activated instantly.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="border-b border-border-subtle py-4">
+<button class="w-full flex justify-between items-center text-left py-2 focus:outline-none" onclick="toggleAccordionFaq(this)">
+<span class="font-headline-lg text-[20px] text-text-primary">What exactly is included in 'Home Service'?</span>
+<span class="material-symbols-outlined transition-transform duration-300 text-text-primary">chevron_right</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-surface/30 px-2 rounded-lg">
+<p class="py-4 text-text-secondary">Home Service includes a comprehensive 24-point check of your EV, brake inspection, suspension check, fluid top-ups (if applicable), and software updates diagnostics, all performed at your doorstep.</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="border-b border-border-subtle py-4">
+<button class="w-full flex justify-between items-center text-left py-2 focus:outline-none" onclick="toggleAccordionFaq(this)">
+<span class="font-headline-lg text-[20px] text-text-primary">Is the membership transferable if I sell my car?</span>
+<span class="material-symbols-outlined transition-transform duration-300 text-text-primary">chevron_right</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-surface/30 px-2 rounded-lg">
+<p class="py-4 text-text-secondary">Yes! The InnoVibe membership is linked to the vehicle's VIN. This adds significant resale value to your car as the new owner can enjoy the remaining balance of the membership.</p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="border-b border-border-subtle py-4">
+<button class="w-full flex justify-between items-center text-left py-2 focus:outline-none" onclick="toggleAccordionFaq(this)">
+<span class="font-headline-lg text-[20px] text-text-primary">How does the 'Priority Support' work?</span>
+<span class="material-symbols-outlined transition-transform duration-300 text-text-primary">chevron_right</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-surface/30 px-2 rounded-lg">
+<p class="py-4 text-text-secondary">Members get a unique access code in the app. When you call our support line or use the chat feature, you are automatically bumped to the front of the queue for immediate assistance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-margin-mobile md:px-gutter mb-12">
+<div class="max-w-container-max mx-auto">
+<div class="bg-primary-container rounded-[40px] p-12 md:p-24 text-center text-white relative overflow-hidden reveal">
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="font-display-lg text-[32px] md:text-display-lg mb-8 leading-tight text-white">Choose Smarter EV Ownership Today.</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-12">Start your journey with InnoVibe and join the premium community of electric vehicle owners.</p>
+<a href="#plans" class="bg-secondary text-white px-12 py-5 rounded-2xl font-label-md text-[18px] hover:bg-secondary/90 transition-all hover:scale-105 shadow-xl inline-block text-center">Become a Member</a>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Unified Footer -->
+<footer class="bg-[#0F172A] text-slate-300 pt-16 pb-8 border-t border-slate-800">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <!-- Brand Info -->
+    <div class="space-y-6">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-blue-400 text-3xl font-bold">electric_bolt</span>
+        <span class="text-xl md:text-2xl font-bold tracking-tight text-white">InnoVibe Mobility</span>
+      </a>
+      <p class="text-sm text-slate-400 leading-relaxed">
+        India's leading electric vehicle service provider with comprehensive EV solutions across the nation. Precision engineering for the electric era.
+      </p>
+      <div class="flex gap-4">
+        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+          <span class="material-symbols-outlined text-lg">public</span>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+          <span class="material-symbols-outlined text-lg">share</span>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+          <span class="material-symbols-outlined text-lg">video_library</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="font-bold text-white tracking-wider mb-6 text-sm uppercase">Quick Links</h4>
+      <ul class="space-y-4">
+        <li><a href="index.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">Home</a></li>
+        <li><a href="services.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">EV Services</a></li>
+        <li><a href="membership.html" class="text-blue-400 font-semibold text-sm transition-colors block hover:translate-x-1 duration-200">Membership Plans</a></li>
+        <li><a href="about.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">About Us</a></li>
+        <li><a href="blog.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">EV Knowledge Hub</a></li>
+        <li><a href="contact.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">Contact &amp; Support</a></li>
+      </ul>
+    </div>
+
+    <!-- Head Office Details -->
+    <div>
+      <h4 class="font-bold text-white tracking-wider mb-6 text-sm uppercase">Head Office</h4>
+      <address class="not-italic space-y-4 text-sm text-slate-400">
+        <p>Gitam iTBI, VDA, Rushikonda,<br>Visakhapatnam, AP – 530045</p>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-blue-400 text-lg">mail</span>
+          <a href="mailto:contact@innovibemobility.com" class="hover:text-blue-400 transition-colors">contact@innovibemobility.com</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-blue-400 text-lg">call</span>
+          <a href="tel:+919014336878" class="hover:text-blue-400 transition-colors">+91 9014336878</a>
+        </div>
+      </address>
+    </div>
+
+    <!-- App Store Badge -->
+    <div>
+      <h4 class="font-bold text-white tracking-wider mb-6 text-sm uppercase">Download App</h4>
+      <p class="text-sm text-slate-400 mb-6">Manage your vehicle services and memberships from anywhere.</p>
+      <a href="#" class="block w-48 hover:opacity-80 transition-opacity">
+        <img alt="Get it on Google Play" class="w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6P_m0umnY_b9gqBbN3wyc4auhZrY0DXCyCy5eULKJBMlUenLaYk3mh0qY5x0oDW9LPmEwlSeBPVUq2ubVOjYBfpczpQlvE3u-TaT5yVOXr37t4eK7eLK2trI3VlAWdGvn-d-ktg3bj8E4hoC9EX8FHyrCt19ufdukQSGZ82pIHSvaGvVkM3-SWXMhrObge7htATk9a4LT3eeE_Yzn5cpbge8PPnvknvoiibG8g_AvjmEaMkJVgsGQMd6TaQvJGBKgl1gIvtaLVH4Q"/>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="max-w-[1280px] mx-auto px-6 md:px-10 pt-8 border-t border-slate-800 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <p>© 2026 InnoVibe Mobility India Pvt Ltd. All rights reserved.</p>
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+      <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+      <a href="#" class="hover:text-white transition-colors">Refund Policy</a>
+    </div>
+    <p class="flex items-center gap-1">
+      <span class="material-symbols-outlined text-sm">lock</span> Quantum Secured By Cryptopix.pvt.ltd
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Action -->
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 active:scale-95 transition-all z-50" href="https://wa.me/919014336878" target="_blank">
+<svg fill="white" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+</a>
+
+<script>
+    // FAQ Accordion Toggle
+    function toggleAccordionFaq(button) {
+        const panel = button.nextElementSibling;
+        const icon = button.querySelector('.material-symbols-outlined');
+        
+        // Toggle panel height
+        if (panel.style.maxHeight && panel.style.maxHeight !== '0px') {
+            panel.style.maxHeight = '0px';
+            icon.classList.remove('rotate-90');
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            icon.classList.add('rotate-90');
+        }
+    }
+
+    // Scroll Reveal Animation
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+    reveal(); // Initial reveal call
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    // Opaque Navigation on Scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (header) {
+            if (window.scrollY > 20) {
+                header.classList.add('bg-white/95', 'shadow-md');
+                header.classList.remove('bg-white/85');
+            } else {
+                header.classList.add('bg-white/85');
+                header.classList.remove('bg-white/95', 'shadow-md');
+            }
+        }
+    });
+
+    // Toast alerts
+    function showToast(message, type = 'success') {
+        const container = document.getElementById('toast-container');
+        if (!container) return;
+        const toast = document.createElement('div');
+        toast.className = `flex items-center gap-3 px-6 py-4 rounded-xl shadow-xl border text-sm font-semibold transition-all duration-500 translate-y-10 opacity-0 ${
+            type === 'success' 
+            ? 'bg-emerald-50 border-emerald-200 text-emerald-800' 
+            : 'bg-red-50 border-red-200 text-red-800'
+        }`;
+        
+        const icon = type === 'success' ? 'check_circle' : 'error';
+        toast.innerHTML = `
+            <span class="material-symbols-outlined">${icon}</span>
+            <span>${message}</span>
+        `;
+        
+        container.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.classList.remove('translate-y-10', 'opacity-0');
+        }, 10);
+        
+        setTimeout(() => {
+            toast.classList.add('opacity-0', 'translate-y-[-10px]');
+            setTimeout(() => toast.remove(), 500);
+        }, 4000);
+    }
+
+    // Choose plan button triggers
+    document.querySelectorAll('.choose-plan-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const plan = e.currentTarget.getAttribute('data-plan');
+            const memberships = JSON.parse(localStorage.getItem('innovibe_memberships') || '[]');
+            memberships.push({ plan, date: new Date().toISOString() });
+            localStorage.setItem('innovibe_memberships', JSON.stringify(memberships));
+            showToast(`Excellent choice! You've selected the ${plan}. We will contact you to activate it.`);
+        });
+    });
+</script>
+</body>
+</html>

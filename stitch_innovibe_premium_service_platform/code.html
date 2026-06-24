@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Booking | InnoVibe Mobility</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-container": "#2563eb",
+                "on-surface-variant": "#434655",
+                "tertiary": "#943700",
+                "on-secondary-fixed": "#191c1e",
+                "surface-container-high": "#e7e7f3",
+                "outline": "#737686",
+                "on-tertiary-fixed": "#360f00",
+                "error": "#ba1a1a",
+                "surface-container-low": "#f3f3fe",
+                "tertiary-fixed-dim": "#ffb596",
+                "secondary": "#5c5f61",
+                "on-error": "#ffffff",
+                "inverse-on-surface": "#f0f0fb",
+                "secondary-fixed": "#e0e3e5",
+                "on-tertiary-container": "#ffede6",
+                "on-tertiary": "#ffffff",
+                "background": "#faf8ff",
+                "error-container": "#ffdad6",
+                "surface-variant": "#e1e2ed",
+                "surface-container-lowest": "#ffffff",
+                "inverse-primary": "#b4c5ff",
+                "tertiary-fixed": "#ffdbcd",
+                "on-error-container": "#93000a",
+                "surface-dim": "#d9d9e5",
+                "on-primary-container": "#eeefff",
+                "on-tertiary-fixed-variant": "#7d2d00",
+                "outline-variant": "#c3c6d7",
+                "tertiary-container": "#bc4800",
+                "on-primary": "#ffffff",
+                "on-secondary-fixed-variant": "#444749",
+                "on-surface": "#191b23",
+                "surface": "#faf8ff",
+                "surface-bright": "#faf8ff",
+                "on-secondary-container": "#626567",
+                "primary-fixed-dim": "#b4c5ff",
+                "secondary-fixed-dim": "#c4c7c9",
+                "surface-container": "#ededf9",
+                "surface-container-highest": "#e1e2ed",
+                "surface-tint": "#0053db",
+                "inverse-surface": "#2e3039",
+                "primary-fixed": "#dbe1ff",
+                "on-background": "#191b23",
+                "secondary-container": "#e0e3e5",
+                "primary": "#004ac6",
+                "on-secondary": "#ffffff",
+                "on-primary-fixed": "#00174b",
+                "on-primary-fixed-variant": "#003ea8"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px",
+                "card": "20px",
+                "button": "12px"
+            },
+            "spacing": {
+                "gutter": "24px",
+                "section-padding": "80px",
+                "stack-lg": "32px",
+                "margin-desktop": "48px",
+                "margin-mobile": "20px",
+                "stack-md": "16px",
+                "container-max": "1280px",
+                "stack-sm": "8px"
+            },
+            "fontFamily": {
+                "body-lg": ["Inter"],
+                "label-sm": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "headline-md": ["Inter"],
+                "label-md": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "display-xl": ["Inter"]
+            },
+            "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "display-xl": ["60px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .card-premium {
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.05), 0px 2px 4px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-premium:hover {
+            box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-4px);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-active .accordion-content {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
+<nav class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="font-display-xl text-headline-md font-bold tracking-tight text-primary">InnoVibe Mobility</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-secondary font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary" href="#">Services</a>
+<a class="text-secondary font-medium hover:text-primary transition-colors" href="#">About</a>
+<a class="text-secondary font-medium hover:text-primary transition-colors" href="#">Blog</a>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-button font-label-md hover:opacity-90 transition-opacity active:scale-95">Book Now</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Section 1: Hero -->
+<section class="relative py-section-padding px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="grid lg:grid-cols-2 gap-stack-lg items-center">
+<div class="reveal active">
+<span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full font-label-md inline-block mb-6 uppercase tracking-wider">Premium EV Care</span>
+<h1 class="font-headline-lg text-headline-lg mb-6">Professional EV Services Built Around Reliability</h1>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                        Expert maintenance, precision repairs, and seamless home services designed for India's evolving electric vehicle ecosystem.
+                    </p>
+<div class="flex flex-wrap gap-4 mb-12">
+<button class="bg-primary text-white h-[56px] px-8 rounded-button font-label-md shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">Book Service</button>
+<button class="bg-white border border-outline-variant h-[56px] px-8 rounded-button font-label-md text-on-surface hover:bg-surface-container-low transition-colors">View Services</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<span class="text-label-sm">Certified Techs</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+<span class="text-label-sm">Genuine Parts</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+<span class="text-label-sm">Fast Turnaround</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+<span class="text-label-sm">24/7 Support</span>
+</div>
+</div>
+</div>
+<div class="relative reveal active" style="transition-delay: 200ms;">
+<div class="rounded-card overflow-hidden shadow-2xl relative z-10 border border-white/20">
+<img class="w-full h-[500px] object-cover" data-alt="A professional electric vehicle technician in a modern, brightly lit workshop environment, wearing a branded InnoVibe uniform. He is focused on inspecting the motor of a sleek electric scooter. The workshop has clean white walls, organized tool arrays, and a high-tech atmosphere with blue accent lighting, reflecting a premium corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM9g4sBqo0Bo1uV8WuaLsoSfRvNrFwRFGL1EOsn1Nt8oy3RPzQ9zK7fl7CK3GB9p1AL-QOa9RiZOG1N5mn5DSbBvIruUl0pV08NDSSGbGIOfnQcqrYXeJcxsw147x7H138ClgjUJrynRGsUaGrnlADvfj4kqF45zd2Bjf7XSabikL7dw1N9bNVyC9yxJ61ThPyCprFwp5AD5B011bkmW0di5pzHu0Oc1E1jswjVFX9Mts5FV1x4Fn7BDJxTmljMM3U-ljWWVK-KpSt"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-card shadow-xl border border-outline-variant/30 z-20 flex items-center gap-4">
+<div class="bg-primary/10 p-3 rounded-xl">
+<span class="material-symbols-outlined text-primary text-[32px]">electric_car</span>
+</div>
+<div>
+<p class="font-bold text-headline-md text-on-surface">5,000+</p>
+<p class="text-label-sm text-on-surface-variant">Vehicles Serviced</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Service Categories (Pricing Cards from Reference) -->
+<section class="py-section-padding bg-surface-container-low px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg mb-4">Our Service Offerings</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">All-around EV maintenance, repair, and home service for two-wheelers and bikes.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="card-premium rounded-card flex flex-col overflow-hidden reveal" style="transition-delay: 100ms;">
+<img class="w-full h-48 object-cover" data-alt="A high-end EV service center interior showing a dedicated 2-wheeler service bay. Multiple electric scooters are parked on clean, grey industrial floors. The background features blue LED lighting strips and digital diagnostic screens, creating a professional and technologically advanced maintenance environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ6S5WCa8yNw3P7w8SebvOeW9aXo96SptmlXbFF70120uDJaqxvg4H3h0wHomocdFOZCz8DSLSS2NrzFcRzoH6eHs_Z_IcumqYFW1cm1qdwdaXS98SjXvroZOx2nyY6APTpXM_eRUuxk0iDy9R-7lG79Ykc7mfW94drdxGtoLT-bR0gcRL_uLTh-fm5cc0Oj1LxwXmAmj09Z5vCu5z3GRT2Z9DBa3CAkbRhDEU8Qq3ug4U1XJX_GmA6xq7kmwn8MXpExyRhLZiRi1Y"/>
+<div class="p-8 flex-grow">
+<h3 class="font-headline-md text-headline-md mb-4">Service at Garage</h3>
+<p class="text-body-md text-on-surface-variant mb-6">Complete EV service at our authorized service center.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Ideal for city commutes
+                                </li>
+<li class="flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Various models available
+                                </li>
+<li class="flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Expert support provided
+                                </li>
+<li class="flex items-center gap-3 text-label-md font-bold text-primary">
+<span class="material-symbols-outlined text-primary text-[18px]">payments</span> Starting price ₹499
+                                </li>
+</ul>
+<button class="w-full bg-primary text-white py-3.5 rounded-button font-label-md">Book Now</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="card-premium rounded-card flex flex-col overflow-hidden reveal" style="transition-delay: 200ms;">
+<img class="w-full h-48 object-cover" data-alt="A smiling electric vehicle technician interacting with a customer and his young son outside their modern home. A branded InnoVibe service van is parked in the driveway. The scene is bright and friendly, emphasizing convenient and reliable doorstep EV service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqjK7iLvpKLZgLYSMgOKoRRFx4sw_8US3yRyJv5S_Utrsmdq07dDPuZiyc3gHdI89pSREGZHY1EpAouh1DhcOH3ju6rzjoLcpgdYiUkrqnEZd0C3tCR8YRQfjZmcHYiX5NUmseFKYqXS-KLEh8fE-twgGgXG04t8KAmReb37I0HDN4ssiqjS0g_jSoHHMstoYbPD6dMzQT6rF4Y7lMN1ZjqTcQR_6MAzO67d8DooPhImprRYv7NAfFDHqESnfUmi_AzB31KQEsPMJ9"/>
+<div class="p-8 flex-grow">
+<h3 class="font-headline-md text-headline-md mb-4">Service at Home</h3>
+<p class="text-body-md text-on-surface-variant mb-6">Convenient EV servicing at your doorstep.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Doorstep service available
+                                </li>
+<li class="flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Certified technicians
+                                </li>
+<li class="flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Genuine parts guaranteed
+                                </li>
+<li class="flex items-center gap-3 text-label-md font-bold text-primary">
+<span class="material-symbols-outlined text-primary text-[18px]">payments</span> Starting price ₹249
+                                </li>
+</ul>
+<button class="w-full bg-primary text-white py-3.5 rounded-button font-label-md">Book Now</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="card-premium rounded-card flex flex-col overflow-hidden reveal" style="transition-delay: 300ms;">
+<img class="w-full h-48 object-cover" data-alt="An on-road emergency scene where an InnoVibe service technician is helping a customer with an electric scooter on a city roadside. The lighting is crisp daylight, and the technician is using professional diagnostic tools. This visualizes reliable and prompt 24/7 roadside assistance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd5sAtsIbBQz1vTEgF7-AzPey5ckK3rwZcce_3GLteCvopV4TnyrlDqx-BNELsWeUxocM5EKcW6Dpa1x1nNptsC_dgiuGE15GWCk7_yEYTNb8UKH-Qh6QEkSfgRFSRq5bM3SeN1aoX2nar1jN8-Gbc3AbjMt6351P82ik_wUVJ5ur7knmpuMjQA39yQtFW-hNptnWaA6EyaDtkPbXSnVgCAZh9088ts-bru-tdT88fd1GigVzp2E_72iUYZSOfgWWBTykSGkmzW8z5"/>
+<div class="p-8 flex-grow">
+<h3 class="font-headline-md text-headline-md mb-4">Service on Road</h3>
+<p class="text-body-md text-on-surface-variant mb-6">24/7 roadside support for EV breakdowns.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Instant help on the go
+                                </li>
+<li class="flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Coverage across regions
+                                </li>
+<li class="flex items-center gap-3 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Professional technicians
+                                </li>
+<li class="flex items-center gap-3 text-label-md font-bold text-primary">
+<span class="material-symbols-outlined text-primary text-[18px]">payments</span> Starting price ₹199
+                                </li>
+</ul>
+<button class="w-full bg-primary text-white py-3.5 rounded-button font-label-md">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Bento Ecosystem -->
+<section class="py-section-padding px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg mb-4">Complete Electric Vehicle Ecosystem</h2>
+<p class="text-on-surface-variant">Advanced solutions beyond standard maintenance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="relative h-80 rounded-card overflow-hidden group reveal">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A detailed view of EV components being meticulously serviced by a hand in a latex glove, symbolizing high-precision technical work. The lighting is cinematic with deep shadows and vibrant blue highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJUCplWf6TxAvtbmLzey68wJleT6YQApzhUCOvIUrr4YHZaJFMY7fck0q3HVSoqqlWrjh6neAJPeCD3LImAFowmbvcLqUt0Cji4Ipm5FVsOmhTZcG6Idi7tYKR2xzfLGuYyQ4ztoTaPW4wGNlG_6PSaQkkthMjT0_g6OgKXVfhp5DDlvE7Ku5v5bKhNbpv6-LYAPGvzcW99PfTVCs5eQUQqEBEKs5MwQ3x9-wkIsySuMfYWmxGV0h8qitmkv_TkDsqts3CrP5_GDRb"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 to-transparent flex flex-col justify-end p-8 text-white">
+<h4 class="font-headline-md text-headline-md mb-2">EV Services</h4>
+<p class="text-body-md text-white/80">Premium maintenance for your long-term peace of mind.</p>
+</div>
+</div>
+<div class="relative h-80 rounded-card overflow-hidden group reveal" style="transition-delay: 100ms;">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="An electric conversion kit being installed into a classic petrol scooter frame. The scene is workshop-based, with bright daylight and professional tools visible, emphasizing a green transition through technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlUrkbjrDCtVS3THCxluswmhT4Nd5sjM2XKOa1eeZInYuHHgQlKePec5Jgm6-spTpQfTSKMOzN8t0KfvGSlV1CjTxyTFuF-UGsyjetDmK0NGUE_xKMO-MYlYbAdIXPCSyrKJ9MI1uLi0CGlIpAryhRyJMyI4W2RnTPh52oZ6ttSq-Ut5n84nUx0qxkEatkY5467bTgvAJspb_vLbd4bxP596kRPo6j46mljOkblFxDBJFH16M93dJzckwKQ2Ocm4HPVhWAOnmOnE_b"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 to-transparent flex flex-col justify-end p-8 text-white">
+<h4 class="font-headline-md text-headline-md mb-2">EV Conversion</h4>
+<p class="text-body-md text-white/80">Transforming petrol vehicles into eco-friendly electric drives.</p>
+</div>
+</div>
+<div class="relative h-80 rounded-card overflow-hidden group reveal" style="transition-delay: 200ms;">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A modern customer support center with sleek headsets and glowing monitors displaying EV diagnostic data. The atmosphere is calm and efficient, with a palette of soft whites and blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg7iEEMHEO4Ji_-SwtQc1DHwlvO_hndF7WJ4g2Fpz0aiSSC9tGSQxoOwvA1OSclKfr4RD_ssVCtW8iPFWrnHlAwvlXUkfbfQqM8Q1koT8GFCNLcbSW_04he9TGa8HNnqRG-uEofOk8_SL9J4qMA2O9QlDmdPRgrNKmRNbyd3hdd5akb0-W1765B4_LNgASz28eso9k72272wA9BMnJt9ayU3xjhGi1rPaRd_ImYlYSIhmQYjW6gqe0q22b6oLYTRaoNkMe9Hiy4Raw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 to-transparent flex flex-col justify-end p-8 text-white">
+<h4 class="font-headline-md text-headline-md mb-2">Customer Support</h4>
+<p class="text-body-md text-white/80">Around-the-clock help for all your EV-related queries.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Why Choose InnoVibe (Trust Cards) -->
+<section class="py-section-padding bg-surface px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg mb-4">Why Our Process Works</h2>
+<p class="text-on-surface-variant">We've designed our process to be efficient, reliable, and customer-focused.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-stack-lg">
+<div class="p-10 card-premium rounded-card text-center reveal">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-[32px]">bolt</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4">Quick Service</h4>
+<p class="text-on-surface-variant">Fast and efficient service to get you back on the road in no time.</p>
+</div>
+<div class="p-10 card-premium rounded-card text-center reveal" style="transition-delay: 100ms;">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-[32px]">shield</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4">Expert Technicians</h4>
+<p class="text-on-surface-variant">Certified professionals with extensive experience in EV maintenance and repair.</p>
+</div>
+<div class="p-10 card-premium rounded-card text-center reveal" style="transition-delay: 200ms;">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-[32px]">headset_mic</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4">Customer Support</h4>
+<p class="text-on-surface-variant">Round-the-clock assistance for all your EV service needs and inquiries.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Booking Experience -->
+<section class="py-section-padding px-margin-desktop bg-white">
+<div class="max-w-container-max mx-auto grid lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-5 reveal">
+<h2 class="font-headline-lg text-headline-lg mb-6">Schedule Your Service in Seconds</h2>
+<p class="text-body-lg text-on-surface-variant mb-8">Experience a hassle-free booking journey. Select your service, choose a slot, and let our experts handle the rest.</p>
+<div class="space-y-6">
+<div class="flex gap-4 p-4 rounded-xl border border-outline-variant/30 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<div>
+<h5 class="font-bold">Flexible Scheduling</h5>
+<p class="text-label-md text-on-surface-variant">Pick a date and time that perfectly fits your routine.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl border border-outline-variant/30 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary">history</span>
+<div>
+<h5 class="font-bold">Real-time Updates</h5>
+<p class="text-label-md text-on-surface-variant">Track your service progress directly from our app.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 reveal" style="transition-delay: 200ms;">
+<div class="card-premium rounded-card p-10">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-secondary">Full Name</label>
+<input class="w-full px-4 py-3 rounded-button border border-outline-variant focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all outline-none" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-secondary">Phone Number</label>
+<input class="w-full px-4 py-3 rounded-button border border-outline-variant focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all outline-none" placeholder="+91 00000 00000" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-secondary">Vehicle Model</label>
+<select class="w-full px-4 py-3 rounded-button border border-outline-variant focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all outline-none">
+<option>Select Vehicle</option>
+<option>Ola S1 Pro</option>
+<option>Ather 450X</option>
+<option>TVS iQube</option>
+<option>Others</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-secondary">Service Type</label>
+<select class="w-full px-4 py-3 rounded-button border border-outline-variant focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all outline-none">
+<option>General Service</option>
+<option>Battery Checkup</option>
+<option>Breakdown Assistance</option>
+<option>Conversion Inquiry</option>
+</select>
+</div>
+<div class="space-y-2 md:col-span-2">
+<label class="font-label-md text-secondary">Location</label>
+<input class="w-full px-4 py-3 rounded-button border border-outline-variant focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all outline-none" placeholder="Enter your city or area" type="text"/>
+</div>
+<div class="md:col-span-2 pt-4">
+<button class="w-full bg-primary text-white h-[56px] rounded-button font-label-md shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors" type="submit">Confirm Booking Request</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: How It Works (Timeline) -->
+<section class="py-section-padding bg-surface-container-low px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-20 reveal">
+<h2 class="font-headline-lg text-headline-lg mb-4">How Booking Works</h2>
+<p class="text-on-surface-variant">Simple, transparent steps to get your EV back in top shape.</p>
+</div>
+<div class="relative">
+<div class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-outline-variant/30 -translate-y-1/2 z-0"></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-stack-lg relative z-10">
+<div class="text-center reveal">
+<div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-headline-md ring-8 ring-white">1</div>
+<h5 class="font-bold mb-2">Book Online</h5>
+<p class="text-label-md text-on-surface-variant">Select service and schedule a slot.</p>
+</div>
+<div class="text-center reveal" style="transition-delay: 100ms;">
+<div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-headline-md ring-8 ring-white">2</div>
+<h5 class="font-bold mb-2">Expert Assigned</h5>
+<p class="text-label-md text-on-surface-variant">Technician is assigned to your request.</p>
+</div>
+<div class="text-center reveal" style="transition-delay: 200ms;">
+<div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-headline-md ring-8 ring-white">3</div>
+<h5 class="font-bold mb-2">Inspection</h5>
+<p class="text-label-md text-on-surface-variant">Thorough diagnostic check of the vehicle.</p>
+</div>
+<div class="text-center reveal" style="transition-delay: 300ms;">
+<div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-headline-md ring-8 ring-white">4</div>
+<h5 class="font-bold mb-2">Completed</h5>
+<p class="text-label-md text-on-surface-variant">Quality service and testing done.</p>
+</div>
+<div class="text-center reveal" style="transition-delay: 400ms;">
+<div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-headline-md ring-8 ring-white">5</div>
+<h5 class="font-bold mb-2">Follow-up</h5>
+<p class="text-label-md text-on-surface-variant">Post-service care and feedback check.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Service Coverage -->
+<section class="py-section-padding px-margin-desktop">
+<div class="max-w-container-max mx-auto grid lg:grid-cols-2 gap-stack-lg items-center">
+<div class="reveal">
+<h2 class="font-headline-lg text-headline-lg mb-6">Expanding Across India</h2>
+<p class="text-body-lg text-on-surface-variant mb-8">We are rapidly growing our network to ensure no EV owner is left stranded. Currently serving major hubs in South India with nationwide expansion plans in motion.</p>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container rounded-xl p-4 border border-outline-variant/30">
+<span class="text-primary font-bold text-headline-md block">Visakhapatnam</span>
+<span class="text-label-sm text-secondary">Headquarters &amp; Service Hub</span>
+</div>
+<div class="bg-surface-container rounded-xl p-4 border border-outline-variant/30">
+<span class="text-primary font-bold text-headline-md block">Hyderabad</span>
+<span class="text-label-sm text-secondary">Primary Operations</span>
+</div>
+<div class="bg-surface-container rounded-xl p-4 border border-outline-variant/30">
+<span class="text-primary font-bold text-headline-md block">Bengaluru</span>
+<span class="text-label-sm text-secondary">Tech Integration Center</span>
+</div>
+<div class="bg-surface-container rounded-xl p-4 border border-outline-variant/30">
+<span class="text-primary font-bold text-headline-md block">Upcoming</span>
+<span class="text-label-sm text-secondary">Chennai &amp; Mumbai</span>
+</div>
+</div>
+</div>
+<div class="reveal" style="transition-delay: 200ms;">
+<div class="h-[400px] rounded-card overflow-hidden border border-outline-variant shadow-lg relative bg-surface-container-high">
+<div class="absolute inset-0 grayscale opacity-40">
+<img class="w-full h-full object-cover" data-alt="A stylized, modern map visualization showing service coverage in India, focusing on Andhra Pradesh and Telangana. The map uses clean lines, primary blue markers for active hubs, and pulsing light blue circles for upcoming locations, set against a light mode background." data-location="Visakhapatnam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkk4nCEzRxswEJFn_eQSvnrbDHMPfwYzvJbXDVKV38t5HRyX0mbV_C8P7UILcc3JFQFJ8HrFMj_VuznsQ9qOLewd822wZlIGB9rGUCKbefUkQduNRrAZEEFMabS0zkG5MdwHKjbl0pPrL5vjrZIuHns6c74g8FGxkDOLP3Edqg7_TQAJ8bI-zIxH90TPRzNk-bO2vrbXqejJ1OClm0cKkzBAnFTXo1vQYFQ56jvqkcj22EuCKvA1SkU7Uuf_YRGuWBxl7w0BrRIU0-"/>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary/20 w-32 h-32 rounded-full animate-ping absolute"></div>
+<div class="bg-primary w-6 h-6 rounded-full border-4 border-white shadow-xl relative"></div>
+</div>
+<div class="absolute bottom-6 left-6 bg-white p-4 rounded-xl shadow-lg border border-outline-variant/30 max-w-[240px]">
+<p class="text-label-md font-bold mb-1">Current Active Hub</p>
+<p class="text-label-sm text-on-surface-variant">Gitam iTBI, VDA, Rushikonda, Visakhapatnam</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: Testimonials -->
+<section class="py-section-padding bg-surface-container-low px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg mb-4">What Our Customers Say</h2>
+<p class="text-on-surface-variant">Trusted by thousands of electric vehicle owners across the region.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<div class="card-premium p-8 rounded-card reveal">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-body-md text-on-surface mb-8 italic">"The doorstep service for my Ather was seamless. The technician was knowledgeable and finished the job in under 45 minutes. Highly recommended!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">AK</div>
+<div>
+<h6 class="font-bold">Animesh Kumar</h6>
+<p class="text-label-sm text-on-surface-variant">Ola S1 Pro Owner</p>
+</div>
+</div>
+</div>
+<div class="card-premium p-8 rounded-card reveal" style="transition-delay: 100ms;">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined">star_half</span>
+</div>
+<p class="text-body-md text-on-surface mb-8 italic">"Very professional approach to EV maintenance. The detailed health report they provide after service gives me a lot of confidence in my vehicle's battery."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">PR</div>
+<div>
+<h6 class="font-bold">Priya Rao</h6>
+<p class="text-label-sm text-on-surface-variant">TVS iQube Owner</p>
+</div>
+</div>
+</div>
+<div class="card-premium p-8 rounded-card reveal" style="transition-delay: 200ms;">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-body-md text-on-surface mb-8 italic">"Their roadside assistance saved my day when my battery drained unexpectedly. They were there in 20 minutes with a mobile charging unit."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">VS</div>
+<div>
+<h6 class="font-bold">Vikram Singh</h6>
+<p class="text-label-sm text-on-surface-variant">Ather 450X Owner</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 9: FAQ -->
+<section class="py-section-padding px-margin-desktop max-w-3xl mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg mb-4">Frequently Asked Questions</h2>
+<p class="text-on-surface-variant">Everything you need to know about InnoVibe EV services.</p>
+</div>
+<div class="space-y-4">
+<div class="accordion-item border-b border-outline-variant/30 reveal">
+<button class="flex justify-between items-center w-full py-6 text-left hover:text-primary transition-colors" onclick="this.parentElement.classList.toggle('accordion-active')">
+<span class="font-bold text-body-lg">Do you service all brands of electric two-wheelers?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="pb-6 text-on-surface-variant">Yes, our technicians are trained to service all major Indian and international EV brands including Ather, Ola, TVS, Bajaj, and Hero Electric, among others.</p>
+</div>
+</div>
+<div class="accordion-item border-b border-outline-variant/30 reveal">
+<button class="flex justify-between items-center w-full py-6 text-left hover:text-primary transition-colors" onclick="this.parentElement.classList.toggle('accordion-active')">
+<span class="font-bold text-body-lg">How long does a standard home service take?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="pb-6 text-on-surface-variant">A standard preventative maintenance checkup usually takes between 45 to 90 minutes depending on the vehicle condition and service package chosen.</p>
+</div>
+</div>
+<div class="accordion-item border-b border-outline-variant/30 reveal">
+<button class="flex justify-between items-center w-full py-6 text-left hover:text-primary transition-colors" onclick="this.parentElement.classList.toggle('accordion-active')">
+<span class="font-bold text-body-lg">What happens if my vehicle needs a major repair at home?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="pb-6 text-on-surface-variant">If a repair cannot be safely completed on-site, we arrange for towing to our nearest authorized service center for specialized attention.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 10: Final CTA -->
+<section class="py-section-padding px-margin-desktop">
+<div class="max-w-container-max mx-auto bg-primary rounded-card p-12 lg:p-20 text-center relative overflow-hidden reveal">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-white mb-6">Ready to Keep Your EV Running at Peak Performance?</h2>
+<p class="text-white/80 text-body-lg mb-12 max-w-2xl mx-auto">Join thousands of satisfied owners who trust InnoVibe for professional, reliable, and convenient service.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="bg-white text-primary h-[56px] px-10 rounded-button font-label-md hover:scale-105 transition-transform">Book a Service Now</button>
+<button class="bg-transparent border border-white text-white h-[56px] px-10 rounded-button font-label-md hover:bg-white/10 transition-colors">Contact Our Experts</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline/20">
+<div class="py-section-padding px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<span class="font-display-xl text-headline-md font-bold text-surface-bright mb-6 block">InnoVibe Mobility</span>
+<p class="text-surface-variant/80 text-body-md mb-8">India's leading electric vehicle service provider with comprehensive EV solutions across the nation.</p>
+<div class="flex gap-4">
+<a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+</div>
+</div>
+<div>
+<h6 class="text-surface-bright font-bold mb-6">Quick Links</h6>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/80 hover:text-primary-fixed transition-colors" href="#">Home</a></li>
+<li><a class="text-primary-fixed-dim" href="#">EV Services</a></li>
+<li><a class="text-surface-variant/80 hover:text-primary-fixed transition-colors" href="#">About</a></li>
+<li><a class="text-surface-variant/80 hover:text-primary-fixed transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-surface-bright font-bold mb-6">Legal</h6>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/80 hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant/80 hover:text-primary-fixed transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant/80 hover:text-primary-fixed transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-surface-bright font-bold mb-6">Head Office</h6>
+<p class="text-surface-variant/80 text-label-md mb-4">Gitam iTBI, VDA, Rushikonda, Visakhapatnam, AP – 530045.</p>
+<p class="text-surface-variant/80 text-label-md mb-2">contact@innovibemobily.com</p>
+<p class="text-surface-variant/80 text-label-md">+91 9014336878</p>
+<div class="mt-6">
+<img class="h-10" data-alt="Official Google Play Store download badge icon on a transparent background, following professional branding standards for mobile app availability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTTbYUslmNn95X2Z2YatzTXy3hqRJfXEtEN2ep960-ISpUZqltT5Fy6zx7sFRV3qCZg8YB2l4rUKLZ01VEMj0GH2zdxrl7p6n43FSQCfvp_nRJzzo93IwPtnIql7GkygOcqnqvWbe-gCqnqgB_sV4K4VRHniIoLLGfAlf_cDn4iLzS2K8YoFnydmREWNt2O4FECJU9-3PR1bGo8iCiloP7v1NUBKnAzFYxFuEoVx_hY47HZbAJanUqYNxgGeAO2hCMalDeEAy2jckx"/>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline/10 text-center">
+<p class="text-surface-variant/60 text-label-sm">© 2024 InnoVibe Mobility. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth reveal of pricing starting from top
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelector('.reveal').classList.add('active');
+            }, 100);
+        });
+    </script>
+</body></html>
