@@ -385,6 +385,7 @@
             author: "Super Admin",
             avatar: "SA",
             cover: "scooter_tech_cover_v3.jpg",
+            cardCover: "scooter_tech_green_banner.png",
             content: [
                 "The humble but essential electric scooter is at the forefront of the electric vehicle revolution, which has revolutionized urban mobility. These advanced devices are much more than simple scooters; they are intricate systems of motor controllers, batteries, and integrated software. When they don't work, the traditional approaches of using a wrench and grease are no longer adequate. Riders need the Innovibe Difference—a service partner who is aware of this digital revolution.",
                 "Innovibe is not just a repair shop; it is a dedicated EV health platform. We have redefined the maintenance and repair landscape by integrating advanced diagnostic technology and engineering expertise, ensuring that performance is not just restored, but often improved.",
@@ -637,7 +638,7 @@
             div.className = "card-premium bg-white rounded-2xl border border-slate-200 overflow-hidden group flex flex-col h-full";
             div.innerHTML = `
                 <div class="h-48 overflow-hidden relative">
-                    <img alt="${art.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="${art.cover}"/>
+                    <img alt="${art.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="${art.cardCover || art.cover}"/>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="flex items-center gap-2 mb-3">
