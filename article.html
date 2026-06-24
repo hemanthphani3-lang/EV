@@ -241,28 +241,35 @@
         </div>
     </div>
 
-    <!-- Reading Content Grid -->
-    <div class="max-w-[1020px] mx-auto grid grid-cols-1 lg:grid-cols-[80px_1fr] gap-8 mb-20 relative z-10">
-        <!-- Social/Like Bar (Sticky on Desktop) -->
-        <div class="flex lg:flex-col lg:sticky lg:top-28 gap-4 justify-center lg:justify-start items-center h-fit">
-            <button id="like-btn" class="w-12 h-12 rounded-full border border-slate-200 bg-white hover:border-red-300 hover:text-red-500 flex items-center justify-center transition-all shadow-sm active:scale-95 group">
-                <span id="like-icon" class="material-symbols-outlined text-xl transition-transform group-hover:scale-110">favorite</span>
-            </button>
-            <span id="like-count" class="text-xs font-bold text-slate-500 -mt-1 select-none">0</span>
-            
-            <div class="hidden lg:block w-8 h-[1px] bg-slate-200 my-2"></div>
-            
-            <button id="share-btn" class="w-12 h-12 rounded-full border border-slate-200 bg-white hover:border-primary hover:text-primary flex items-center justify-center transition-all shadow-sm active:scale-95 group">
-                <span class="material-symbols-outlined text-xl transition-transform group-hover:scale-110">share</span>
-            </button>
-        </div>
-
+    <!-- Reading Content Container -->
+    <div class="max-w-3xl mx-auto mb-20 relative z-10">
         <!-- Main Body Content -->
-        <article class="max-w-3xl prose prose-slate prose-lg lg:prose-xl mx-auto prose-headings:text-slate-900 prose-headings:font-extrabold prose-p:leading-relaxed prose-p:text-slate-600 prose-a:text-primary prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-slate-50 prose-blockquote:p-6 prose-blockquote:rounded-r-xl">
+        <article class="prose prose-slate prose-lg lg:prose-xl mx-auto prose-headings:text-slate-900 prose-headings:font-extrabold prose-p:leading-relaxed prose-p:text-slate-600 prose-a:text-primary prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-slate-50 prose-blockquote:p-6 prose-blockquote:rounded-r-xl">
             <div id="article-content" class="space-y-6 text-slate-700 leading-relaxed text-base md:text-lg">
                 <!-- Content gets injected here -->
             </div>
         </article>
+
+        <!-- Social/Like Action Row at the End of Article -->
+        <div class="border-t border-slate-200 mt-16 pt-10 flex flex-col items-center justify-center gap-4">
+            <p class="text-xs uppercase tracking-widest text-slate-400 font-bold">Was this helpful?</p>
+            <div class="flex items-center gap-6">
+                <!-- Like Button -->
+                <div class="flex items-center gap-3">
+                    <button id="like-btn" class="w-14 h-14 rounded-full border border-slate-200 bg-white hover:border-red-300 hover:text-red-500 flex items-center justify-center transition-all shadow-md active:scale-95 group">
+                        <span id="like-icon" class="material-symbols-outlined text-2xl transition-transform group-hover:scale-110">favorite</span>
+                    </button>
+                    <span id="like-count" class="text-sm font-bold text-slate-600 select-none min-w-[20px]">0</span>
+                </div>
+                
+                <div class="w-[1px] h-8 bg-slate-200"></div>
+                
+                <!-- Share Button -->
+                <button id="share-btn" class="w-14 h-14 rounded-full border border-slate-200 bg-white hover:border-primary hover:text-primary flex items-center justify-center transition-all shadow-md active:scale-95 group" title="Copy Link">
+                    <span class="material-symbols-outlined text-2xl transition-transform group-hover:scale-110">share</span>
+                </button>
+            </div>
+        </div>
     </div>
 
     <!-- Related Articles -->
