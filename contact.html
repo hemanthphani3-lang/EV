@@ -101,18 +101,37 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; }
-        .hover-lift { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
-        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05); }
+        .hover-lift { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        @media (prefers-reduced-motion: no-preference) {
+            .hover-lift:hover {
+                transform: translateY(-8px) scale(1.015);
+                box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.16), 0 0 0 1px rgba(37, 99, 235, 0.1);
+                border-color: rgba(37, 99, 235, 0.3);
+            }
+        }
         .glass-shadow { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
         }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .accordion-active .accordion-content { max-height: 500px; }
         .accordion-active .accordion-icon { transform: rotate(180deg); }
+        /* Ambient Glow Blobs */
+        .glow-blob {
+            filter: blur(100px);
+            opacity: 0.15;
+            mix-blend-mode: multiply;
+            animation: pulse-slow 8s infinite alternate;
+            pointer-events: none;
+        }
+        @keyframes pulse-slow {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.1) translate(20px, -20px); }
+        }
     </style>
 </head>
 <body class="text-on-surface pt-20">
@@ -185,8 +204,12 @@
 
 <main>
 <!-- Hero Section -->
-<section class="bg-surface-container-lowest py-section-padding">
-<div class="max-w-container-max mx-auto px-gutter text-center">
+<section class="bg-surface-container-lowest py-section-padding relative overflow-hidden">
+    <!-- Ambient Glow Blobs -->
+    <div class="glow-blob absolute top-0 left-10 w-96 h-96 bg-primary/10 rounded-full"></div>
+    <div class="glow-blob absolute bottom-0 right-10 w-96 h-96 bg-[#0891b2]/5 rounded-full" style="animation-delay: 5s;"></div>
+    
+<div class="max-w-container-max mx-auto px-gutter text-center relative z-10">
 <span class="text-primary font-label-sm tracking-widest uppercase mb-4 block">CONTACT INNOVIBE</span>
 <h1 class="font-display-lg text-display-lg text-on-surface mb-6 max-w-4xl mx-auto">Let's Build Better EV Experiences Together</h1>
 <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Get support, book services, explore partnerships, or talk with our team. We're here to help you navigate the future of mobility.</p>

@@ -44,23 +44,30 @@
         }
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
         }
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        .about-card:hover {
-            box-shadow: 0px 20px 40px rgba(0, 74, 198, 0.08);
-            transform: translateY(-6px);
-            border-color: #2563eb;
+        .about-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .about-card:hover {
+                transform: translateY(-8px) scale(1.015);
+                box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.16), 0 0 0 1px rgba(37, 99, 235, 0.1);
+                border-color: rgba(37, 99, 235, 0.3);
+            }
         }
         .gradient-bg {
             background: linear-gradient(135deg, #004ac6 0%, #2563eb 100%);
@@ -69,6 +76,18 @@
             background: linear-gradient(135deg, #004ac6 0%, #2563eb 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        /* Ambient Glow Blobs */
+        .glow-blob {
+            filter: blur(100px);
+            opacity: 0.15;
+            mix-blend-mode: multiply;
+            animation: pulse-slow 8s infinite alternate;
+            pointer-events: none;
+        }
+        @keyframes pulse-slow {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.1) translate(20px, -20px); }
         }
     </style>
 </head>
@@ -143,6 +162,10 @@
 <main>
 <!-- Hero Section -->
 <section class="relative py-24 bg-white overflow-hidden">
+    <!-- Ambient Glow Blobs -->
+    <div class="glow-blob absolute top-10 left-10 w-96 h-96 bg-primary/10 rounded-full"></div>
+    <div class="glow-blob absolute bottom-10 right-10 w-96 h-96 bg-[#0891b2]/5 rounded-full" style="animation-delay: 5s;"></div>
+    
     <div class="max-w-[1280px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="reveal">
             <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
@@ -160,7 +183,7 @@
             </div>
         </div>
         <div class="relative reveal" style="transition-delay: 200ms;">
-            <div class="rounded-card overflow-hidden shadow-2xl relative z-10 border border-slate-100">
+            <div class="rounded-card overflow-hidden shadow-2xl relative z-10 border border-slate-100 animate-float">
                 <img alt="EV Engineering Design" class="w-full h-[450px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0gdn2S8C9wDnJYSnjSNEdQ_dhrqGeu2C79u2jmTWJ1giuSmmh0fsmstszSPYQI7fdOAyombGqVa7eXnjGRm5QCOkGI4T3Bo8ClQRol8v1gobb_14ffZS1XpBEzNy-SW4__g0JY8-67l46pc5-7ag5y2Ju8BRCb4XxkUMeyjSEShdu64jNf-rPTyiQPrkYk-YwpY7Fcp72kOR8u6Dtn-ppm7WWRaFgLOcuyg5hWaOBm2e9TRyqGIRLjRrOc4V2uo2WSJ0ewBXhSy7S"/>
             </div>
         </div>
