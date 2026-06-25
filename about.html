@@ -147,7 +147,7 @@
                 const loadingScreen = document.createElement('div');
                 loadingScreen.id = 'loading-screen';
                 loadingScreen.style.cssText = 'position: fixed; inset: 0; z-index: 99999999; display: flex; align-items: center; justify-content: center; background-color: #FFFFFF; transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: all; overflow: hidden;';
-                loadingScreen.innerHTML = '<video id="loading-video" src="load.mp4" autoplay playsinline style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.2); transform-origin: top left;"></video>';
+                loadingScreen.innerHTML = '<video id="loading-video" src="load.mp4" autoplay playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>';
                 document.body.appendChild(loadingScreen);
                 
                 const loadingVideo = document.getElementById('loading-video');
