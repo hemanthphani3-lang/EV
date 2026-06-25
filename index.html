@@ -183,6 +183,22 @@
 </head>
 <body class="bg-background text-on-background font-body-md overflow-x-hidden pt-20">
     <script id="page-transition-entry">
+        // Clean URL in address bar
+        if (window.location.pathname.endsWith('.html')) {
+            let cleanPath = window.location.pathname.slice(0, -5);
+            if (cleanPath.endsWith('/index')) {
+                cleanPath = cleanPath.slice(0, -6) || '/';
+            }
+            window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+        }
+
+        // Register Service Worker for clean URL refreshes
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(err => {
+                console.warn('Service worker registration failed:', err);
+            });
+        }
+
         document.body.style.opacity = '0';
         document.body.style.transition = 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         window.addEventListener('DOMContentLoaded', () => {
