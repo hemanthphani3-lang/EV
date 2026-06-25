@@ -135,9 +135,9 @@
             
             // Inject synchronous stylesheet to prevent content flash before video loads
             document.write(`
-                <style>
+                <style id="page-transition-preload-styles">
                     #router-view, header, footer, #toast-container, .whatsapp-float, [id^="chatbot-"] {
-                        opacity: 0 !important;
+                        opacity: 0;
                     }
                 </style>
             `);
@@ -162,6 +162,12 @@
                         el.style.transition = 'opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
                         el.style.opacity = '1';
                     });
+                    
+                    // Remove preload styles so normal style layout applies fully
+                    const preloadStyles = document.getElementById('page-transition-preload-styles');
+                    if (preloadStyles) {
+                        preloadStyles.remove();
+                    }
                     
                     setTimeout(() => {
                         loadingScreen.remove();
