@@ -182,6 +182,15 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 </head>
 <body class="bg-background text-on-background font-body-md overflow-x-hidden pt-20">
+    <script id="page-transition-entry">
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        window.addEventListener('DOMContentLoaded', () => {
+            requestAnimationFrame(() => {
+                document.body.style.opacity = '1';
+            });
+        });
+    </script>
 
 <!-- Unified Toast Container -->
 <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
@@ -990,5 +999,49 @@
         });
     }
 </script>
+    <script id="page-transition-exit">
+        // Smooth Page Transitions
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href]');
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && 
+                    !href.startsWith('#') && 
+                    !href.startsWith('tel:') && 
+                    !href.startsWith('mailto:') && 
+                    !href.startsWith('javascript:') && 
+                    link.getAttribute('target') !== '_blank'
+                ) {
+                    try {
+                        const targetUrl = new URL(href, window.location.href);
+                        if (targetUrl.pathname !== window.location.pathname) {
+                            link.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                document.body.style.opacity = '0';
+                                setTimeout(() => {
+                                    window.location.href = href;
+                                }, 300);
+                            });
+                        }
+                    } catch (err) {
+                        if (href.endsWith('.html') || !href.includes('://')) {
+                            link.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                document.body.style.opacity = '0';
+                                setTimeout(() => {
+                                    window.location.href = href;
+                                }, 300);
+                            });
+                        }
+                    }
+                }
+            });
+        });
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                document.body.style.opacity = '1';
+            }
+        });
+    </script>
 </body>
 </html>
