@@ -181,7 +181,7 @@
     </style>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 </head>
-<body class="text-text-primary pt-20">
+<body class="bg-background text-text-primary font-body-md overflow-x-hidden pt-20">
     <script id="page-transition-entry">
         // Clean URL in address bar
         if (window.location.pathname.endsWith('.html')) {
@@ -361,7 +361,7 @@
 </header>
 <main id="router-view" class="transition-opacity duration-300">
 
-<main class="w-full">
+<div class="w-full">
 <!-- Hero Section -->
 <section class="bg-white border-b border-border py-16 px-page-margin-mobile md:px-page-margin-desktop relative overflow-hidden">
     <!-- Ambient Glow Blobs -->
@@ -385,7 +385,7 @@
 <section class="py-12 px-page-margin-mobile md:px-page-margin-desktop">
 <div class="max-w-[1280px] mx-auto">
 <div class="bg-white rounded-3xl overflow-hidden border border-border shadow-xl hover:shadow-2xl transition-shadow duration-500 flex flex-col md:flex-row min-h-[500px]">
-<div class="md:w-1/2 relative group overflow-hidden">
+<div class="md:w-1/2 relative group overflow-hidden h-72 md:h-auto">
 <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional electric vehicle technician in a modern workshop environment, inspecting a sleek white electric scooter. He is holding a digital tablet displaying holographic diagnostic data overlays." src="scooter_tech_featured_banner.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 </div>
@@ -412,7 +412,7 @@
 </section>
 
 <!-- Search & Filter Bar (Sticky) -->
-<section class="sticky top-[72px] z-40 py-6 bg-surface/90 backdrop-blur-md border-y border-border">
+<section class="sticky top-[80px] z-40 py-6 bg-surface/90 backdrop-blur-md border-y border-border">
 <div class="max-w-[1280px] mx-auto px-page-margin-mobile md:px-page-margin-desktop flex flex-col md:flex-row items-center gap-6">
 <div class="relative flex-1 w-full">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary">search</span>
@@ -574,7 +574,7 @@
 </div>
 </div>
 </section>
-</main>
+</div>
 
 </main>
 
