@@ -159,7 +159,13 @@
             if (cleanPath.endsWith('/index')) {
                 cleanPath = cleanPath.slice(0, -6) || '/';
             }
-            window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+            let search = window.location.search;
+            // Clean up the cache buster query parameter
+            search = search.replace(/[?&]v=[^&]+/g, '');
+            if (search.startsWith('&')) {
+                search = '?' + search.slice(1);
+            }
+            window.history.replaceState(null, '', cleanPath + search + window.location.hash);
         }
 
         // Register Service Worker for clean URL refreshes
@@ -746,7 +752,8 @@
                                 e.preventDefault();
                                 document.body.style.opacity = '0';
                                 setTimeout(() => {
-                                    window.location.href = href;
+                                    const sep = href.includes('?') ? '&' : '?';
+                                    window.location.href = href + sep + 'v=' + new Date().getTime();
                                 }, 300);
                             });
                         }
@@ -756,7 +763,8 @@
                                 e.preventDefault();
                                 document.body.style.opacity = '0';
                                 setTimeout(() => {
-                                    window.location.href = href;
+                                    const sep = href.includes('?') ? '&' : '?';
+                                    window.location.href = href + sep + 'v=' + new Date().getTime();
                                 }, 300);
                             });
                         }
