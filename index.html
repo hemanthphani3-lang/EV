@@ -9,7 +9,7 @@
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     
     <!-- Tailwind Configuration -->
@@ -80,15 +80,15 @@
                     "container-max": "1280px",
                     "stack-gap": "12px",
                     "margin-mobile": "16px",
-                    "section-gap": "100px",
+                    "section-gap": "120px",
                     "gutter": "24px"
             },
             "fontFamily": {
-                    "body-md": ["Inter"],
-                    "headline-section": ["Inter"],
-                    "label-sm": ["Inter"],
-                    "display-hero": ["Inter"],
-                    "headline-card": ["Inter"],
+                    "body-md": ["'Plus Jakarta Sans'", "sans-serif"],
+                    "headline-section": ["'Outfit'", "sans-serif"],
+                    "label-sm": ["'Plus Jakarta Sans'", "sans-serif"],
+                    "display-hero": ["'Outfit'", "sans-serif"],
+                    "headline-card": ["'Outfit'", "sans-serif"],
                     "code-mono": ["JetBrains Mono"]
             },
             "fontSize": {
@@ -115,8 +115,8 @@
         /* Premium Card Refinements */
         .premium-card {
             background: #ffffff;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 10px 15px -3px rgba(15, 23, 42, 0.03), 0 0 0 1px rgba(15, 23, 42, 0.01);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.02), 0 10px 30px -5px rgba(15, 23, 42, 0.03), 0 0 0 1px rgba(15, 23, 42, 0.015);
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
@@ -145,13 +145,13 @@
         
         @media (prefers-reduced-motion: no-preference) {
             .premium-card:hover {
-                transform: translateY(-8px) scale(1.015);
-                box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.16), 0 0 0 1px rgba(37, 99, 235, 0.1);
-                border-color: rgba(37, 99, 235, 0.3);
+                transform: translateY(-6px) scale(1.008);
+                box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.03);
+                border-color: rgba(37, 99, 235, 0.15);
             }
             .reveal {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
                 transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             }
             .reveal.active {
@@ -159,11 +159,11 @@
                 transform: translateY(0);
             }
             .pulse-btn {
-                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
             .pulse-btn:hover {
                 transform: translateY(-2px) scale(1.02);
-                box-shadow: 0 12px 24px -10px rgba(37, 99, 235, 0.4);
+                box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
             }
             .magnetic-icon {
                 transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);

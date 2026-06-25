@@ -9,7 +9,7 @@
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     
     <!-- Tailwind Configuration -->
@@ -89,13 +89,13 @@
                 "stack-lg": "24px"
               },
               "fontFamily": {
-                "display-lg": ["Inter"],
-                "headline-xl": ["Inter"],
-                "headline-lg": ["Inter"],
-                "label-md": ["Inter"],
-                "label-sm": ["Inter"],
-                "body-lg": ["Inter"],
-                "body-md": ["Inter"]
+                "display-lg": ["'Outfit'", "sans-serif"],
+                "headline-xl": ["'Outfit'", "sans-serif"],
+                "headline-lg": ["'Outfit'", "sans-serif"],
+                "label-md": ["'Plus Jakarta Sans'", "sans-serif"],
+                "label-sm": ["'Plus Jakarta Sans'", "sans-serif"],
+                "body-lg": ["'Plus Jakarta Sans'", "sans-serif"],
+                "body-md": ["'Plus Jakarta Sans'", "sans-serif"]
               },
               "fontSize": {
                 "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
@@ -123,7 +123,7 @@
         }
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.active {
@@ -135,9 +135,9 @@
         }
         @media (prefers-reduced-motion: no-preference) {
             .pricing-card:hover {
-                transform: translateY(-8px) scale(1.015);
-                box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.16), 0 0 0 1px rgba(37, 99, 235, 0.1);
-                border-color: rgba(37, 99, 235, 0.3);
+                transform: translateY(-6px) scale(1.008);
+                box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.03);
+                border-color: rgba(37, 99, 235, 0.15);
             }
         }
         /* Ambient Glow Blobs */

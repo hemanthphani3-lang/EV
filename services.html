@@ -9,7 +9,7 @@
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     
     <!-- Leaflet Map CSS & JS -->
@@ -82,7 +82,7 @@
             },
             "spacing": {
                 "gutter": "24px",
-                "section-padding": "80px",
+                "section-padding": "120px",
                 "stack-lg": "32px",
                 "margin-desktop": "48px",
                 "margin-mobile": "20px",
@@ -91,14 +91,14 @@
                 "stack-sm": "8px"
             },
             "fontFamily": {
-                "body-lg": ["Inter"],
-                "label-sm": ["Inter"],
-                "headline-lg-mobile": ["Inter"],
-                "headline-md": ["Inter"],
-                "label-md": ["Inter"],
-                "headline-lg": ["Inter"],
-                "body-md": ["Inter"],
-                "display-xl": ["Inter"]
+                "body-lg": ["'Plus Jakarta Sans'", "sans-serif"],
+                "label-sm": ["'Plus Jakarta Sans'", "sans-serif"],
+                "headline-lg-mobile": ["'Outfit'", "sans-serif"],
+                "headline-md": ["'Outfit'", "sans-serif"],
+                "label-md": ["'Plus Jakarta Sans'", "sans-serif"],
+                "headline-lg": ["'Outfit'", "sans-serif"],
+                "body-md": ["'Plus Jakarta Sans'", "sans-serif"],
+                "display-xl": ["'Outfit'", "sans-serif"]
             },
             "fontSize": {
                 "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
@@ -138,16 +138,16 @@
         /* Premium Card Refinements */
         .card-premium {
             background: #ffffff;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 10px 15px -3px rgba(15, 23, 42, 0.03), 0 0 0 1px rgba(15, 23, 42, 0.01);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.02), 0 10px 30px -5px rgba(15, 23, 42, 0.03), 0 0 0 1px rgba(15, 23, 42, 0.015);
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         @media (prefers-reduced-motion: no-preference) {
             .card-premium:hover {
-                transform: translateY(-8px) scale(1.015);
-                box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.16), 0 0 0 1px rgba(37, 99, 235, 0.1);
-                border-color: rgba(37, 99, 235, 0.3);
+                transform: translateY(-6px) scale(1.008);
+                box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.03);
+                border-color: rgba(37, 99, 235, 0.15);
             }
         }
         
