@@ -225,20 +225,30 @@
                 
                 function hideLoader() {
                     clearTimeout(fallback);
+                    
+                    // Fade out loading screen overlay
                     loadingScreen.style.opacity = '0';
                     
-                    // Smoothly fade in content elements slowly
+                    // 1. Set elements to opacity 0 inline so they stay hidden when stylesheet is removed
                     const elms = document.querySelectorAll('#router-view, header, footer, .whatsapp-float, [id^="chatbot-"]');
                     elms.forEach(el => {
-                        el.style.transition = 'opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
-                        el.style.opacity = '1';
+                        el.style.opacity = '0';
                     });
                     
-                    // Remove preload styles so normal style layout applies fully
+                    // 2. Remove preload styles so normal style layout applies fully
                     const preloadStyles = document.getElementById('page-transition-preload-styles');
                     if (preloadStyles) {
                         preloadStyles.remove();
                     }
+                    
+                    // 3. Force reflow to ensure browser registers the starting inline opacity of 0
+                    document.body.offsetHeight;
+                    
+                    // 4. Smoothly fade in content elements slowly
+                    elms.forEach(el => {
+                        el.style.transition = 'opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                        el.style.opacity = '1';
+                    });
                     
                     setTimeout(() => {
                         loadingScreen.remove();
