@@ -235,7 +235,7 @@
   </div>
 </header>
 
-<main>
+<main id="router-view" class="transition-opacity duration-300">
 <!-- Hero Section -->
 <section class="bg-surface-container-lowest py-section-padding relative overflow-hidden">
     <!-- Ambient Glow Blobs -->
@@ -690,45 +690,188 @@
     }
 </script>
     <script id="page-transition-exit">
-        // Smooth Page Transitions
+        // InnoVibe SPA HTML Router & Transitions
         document.addEventListener('DOMContentLoaded', () => {
-            const links = document.querySelectorAll('a[href]');
-            links.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href && 
-                    !href.startsWith('#') && 
-                    !href.startsWith('tel:') && 
-                    !href.startsWith('mailto:') && 
-                    !href.startsWith('javascript:') && 
-                    link.getAttribute('target') !== '_blank'
-                ) {
-                    try {
-                        const targetUrl = new URL(href, window.location.href);
-                        if (targetUrl.pathname !== window.location.pathname) {
-                            link.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                document.body.style.opacity = '0';
-                                setTimeout(() => {
-                                    const sep = href.includes('?') ? '&' : '?';
-                                    window.location.href = href + sep + 'v=' + new Date().getTime();
-                                }, 300);
-                            });
-                        }
-                    } catch (err) {
-                        if (href.endsWith('.html') || !href.includes('://')) {
-                            link.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                document.body.style.opacity = '0';
-                                setTimeout(() => {
-                                    const sep = href.includes('?') ? '&' : '?';
-                                    window.location.href = href + sep + 'v=' + new Date().getTime();
-                                }, 300);
-                            });
+            const routerView = document.getElementById('router-view');
+            
+            function bindLinks(container = document) {
+                const links = container.querySelectorAll('a[href]');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && 
+                        !href.startsWith('#') && 
+                        !href.startsWith('tel:') && 
+                        !href.startsWith('mailto:') && 
+                        !href.startsWith('javascript:') && 
+                        link.getAttribute('target') !== '_blank'
+                    ) {
+                        try {
+                            const targetUrl = new URL(href, window.location.href);
+                            if (targetUrl.pathname !== window.location.pathname) {
+                                link.removeEventListener('click', handleNavigation);
+                                link.addEventListener('click', handleNavigation);
+                            }
+                        } catch (err) {
+                            if (href.endsWith('.html') || !href.includes('://')) {
+                                link.removeEventListener('click', handleNavigation);
+                                link.addEventListener('click', handleNavigation);
+                            }
                         }
                     }
+                });
+            }
+
+            function handleNavigation(e) {
+                e.preventDefault();
+                const href = e.currentTarget.getAttribute('href');
+                loadPage(href);
+            }
+
+            function loadPage(href) {
+                if (routerView) {
+                    routerView.style.opacity = '0';
                 }
+                
+                // Append cache buster to bypass browser cache
+                const sep = href.includes('?') ? '&' : '?';
+                const fetchUrl = href + sep + 'v=' + new Date().getTime();
+                
+                fetch(fetchUrl)
+                    .then(res => {
+                        if (!res.ok) throw new Error('Failed to load page');
+                        return res.text();
+                    })
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const newDoc = parser.parseFromString(html, 'text/html');
+                        const newContent = newDoc.getElementById('router-view');
+                        
+                        if (newContent && routerView) {
+                            // Swap content
+                            routerView.innerHTML = newContent.innerHTML;
+                            routerView.className = newContent.className;
+                            window.scrollTo({ top: 0, behavior: 'instant' });
+                        }
+                        
+                        // Update active state in Navigation Links
+                        const oldDesktopNav = document.querySelector('header nav .hidden.md\:flex');
+                        const newDesktopNav = newDoc.querySelector('header nav .hidden.md\:flex');
+                        if (oldDesktopNav && newDesktopNav) {
+                            oldDesktopNav.innerHTML = newDesktopNav.innerHTML;
+                        }
+                        
+                        const oldMobileMenu = document.querySelector('#mobile-menu div.flex.flex-col');
+                        const newMobileMenu = newDoc.querySelector('#mobile-menu div.flex.flex-col');
+                        if (oldMobileMenu && newMobileMenu) {
+                            oldMobileMenu.innerHTML = newMobileMenu.innerHTML;
+                        }
+                        
+                        // Clean URL and remove buster
+                        let cleanPath = href;
+                        if (cleanPath.endsWith('.html')) {
+                            cleanPath = cleanPath.slice(0, -5);
+                        }
+                        if (cleanPath.endsWith('/index')) {
+                            cleanPath = cleanPath.slice(0, -6) || '/';
+                        }
+                        window.history.pushState(null, '', cleanPath);
+                        
+                        // Update title
+                        document.title = newDoc.title;
+                        
+                        // Load missing CSS link tags
+                        const newLinks = Array.from(newDoc.querySelectorAll('link[rel="stylesheet"]'));
+                        newLinks.forEach(link => {
+                            const cssHref = link.getAttribute('href');
+                            if (cssHref && !document.querySelector(`link[href="${cssHref}"]`)) {
+                                const newLink = document.createElement('link');
+                                newLink.rel = 'stylesheet';
+                                newLink.href = cssHref;
+                                document.head.appendChild(newLink);
+                            }
+                        });
+                        
+                        // Load and run script tags sequentially
+                        const scripts = Array.from(newDoc.querySelectorAll('script:not(#page-transition-entry):not(#page-transition-exit)'));
+                        
+                        function runScripts(index = 0) {
+                            if (index >= scripts.length) {
+                                bindLinks(routerView);
+                                setTimeout(() => {
+                                    if (routerView) routerView.style.opacity = '1';
+                                }, 50);
+                                return;
+                            }
+                            
+                            const script = scripts[index];
+                            const newScript = document.createElement('script');
+                            
+                            if (script.src) {
+                                if (document.querySelector(`script[src="${script.src}"]`)) {
+                                    runScripts(index + 1);
+                                } else {
+                                    newScript.src = script.src;
+                                    newScript.onload = () => runScripts(index + 1);
+                                    newScript.onerror = () => runScripts(index + 1);
+                                    document.head.appendChild(newScript);
+                                }
+                            } else {
+                                const scriptText = script.textContent;
+                                const originalDocAdd = document.addEventListener;
+                                const originalWinAdd = window.addEventListener;
+
+                                document.addEventListener = function(event, callback, options) {
+                                    if (event === 'DOMContentLoaded') {
+                                        callback(new Event('DOMContentLoaded'));
+                                    } else {
+                                        originalDocAdd.call(document, event, callback, options);
+                                    }
+                                };
+
+                                window.addEventListener = function(event, callback, options) {
+                                    if (event === 'DOMContentLoaded') {
+                                        callback(new Event('DOMContentLoaded'));
+                                    } else {
+                                        originalWinAdd.call(window, event, callback, options);
+                                    }
+                                };
+
+                                try {
+                                    newScript.textContent = `(function(){
+${scriptText}
+})();`;
+                                    document.body.appendChild(newScript);
+                                    newScript.remove();
+                                } catch (err) {
+                                    console.error('Error running inline script:', err);
+                                }
+
+                                document.addEventListener = originalDocAdd;
+                                window.addEventListener = originalWinAdd;
+                                runScripts(index + 1);
+                            }
+                        }
+                        
+                        runScripts();
+                    })
+                    .catch(err => {
+                        console.error('SPA router navigation failed:', err);
+                        window.location.href = href;
+                    });
+            }
+
+            bindLinks();
+
+            window.addEventListener('popstate', () => {
+                let path = window.location.pathname;
+                if (path === '/') path = 'index.html';
+                if (!path.endsWith('.html') && !path.includes('.')) {
+                    path += '.html';
+                }
+                loadPage(path);
             });
         });
+        
         window.addEventListener('pageshow', (event) => {
             if (event.persisted) {
                 document.body.style.opacity = '1';
