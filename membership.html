@@ -179,13 +179,68 @@
             });
         }
 
-        document.body.style.opacity = '0';
-        document.body.style.transition = 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-        window.addEventListener('DOMContentLoaded', () => {
-            requestAnimationFrame(() => {
-                document.body.style.opacity = '1';
+        // Session-based splash video loading screen
+        const hasShownLoading = sessionStorage.getItem('loading-screen-shown');
+        if (!hasShownLoading) {
+            sessionStorage.setItem('loading-screen-shown', 'true');
+            
+            // Inject synchronous stylesheet to prevent content flash before video loads
+            document.write(`
+                <style>
+                    #router-view, header, footer, #toast-container, .whatsapp-float, [id^="chatbot-"] {
+                        opacity: 0 !important;
+                    }
+                </style>
+            `);
+            
+            window.addEventListener('DOMContentLoaded', () => {
+                // Create and insert loading screen overlay
+                const loadingScreen = document.createElement('div');
+                loadingScreen.id = 'loading-screen';
+                loadingScreen.style.cssText = 'position: fixed; inset: 0; z-index: 99999999; display: flex; align-items: center; justify-content: center; background-color: #FFFFFF; transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: all;';
+                loadingScreen.innerHTML = '<video id="loading-video" src="load.mp4" muted autoplay playsinline style="max-width: 90%; max-height: 90%; object-fit: contain; width: 600px; height: auto;"></video>';
+                document.body.appendChild(loadingScreen);
+                
+                const loadingVideo = document.getElementById('loading-video');
+                
+                function hideLoader() {
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingScreen.remove();
+                        // Smoothly fade in content elements
+                        const elms = document.querySelectorAll('#router-view, header, footer, .whatsapp-float, [id^="chatbot-"]');
+                        elms.forEach(el => {
+                            el.style.transition = 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                            el.style.opacity = '1';
+                        });
+                    }, 500);
+                }
+                
+                const fallback = setTimeout(hideLoader, 4000);
+                
+                if (loadingVideo) {
+                    loadingVideo.addEventListener('ended', () => {
+                        clearTimeout(fallback);
+                        hideLoader();
+                    });
+                    
+                    loadingVideo.play().catch(err => {
+                        console.warn('Autoplay prevented:', err);
+                        clearTimeout(fallback);
+                        hideLoader();
+                    });
+                }
             });
-        });
+        } else {
+            // Standard Page Transition Fade-In
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            window.addEventListener('DOMContentLoaded', () => {
+                requestAnimationFrame(() => {
+                    document.body.style.opacity = '1';
+                });
+            });
+        }
     </script>
 
 <!-- Unified Toast Container -->
