@@ -15,100 +15,137 @@
     <!-- Tailwind Configuration -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                "on-tertiary-fixed": "#002113",
-                "inverse-on-surface": "#eff1f3",
-                "surface-bright": "#f7f9fb",
-                "secondary-fixed-dim": "#b4c5ff",
-                "tertiary-fixed-dim": "#4edea3",
-                "secondary-container": "#316bf3",
-                "on-tertiary-container": "#009668",
-                "secondary": "#0051d5",
-                "inverse-primary": "#bec6e0",
-                "on-surface-variant": "#45464d",
-                "surface-tint": "#565e74",
-                "primary-container": "#131b2e",
-                "surface": "#f7f9fb",
-                "outline": "#76777d",
-                "on-primary-container": "#7c839b",
-                "primary-fixed-dim": "#bec6e0",
-                "text-primary": "#0F172A",
-                "on-tertiary": "#ffffff",
-                "tertiary-container": "#002113",
-                "on-primary-fixed": "#131b2e",
-                "surface-dim": "#d8dadc",
-                "primary-fixed": "#dae2fd",
-                "text-secondary": "#475569",
-                "inverse-surface": "#2d3133",
-                "on-secondary-container": "#fefcff",
-                "error": "#ba1a1a",
-                "surface-variant": "#e0e3e5",
-                "on-secondary-fixed-variant": "#003ea8",
-                "surface-container-low": "#f2f4f6",
-                "on-secondary": "#ffffff",
-                "primary": "#000000",
-                "on-tertiary-fixed-variant": "#005236",
-                "border-subtle": "#E2E8F0",
-                "surface-container-high": "#e6e8ea",
-                "tertiary": "#000000",
-                "on-error": "#ffffff",
-                "on-background": "#191c1e",
-                "surface-white": "#FFFFFF",
-                "on-primary": "#ffffff",
-                "error-container": "#ffdad6",
-                "on-primary-fixed-variant": "#3f465c",
-                "on-error-container": "#93000a",
-                "on-secondary-fixed": "#00174b",
-                "surface-container-lowest": "#ffffff",
-                "background": "#f7f9fb",
-                "tertiary-fixed": "#6ffbbe",
-                "surface-container-highest": "#e0e3e5",
-                "on-surface": "#191c1e",
-                "outline-variant": "#c6c6cd",
-                "secondary-fixed": "#dbe1ff",
-                "surface-container": "#eceef0"
-              },
-              "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-              },
-              "spacing": {
-                "stack-sm": "8px",
-                "gutter": "32px",
-                "section-padding-desktop": "120px",
-                "container-max": "1280px",
-                "section-padding-mobile": "64px",
-                "margin-mobile": "20px",
-                "stack-md": "16px",
-                "stack-lg": "24px"
-              },
-              "fontFamily": {
-                "display-lg": ["'Outfit'", "sans-serif"],
-                "headline-xl": ["'Outfit'", "sans-serif"],
-                "headline-lg": ["'Outfit'", "sans-serif"],
-                "label-md": ["'Plus Jakarta Sans'", "sans-serif"],
-                "label-sm": ["'Plus Jakarta Sans'", "sans-serif"],
-                "body-lg": ["'Plus Jakarta Sans'", "sans-serif"],
-                "body-md": ["'Plus Jakarta Sans'", "sans-serif"]
-              },
-              "fontSize": {
-                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                "headline-xl": ["36px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                "headline-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
-                "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
-                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
-              }
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-background": "#131b2e",
+              "inverse-surface": "#283044",
+              "on-surface-variant": "#434655",
+              "secondary-fixed-dim": "#b9c7df",
+              "tertiary": "#943700",
+              "on-secondary-fixed-variant": "#3a485b",
+              "surface-container-highest": "#dae2fd",
+              "outline": "#737686",
+              "on-tertiary-fixed": "#360f00",
+              "secondary-fixed": "#d5e3fc",
+              "primary-container": "#2563eb",
+              "error": "#ba1a1a",
+              "surface-bright": "#faf8ff",
+              "on-primary-container": "#eeefff",
+              "secondary": "#515f74",
+              "primary-fixed-dim": "#b4c5ff",
+              "on-error": "#ffffff",
+              "tertiary-container": "#bc4800",
+              "surface-variant": "#dae2fd",
+              "on-tertiary-fixed-variant": "#7d2d00",
+              "surface-container": "#eaedff",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#003ea8",
+              "outline-variant": "#c3c6d7",
+              "surface-tint": "#0053db",
+              "primary": "#004ac6",
+              "secondary-container": "#d5e3fc",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-dim": "#d2d9f4",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#b4c5ff",
+              "on-primary-fixed": "#00174b",
+              "on-secondary-fixed": "#0d1c2e",
+              "tertiary-fixed-dim": "#ffb596",
+              "surface-container-high": "#e2e7ff",
+              "surface": "#faf8ff",
+              "on-surface": "#131b2e",
+              "surface-container-low": "#f2f3ff",
+              "inverse-on-surface": "#eef0ff",
+              "background": "#faf8ff",
+              "on-tertiary-container": "#ffede6",
+              "tertiary-fixed": "#ffdbcd",
+              "on-secondary-container": "#57657a",
+              "primary-fixed": "#dbe1ff",
+              "text-secondary": "#475569",
+              "text-primary": "#0F172A",
+              "border": "#E2E8F0",
+              "success": "#10B981",
+              "surface-elevated": "#FFFFFF",
+              "on-inverse-surface": "#f5f6fa",
+              "border-subtle": "#E2E8F0",
+              "surface-white": "#FFFFFF",
+              "success-emerald": "#10B981",
+              "background-main": "#FFFFFF",
+              "background-section": "#F8FAFC"
             },
-          },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "2xl": "1rem",
+              "full": "9999px",
+              "card": "24px",
+              "button": "12px",
+              "3xl": "1.5rem"
+            },
+            "spacing": {
+              "margin-desktop": "40px",
+              "container-max": "1280px",
+              "stack-gap": "12px",
+              "margin-mobile": "20px",
+              "section-gap": "120px",
+              "gutter": "32px",
+              "section-padding": "120px",
+              "stack-lg": "24px",
+              "stack-md": "16px",
+              "stack-sm": "8px",
+              "page-margin-tablet": "40px",
+              "page-margin-desktop": "80px",
+              "page-margin-mobile": "20px",
+              "section-padding-desktop": "120px",
+              "section-padding-mobile": "64px",
+              "unit": "4px"
+            },
+            "fontFamily": {
+              "body-md": ["'Plus Jakarta Sans'", "sans-serif"],
+              "headline-section": ["'Outfit'", "sans-serif"],
+              "label-sm": ["'Plus Jakarta Sans'", "sans-serif"],
+              "display-hero": ["'Outfit'", "sans-serif"],
+              "headline-card": ["'Outfit'", "sans-serif"],
+              "code-mono": ["JetBrains Mono"],
+              "body-lg": ["'Plus Jakarta Sans'", "sans-serif"],
+              "headline-lg-mobile": ["'Outfit'", "sans-serif"],
+              "headline-md": ["'Outfit'", "sans-serif"],
+              "label-md": ["'Plus Jakarta Sans'", "sans-serif"],
+              "headline-lg": ["'Outfit'", "sans-serif"],
+              "display-xl": ["'Outfit'", "sans-serif"],
+              "display-xl-mobile": ["'Outfit'", "sans-serif"],
+              "label-lg": ["'Plus Jakarta Sans'", "sans-serif"],
+              "display-lg": ["'Outfit'", "sans-serif"],
+              "headline-xl": ["'Outfit'", "sans-serif"]
+            },
+            "fontSize": {
+              "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+              "headline-section": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+              "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
+              "display-hero": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+              "headline-card": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+              "code-mono": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+              "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+              "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+              "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+              "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+              "headline-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+              "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+              "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+              "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+              "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "headline-xl": ["36px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          }
         }
+      }
     </script>
     <style>
         .material-symbols-outlined {
@@ -139,6 +176,60 @@
                 box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.03);
                 border-color: rgba(37, 99, 235, 0.15);
             }
+        }
+        /* Premium Card Refinements */
+        .card-premium {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.02), 0 10px 30px -5px rgba(15, 23, 42, 0.03), 0 0 0 1px rgba(15, 23, 42, 0.015);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .card-premium:hover {
+                transform: translateY(-6px) scale(1.008);
+                box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.03);
+                border-color: rgba(37, 99, 235, 0.15);
+            }
+            .scale-105:hover {
+                transform: translateY(-6px) scale(1.058) !important;
+            }
+        }
+        /* Gold Premium Recommended Card styling */
+        .gold-badge {
+            background: linear-gradient(
+                120deg,
+                #bf953f 0%,
+                #fcf6ba 25%,
+                #b38728 50%,
+                #fcf6ba 75%,
+                #bf953f 100%
+            ) !important;
+            background-size: 200% auto !important;
+            color: #1e1b4b !important;
+            font-weight: 800 !important;
+            animation: goldBadgeShine 3s linear infinite !important;
+            box-shadow: 0 4px 12px rgba(191, 149, 63, 0.4) !important;
+        }
+        @keyframes goldBadgeShine {
+            0% {
+                background-position: 200% center;
+            }
+            100% {
+                background-position: -200% center;
+            }
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #bf953f 0%, #b38728 100%) !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(191, 149, 63, 0.25) !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #bf953f 100%) !important;
+            box-shadow: 0 6px 20px rgba(191, 149, 63, 0.4) !important;
+            transform: translateY(-1px) !important;
         }
         /* Ambient Glow Blobs */
         .glow-blob {
@@ -300,6 +391,7 @@
       <a href="index.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Home</a>
       <a href="services.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Services &amp; Bookings</a>
       <a href="membership.html" class="text-[#004ac6] font-bold border-b-2 border-[#004ac6] pb-1 text-sm transition-all">Membership</a>
+      <a href="amc.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">AMC</a>
       <a href="about.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">About Us</a>
       <a href="blog.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Blog</a>
       <a href="contact.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Contact Us</a>
@@ -323,6 +415,7 @@
     <a href="index.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Home</a>
     <a href="services.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Services &amp; Bookings</a>
     <a href="membership.html" class="bg-blue-50 text-[#004ac6] font-bold py-2 px-3 rounded-lg transition-all">Membership</a>
+    <a href="amc.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">AMC</a>
     <a href="about.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">About Us</a>
     <a href="blog.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Blog</a>
     <a href="contact.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Contact Us</a>
@@ -367,7 +460,7 @@
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
 <!-- Card 1 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="card-premium val-prop-card p-8 rounded-3xl group">
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-[32px]">support_agent</span>
 </div>
@@ -375,7 +468,7 @@
 <p class="text-text-secondary">Skip the queue with our dedicated 24/7 VIP assistance line for all members.</p>
 </div>
 <!-- Card 2 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="card-premium val-prop-card p-8 rounded-3xl group">
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-[32px]">directions_car</span>
 </div>
@@ -383,7 +476,7 @@
 <p class="text-text-secondary">Emergency charging and towing services anywhere, anytime across the country.</p>
 </div>
 <!-- Card 3 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="card-premium val-prop-card p-8 rounded-3xl group">
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-[32px]">build</span>
 </div>
@@ -391,7 +484,7 @@
 <p class="text-text-secondary">Scheduled checkups and predictive maintenance to keep your EV at peak performance.</p>
 </div>
 <!-- Card 4 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="card-premium val-prop-card p-8 rounded-3xl group">
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-[32px]">percent</span>
 </div>
@@ -399,7 +492,7 @@
 <p class="text-text-secondary">Enjoy flat discounts on labor and genuine spare parts across our network.</p>
 </div>
 <!-- Card 5 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="card-premium val-prop-card p-8 rounded-3xl group">
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-[32px]">battery_charging_full</span>
 </div>
@@ -407,7 +500,7 @@
 <p class="text-text-secondary">Comprehensive battery diagnostics and health monitoring reporting quarterly.</p>
 </div>
 <!-- Card 6 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl transition-all group">
+<div class="card-premium val-prop-card p-8 rounded-3xl group">
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-[32px]">redeem</span>
 </div>
@@ -427,7 +520,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch reveal">
 <!-- Lifetime Plan -->
-<div class="pricing-card bg-surface-white border border-border-subtle rounded-[24px] p-10 flex flex-col transition-all duration-300">
+<div class="pricing-card bg-surface-white border border-border-subtle rounded-[24px] p-10 flex flex-col cursor-pointer transition-all duration-300">
 <div class="mb-8">
 <h3 class="font-headline-lg text-headline-lg mb-2">Lifetime Plan</h3>
 <div class="flex items-baseline gap-1">
@@ -445,22 +538,22 @@
 </div>
 <div class="flex items-center gap-3 text-text-primary">
 <span class="material-symbols-outlined text-[#10B981]">check_circle</span>
-<span>1 Free EV Service at Home</span>
+<span>15% Discount on Accessories</span>
 </div>
 <div class="flex items-center gap-3 text-text-primary">
 <span class="material-symbols-outlined text-[#10B981]">check_circle</span>
-<span>1 Free On-Road Assistance</span>
+<span>2 Free EV Services at Home</span>
 </div>
 <div class="flex items-center gap-3 text-text-primary">
 <span class="material-symbols-outlined text-[#10B981]">check_circle</span>
-<span>1 Free Battery Diagnostic</span>
+<span>Unlimited Battery Diagnostics</span>
 </div>
 </div>
 <button data-plan="Lifetime Plan" class="choose-plan-btn w-full py-4 border border-border-subtle rounded-xl font-label-md hover:bg-primary-container hover:text-white transition-all">Choose Plan</button>
 </div>
 <!-- 3 Years Plan (Recommended) -->
-<div class="pricing-card bg-primary-container text-white border-2 border-secondary rounded-[24px] p-10 flex flex-col relative scale-105 shadow-2xl z-10 transition-all duration-300">
-<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-label-sm font-bold uppercase tracking-wider">Recommended</div>
+<div class="pricing-card bg-primary-container text-white border-2 border-[#bf953f]/60 rounded-[24px] p-10 flex flex-col relative scale-105 shadow-2xl z-10 cursor-pointer transition-all duration-300">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 gold-badge px-4 py-1 rounded-full text-label-sm font-bold uppercase tracking-wider">Recommended</div>
 <div class="mb-8">
 <h3 class="font-headline-lg text-headline-lg mb-2 text-white">3 Years Plan</h3>
 <div class="flex items-baseline gap-1">
@@ -493,10 +586,10 @@
 <span class="text-surface-variant">Priority Maintenance Queue</span>
 </div>
 </div>
-<button data-plan="3 Years Plan" class="choose-plan-btn w-full py-4 bg-secondary rounded-xl font-label-md hover:bg-secondary/90 transition-all text-white">Choose Plan</button>
+<button data-plan="3 Years Plan" class="choose-plan-btn w-full py-4 gold-btn rounded-xl font-label-md transition-all text-white">Choose Plan</button>
 </div>
 <!-- 1 Year Plan -->
-<div class="pricing-card bg-surface-white border border-border-subtle rounded-[24px] p-10 flex flex-col transition-all duration-300">
+<div class="pricing-card bg-surface-white border border-border-subtle rounded-[24px] p-10 flex flex-col cursor-pointer transition-all duration-300">
 <div class="mb-8">
 <h3 class="font-headline-lg text-headline-lg mb-2">1 Year Plan</h3>
 <div class="flex items-baseline gap-1">
@@ -626,7 +719,7 @@
 <h2 class="font-headline-xl text-headline-xl text-center mb-16 reveal">The InnoVibe Advantage</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
 <!-- Card 1 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div class="card-premium advantage-card p-8 rounded-3xl group flex flex-col justify-between">
 <div>
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
 <span class="material-symbols-outlined text-[32px]">verified_user</span>
@@ -636,7 +729,7 @@
 </div>
 </div>
 <!-- Card 2 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div class="card-premium advantage-card p-8 rounded-3xl group flex flex-col justify-between">
 <div>
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
 <span class="material-symbols-outlined text-[32px]">engineering</span>
@@ -646,7 +739,7 @@
 </div>
 </div>
 <!-- Card 3 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div class="card-premium advantage-card p-8 rounded-3xl group flex flex-col justify-between">
 <div>
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
 <span class="material-symbols-outlined text-[32px]">public</span>
@@ -656,7 +749,7 @@
 </div>
 </div>
 <!-- Card 4 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div class="card-premium advantage-card p-8 rounded-3xl group flex flex-col justify-between">
 <div>
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
 <span class="material-symbols-outlined text-[32px]">hub</span>
@@ -666,7 +759,7 @@
 </div>
 </div>
 <!-- Card 5 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div class="card-premium advantage-card p-8 rounded-3xl group flex flex-col justify-between">
 <div>
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
 <span class="material-symbols-outlined text-[32px]">health_and_safety</span>
@@ -676,7 +769,7 @@
 </div>
 </div>
 <!-- Card 6 -->
-<div class="bg-surface-white p-8 rounded-3xl border border-border-subtle hover:shadow-xl hover:-translate-y-1.5 hover:border-secondary transition-all duration-300 group flex flex-col justify-between">
+<div class="card-premium advantage-card p-8 rounded-3xl group flex flex-col justify-between">
 <div>
 <div class="w-14 h-14 bg-secondary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
 <span class="material-symbols-outlined text-[32px]">savings</span>
@@ -694,7 +787,7 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
 <h2 class="font-headline-xl text-headline-xl text-center mb-16 reveal">Trusted by EV Owners</h2>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal">
-<div class="bg-surface-white p-10 rounded-3xl shadow-sm border border-border-subtle flex flex-col">
+<div class="card-premium testimonial-card p-10 rounded-3xl flex flex-col">
 <div class="flex gap-1 text-[#F59E0B] mb-6">
 <span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -713,7 +806,7 @@
 </div>
 </div>
 </div>
-<div class="bg-surface-white p-10 rounded-3xl shadow-sm border border-border-subtle flex flex-col scale-105 z-10 lg:mt-0 mt-8">
+<div class="card-premium testimonial-card p-10 rounded-3xl flex flex-col scale-105 z-10 lg:mt-0 mt-8">
 <div class="flex gap-1 text-[#F59E0B] mb-6">
 <span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -732,7 +825,7 @@
 </div>
 </div>
 </div>
-<div class="bg-surface-white p-10 rounded-3xl shadow-sm border border-border-subtle flex flex-col lg:mt-0 mt-8">
+<div class="card-premium testimonial-card p-10 rounded-3xl flex flex-col lg:mt-0 mt-8">
 <div class="flex gap-1 text-[#F59E0B] mb-6">
 <span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -752,9 +845,10 @@
 </div>
 </div>
 </div>
-<div class="mt-20 rounded-3xl overflow-hidden h-[400px] reveal relative shadow-2xl">
-<img alt="Happy EV Owners" class="w-full h-full object-cover" src="happy_ev_owners.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-12">
+<div id="video-card-container" class="mt-20 rounded-3xl overflow-hidden h-[400px] reveal relative shadow-2xl cursor-pointer transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl">
+<video id="card-video" class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-700" src="scooter.mp4" playsinline muted></video>
+<img id="card-image" alt="Happy EV Owners" class="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-700 opacity-0" src="happy_ev_owners.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-12 z-20">
 <p class="text-white text-headline-xl max-w-2xl font-bold">Join 50,000+ EV owners driving with confidence.</p>
 </div>
 </div>
@@ -876,6 +970,7 @@
         <li><a href="index.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">Home</a></li>
         <li><a href="services.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">EV Services</a></li>
         <li><a href="membership.html" class="text-blue-400 font-semibold text-sm transition-colors block hover:translate-x-1 duration-200">Membership Plans</a></li>
+        <li><a href="amc.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">AMC Protection Plans</a></li>
         <li><a href="about.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">About Us</a></li>
         <li><a href="blog.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">EV Knowledge Hub</a></li>
         <li><a href="contact.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">Contact &amp; Support</a></li>
@@ -1022,6 +1117,123 @@
             showToast(`Excellent choice! You've selected the ${plan}. We will contact you to activate it.`);
         });
     });
+
+    // Dynamic Card Interactivity Handlers
+    (function() {
+        // 1. Value Proposition Cards click handler
+        document.querySelectorAll('.val-prop-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h3').textContent.trim();
+                showToast(`Membership Benefit: ${title} is fully covered under your active membership plan!`);
+            });
+        });
+
+        // 2. Click pricing card anywhere triggers the select button click
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('.choose-plan-btn')) {
+                    const btn = card.querySelector('.choose-plan-btn');
+                    if (btn) btn.click();
+                }
+            });
+        });
+
+        // 3. Advantage Cards click handler
+        document.querySelectorAll('.advantage-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h5').textContent.trim();
+                showToast(`InnoVibe Advantage: Enjoy premium ${title} as a member!`);
+            });
+        });
+
+        // 4. Testimonial Cards click handler
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const name = card.querySelector('.font-bold').textContent.trim();
+                showToast(`Member Story: ${name} is an active InnoVibe community member!`);
+            });
+        });
+
+        // 5. Video Card click handler (toggles play/pause and muted state)
+        const videoContainer = document.getElementById('video-card-container');
+        if (videoContainer) {
+            videoContainer.addEventListener('click', () => {
+                const video = document.getElementById('card-video');
+                const image = document.getElementById('card-image');
+                if (video) {
+                    if (video.paused) {
+                        if (image) {
+                            image.classList.remove('opacity-100');
+                            image.classList.add('opacity-0');
+                        }
+                        video.muted = false;
+                        video.play().then(() => {
+                            showToast("Now playing member spotlight video with audio!");
+                        }).catch(() => {
+                            video.muted = true;
+                            video.play();
+                            showToast("Now playing member spotlight video!");
+                        });
+                    } else {
+                        video.pause();
+                        showToast("Spotlight video paused.");
+                    }
+                }
+            });
+        }
+    })();
+
+    // Card video autoplay on scroll and image swap on complete
+    (function() {
+        const video = document.getElementById('card-video');
+        const image = document.getElementById('card-image');
+        const container = document.getElementById('video-card-container');
+        
+        if (!video || !image || !container) return;
+        
+        let hasPlayedThisScroll = false;
+        
+        function showFallbackImage() {
+            image.classList.remove('opacity-0');
+            image.classList.add('opacity-100');
+        }
+        
+        video.addEventListener('ended', showFallbackImage);
+        video.addEventListener('error', showFallbackImage);
+        
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (!hasPlayedThisScroll) {
+                            image.classList.remove('opacity-100');
+                            image.classList.add('opacity-0');
+                            
+                            video.currentTime = 0;
+                            const playPromise = video.play();
+                            if (playPromise !== undefined) {
+                                playPromise.catch(error => {
+                                    console.log("Autoplay of scooter video prevented:", error);
+                                    showFallbackImage();
+                                });
+                            }
+                            hasPlayedThisScroll = true;
+                        }
+                    } else {
+                        video.pause();
+                        hasPlayedThisScroll = false;
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+            observer.observe(container);
+        } else {
+            video.play().catch(() => {
+                showFallbackImage();
+            });
+        }
+    })();
 </script>
     <script id="page-transition-exit">
         // InnoVibe SPA HTML Router & Transitions
@@ -1088,8 +1300,8 @@
                         }
                         
                         // Update active state in Navigation Links
-                        const oldDesktopNav = document.querySelector('header nav .hidden.md\:flex');
-                        const newDesktopNav = newDoc.querySelector('header nav .hidden.md\:flex');
+                        const oldDesktopNav = document.querySelector('header nav .hidden.md\\:flex');
+                        const newDesktopNav = newDoc.querySelector('header nav .hidden.md\\:flex');
                         if (oldDesktopNav && newDesktopNav) {
                             oldDesktopNav.innerHTML = newDesktopNav.innerHTML;
                         }
@@ -1125,12 +1337,27 @@
                             }
                         });
                         
+                        // Load missing style tags (inline styles)
+                        const newStyles = Array.from(newDoc.querySelectorAll('style'));
+                        newStyles.forEach(style => {
+                            if (style.id === 'page-transition-preload-styles') return;
+                            const exists = Array.from(document.querySelectorAll('style')).some(existingStyle => {
+                                return existingStyle.textContent === style.textContent;
+                            });
+                            if (!exists) {
+                                const newStyle = document.createElement('style');
+                                if (style.id) newStyle.id = style.id;
+                                newStyle.textContent = style.textContent;
+                                document.head.appendChild(newStyle);
+                            }
+                        });
+                        
                         // Load and run script tags sequentially
                         const scripts = Array.from(newDoc.querySelectorAll('script:not(#page-transition-entry):not(#page-transition-exit)'));
                         
                         function runScripts(index = 0) {
                             if (index >= scripts.length) {
-                                bindLinks(routerView);
+                                bindLinks();
                                 setTimeout(() => {
                                     if (routerView) routerView.style.opacity = '1';
                                 }, 50);

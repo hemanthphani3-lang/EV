@@ -569,9 +569,10 @@
 </div>
 </div>
 </div>
-<div class="mt-20 rounded-3xl overflow-hidden h-[400px] reveal relative shadow-2xl">
-<img alt="Happy EV Owners" class="w-full h-full object-cover" src="../happy_ev_owners.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-12">
+<div id="video-card-container" class="mt-20 rounded-3xl overflow-hidden h-[400px] reveal relative shadow-2xl">
+<video id="card-video" class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-700" src="../scooter.mp4" playsinline muted></video>
+<img id="card-image" alt="Happy EV Owners" class="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-700 opacity-0" src="../happy_ev_owners.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-12 z-20">
 <p class="text-white text-headline-xl max-w-2xl font-bold">Join 50,000+ EV owners driving with confidence.</p>
 </div>
 </div>
@@ -734,5 +735,57 @@
         window.addEventListener("scroll", reveal);
         // Initial call
         reveal();
+
+        // Card video autoplay on scroll and image swap on complete
+        (function() {
+            const video = document.getElementById('card-video');
+            const image = document.getElementById('card-image');
+            const container = document.getElementById('video-card-container');
+            
+            if (!video || !image || !container) return;
+            
+            let hasPlayedThisScroll = false;
+            
+            function showFallbackImage() {
+                image.classList.remove('opacity-0');
+                image.classList.add('opacity-100');
+            }
+            
+            video.addEventListener('ended', showFallbackImage);
+            video.addEventListener('error', showFallbackImage);
+            
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (!hasPlayedThisScroll) {
+                                image.classList.remove('opacity-100');
+                                image.classList.add('opacity-0');
+                                
+                                video.currentTime = 0;
+                                const playPromise = video.play();
+                                if (playPromise !== undefined) {
+                                    playPromise.catch(error => {
+                                        console.log("Autoplay of scooter video prevented:", error);
+                                        showFallbackImage();
+                                    });
+                                }
+                                hasPlayedThisScroll = true;
+                            }
+                        } else {
+                            video.pause();
+                            hasPlayedThisScroll = false;
+                        }
+                    });
+                }, {
+                    threshold: 0.15
+                });
+                observer.observe(container);
+            } else {
+                video.play().catch(() => {
+                    showFallbackImage();
+                });
+            }
+        })();
     </script>
 </body></html>

@@ -15,90 +15,137 @@
     <!-- Tailwind Configuration -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-surface": "#131b2e",
-                        "surface": "#faf8ff",
-                        "secondary-fixed": "#d5e3fc",
-                        "on-secondary-fixed": "#0d1c2e",
-                        "tertiary-fixed": "#ffdbcd",
-                        "success-emerald": "#10B981",
-                        "on-tertiary": "#ffffff",
-                        "secondary-container": "#d5e3fc",
-                        "surface-container": "#eaedff",
-                        "on-error-container": "#93000a",
-                        "on-background": "#131b2e",
-                        "on-primary-container": "#eeefff",
-                        "on-primary-fixed-variant": "#003ea8",
-                        "tertiary": "#943700",
-                        "on-tertiary-container": "#ffede6",
-                        "background": "#faf8ff",
-                        "on-primary": "#ffffff",
-                        "surface-dim": "#d2d9f4",
-                        "primary": "#004ac6",
-                        "inverse-on-surface": "#eef0ff",
-                        "primary-fixed": "#dbe1ff",
-                        "on-secondary": "#ffffff",
-                        "error": "#ba1a1a",
-                        "on-secondary-fixed-variant": "#3a485b",
-                        "inverse-primary": "#b4c5ff",
-                        "primary-container": "#2563eb",
-                        "outline-variant": "#c3c6d7",
-                        "surface-container-low": "#f2f3ff",
-                        "on-secondary-container": "#57657a",
-                        "on-surface-variant": "#434655",
-                        "tertiary-container": "#bc4800",
-                        "primary-fixed-dim": "#b4c5ff",
-                        "border-subtle": "#E2E8F0",
-                        "secondary": "#515f74",
-                        "error-container": "#ffdad6",
-                        "surface-container-high": "#e2e7ff",
-                        "surface-tint": "#0053db",
-                        "inverse-surface": "#283044",
-                        "surface-container-lowest": "#ffffff",
-                        "on-tertiary-fixed-variant": "#7d2d00",
-                        "surface-variant": "#dae2fd",
-                        "background-main": "#FFFFFF",
-                        "outline": "#737686",
-                        "tertiary-fixed-dim": "#ffb596",
-                        "on-error": "#ffffff",
-                        "surface-container-highest": "#dae2fd",
-                        "on-tertiary-fixed": "#360f00",
-                        "background-section": "#F8FAFC",
-                        "surface-bright": "#faf8ff",
-                        "secondary-fixed-dim": "#b9c7df",
-                        "on-primary-fixed": "#00174b"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "2xl": "1rem",
-                        "3xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "container-max": "1280px",
-                        "section-padding": "120px",
-                        "gutter": "32px",
-                        "margin-mobile": "20px",
-                        "unit": "4px"
-                    },
-                    "fontFamily": {
-                        "display-lg": ["'Outfit'", "sans-serif"],
-                        "headline-lg": ["'Outfit'", "sans-serif"],
-                        "headline-xl": ["'Outfit'", "sans-serif"],
-                        "body-lg": ["'Plus Jakarta Sans'", "sans-serif"],
-                        "body-md": ["'Plus Jakarta Sans'", "sans-serif"],
-                        "label-sm": ["'Plus Jakarta Sans'", "sans-serif"],
-                        "label-md": ["'Plus Jakarta Sans'", "sans-serif"]
-                    }
-                }
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-background": "#131b2e",
+              "inverse-surface": "#283044",
+              "on-surface-variant": "#434655",
+              "secondary-fixed-dim": "#b9c7df",
+              "tertiary": "#943700",
+              "on-secondary-fixed-variant": "#3a485b",
+              "surface-container-highest": "#dae2fd",
+              "outline": "#737686",
+              "on-tertiary-fixed": "#360f00",
+              "secondary-fixed": "#d5e3fc",
+              "primary-container": "#2563eb",
+              "error": "#ba1a1a",
+              "surface-bright": "#faf8ff",
+              "on-primary-container": "#eeefff",
+              "secondary": "#515f74",
+              "primary-fixed-dim": "#b4c5ff",
+              "on-error": "#ffffff",
+              "tertiary-container": "#bc4800",
+              "surface-variant": "#dae2fd",
+              "on-tertiary-fixed-variant": "#7d2d00",
+              "surface-container": "#eaedff",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#003ea8",
+              "outline-variant": "#c3c6d7",
+              "surface-tint": "#0053db",
+              "primary": "#004ac6",
+              "secondary-container": "#d5e3fc",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-dim": "#d2d9f4",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#b4c5ff",
+              "on-primary-fixed": "#00174b",
+              "on-secondary-fixed": "#0d1c2e",
+              "tertiary-fixed-dim": "#ffb596",
+              "surface-container-high": "#e2e7ff",
+              "surface": "#faf8ff",
+              "on-surface": "#131b2e",
+              "surface-container-low": "#f2f3ff",
+              "inverse-on-surface": "#eef0ff",
+              "background": "#faf8ff",
+              "on-tertiary-container": "#ffede6",
+              "tertiary-fixed": "#ffdbcd",
+              "on-secondary-container": "#57657a",
+              "primary-fixed": "#dbe1ff",
+              "text-secondary": "#475569",
+              "text-primary": "#0F172A",
+              "border": "#E2E8F0",
+              "success": "#10B981",
+              "surface-elevated": "#FFFFFF",
+              "on-inverse-surface": "#f5f6fa",
+              "border-subtle": "#E2E8F0",
+              "surface-white": "#FFFFFF",
+              "success-emerald": "#10B981",
+              "background-main": "#FFFFFF",
+              "background-section": "#F8FAFC"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "2xl": "1rem",
+              "full": "9999px",
+              "card": "24px",
+              "button": "12px",
+              "3xl": "1.5rem"
+            },
+            "spacing": {
+              "margin-desktop": "40px",
+              "container-max": "1280px",
+              "stack-gap": "12px",
+              "margin-mobile": "20px",
+              "section-gap": "120px",
+              "gutter": "32px",
+              "section-padding": "120px",
+              "stack-lg": "24px",
+              "stack-md": "16px",
+              "stack-sm": "8px",
+              "page-margin-tablet": "40px",
+              "page-margin-desktop": "80px",
+              "page-margin-mobile": "20px",
+              "section-padding-desktop": "120px",
+              "section-padding-mobile": "64px",
+              "unit": "4px"
+            },
+            "fontFamily": {
+              "body-md": ["'Plus Jakarta Sans'", "sans-serif"],
+              "headline-section": ["'Outfit'", "sans-serif"],
+              "label-sm": ["'Plus Jakarta Sans'", "sans-serif"],
+              "display-hero": ["'Outfit'", "sans-serif"],
+              "headline-card": ["'Outfit'", "sans-serif"],
+              "code-mono": ["JetBrains Mono"],
+              "body-lg": ["'Plus Jakarta Sans'", "sans-serif"],
+              "headline-lg-mobile": ["'Outfit'", "sans-serif"],
+              "headline-md": ["'Outfit'", "sans-serif"],
+              "label-md": ["'Plus Jakarta Sans'", "sans-serif"],
+              "headline-lg": ["'Outfit'", "sans-serif"],
+              "display-xl": ["'Outfit'", "sans-serif"],
+              "display-xl-mobile": ["'Outfit'", "sans-serif"],
+              "label-lg": ["'Plus Jakarta Sans'", "sans-serif"],
+              "display-lg": ["'Outfit'", "sans-serif"],
+              "headline-xl": ["'Outfit'", "sans-serif"]
+            },
+            "fontSize": {
+              "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+              "headline-section": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+              "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
+              "display-hero": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+              "headline-card": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+              "code-mono": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+              "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+              "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+              "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+              "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+              "headline-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+              "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+              "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+              "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+              "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "headline-xl": ["36px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}]
             }
+          }
         }
+      }
     </script>
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFFF; }
@@ -281,6 +328,7 @@
       <a href="index.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Home</a>
       <a href="services.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Services &amp; Bookings</a>
       <a href="membership.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Membership</a>
+      <a href="amc.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">AMC</a>
       <a href="about.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">About Us</a>
       <a href="blog.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Blog</a>
       <a href="contact.html" class="text-[#004ac6] font-bold border-b-2 border-[#004ac6] pb-1 text-sm transition-all">Contact Us</a>
@@ -304,6 +352,7 @@
     <a href="index.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Home</a>
     <a href="services.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Services &amp; Bookings</a>
     <a href="membership.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Membership</a>
+    <a href="amc.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">AMC</a>
     <a href="about.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">About Us</a>
     <a href="blog.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Blog</a>
     <a href="contact.html" class="bg-blue-50 text-[#004ac6] font-bold py-2 px-3 rounded-lg transition-all">Contact Us</a>
@@ -627,6 +676,7 @@
         <li><a href="index.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">Home</a></li>
         <li><a href="services.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">EV Services</a></li>
         <li><a href="membership.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">Membership Plans</a></li>
+        <li><a href="amc.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">AMC Protection Plans</a></li>
         <li><a href="about.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">About Us</a></li>
         <li><a href="blog.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">EV Knowledge Hub</a></li>
         <li><a href="contact.html" class="text-blue-400 font-semibold text-sm transition-colors block hover:translate-x-1 duration-200">Contact &amp; Support</a></li>
@@ -832,8 +882,8 @@
                         }
                         
                         // Update active state in Navigation Links
-                        const oldDesktopNav = document.querySelector('header nav .hidden.md\:flex');
-                        const newDesktopNav = newDoc.querySelector('header nav .hidden.md\:flex');
+                        const oldDesktopNav = document.querySelector('header nav .hidden.md\\:flex');
+                        const newDesktopNav = newDoc.querySelector('header nav .hidden.md\\:flex');
                         if (oldDesktopNav && newDesktopNav) {
                             oldDesktopNav.innerHTML = newDesktopNav.innerHTML;
                         }
@@ -869,12 +919,27 @@
                             }
                         });
                         
+                        // Load missing style tags (inline styles)
+                        const newStyles = Array.from(newDoc.querySelectorAll('style'));
+                        newStyles.forEach(style => {
+                            if (style.id === 'page-transition-preload-styles') return;
+                            const exists = Array.from(document.querySelectorAll('style')).some(existingStyle => {
+                                return existingStyle.textContent === style.textContent;
+                            });
+                            if (!exists) {
+                                const newStyle = document.createElement('style');
+                                if (style.id) newStyle.id = style.id;
+                                newStyle.textContent = style.textContent;
+                                document.head.appendChild(newStyle);
+                            }
+                        });
+                        
                         // Load and run script tags sequentially
                         const scripts = Array.from(newDoc.querySelectorAll('script:not(#page-transition-entry):not(#page-transition-exit)'));
                         
                         function runScripts(index = 0) {
                             if (index >= scripts.length) {
-                                bindLinks(routerView);
+                                bindLinks();
                                 setTimeout(() => {
                                     if (routerView) routerView.style.opacity = '1';
                                 }, 50);

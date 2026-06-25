@@ -21,16 +21,28 @@ self.addEventListener('fetch', event => {
             pathname = pathname.slice(0, -1);
         }
         
-        const cleanPages = ['/about', '/services', '/blog', '/article', '/membership', '/contact', '/index'];
+        const cleanPages = ['/about', '/services', '/blog', '/article', '/membership', '/contact', '/index', '/amc'];
+        
+        // Handle pages without .html extension
         if (cleanPages.includes(pathname)) {
-            // Force browser to fetch the fresh layout by adding a timestamp parameter to the fetch URL
             const fetchUrl = pathname + '.html?v=' + Date.now();
             event.respondWith(
                 fetch(fetchUrl).catch(() => {
-                    // Fallback to default request if fetch fails (e.g. offline)
                     return fetch(event.request);
                 })
             );
+        }
+        // Handle pages with .html extension directly
+        else if (pathname.endsWith('.html')) {
+            const pageWithoutExt = pathname.slice(0, -5);
+            if (cleanPages.includes(pageWithoutExt)) {
+                const fetchUrl = pathname + '?v=' + Date.now();
+                event.respondWith(
+                    fetch(fetchUrl).catch(() => {
+                        return fetch(event.request);
+                    })
+                );
+            }
         }
     }
 });

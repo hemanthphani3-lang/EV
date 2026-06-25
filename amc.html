@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Annual Maintenance Contract | InnoVibe Mobility</title>
+    <meta name="description" content="Protect your electric scooter with flexible multi-year maintenance plans designed for reliability, convenience, and complete peace of mind." />
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind Configuration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-background": "#131b2e",
+              "inverse-surface": "#283044",
+              "on-surface-variant": "#434655",
+              "secondary-fixed-dim": "#b9c7df",
+              "on-secondary-fixed-variant": "#3a485b",
+              "surface-container-highest": "#dae2fd",
+              "outline": "#737686",
+              "on-tertiary-fixed": "#360f00",
+              "secondary-fixed": "#d5e3fc",
+              "primary-container": "#2563eb",
+              "error": "#ba1a1a",
+              "surface-bright": "#faf8ff",
+              "on-primary-container": "#eeefff",
+              "secondary": "#515f74",
+              "primary-fixed-dim": "#b4c5ff",
+              "on-error": "#ffffff",
+              "tertiary-container": "#bc4800",
+              "surface-variant": "#dae2fd",
+              "on-tertiary-fixed-variant": "#7d2d00",
+              "surface-container": "#eaedff",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#003ea8",
+              "outline-variant": "#c3c6d7",
+              "surface-tint": "#0053db",
+              "primary": "#004ac6",
+              "secondary-container": "#d5e3fc",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-dim": "#d2d9f4",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#b4c5ff",
+              "on-primary-fixed": "#00174b",
+              "on-secondary-fixed": "#0d1c2e",
+              "tertiary-fixed-dim": "#ffb596",
+              "surface-container-high": "#e2e7ff",
+              "surface": "#faf8ff",
+              "on-surface": "#131b2e",
+              "surface-container-low": "#f2f3ff",
+              "inverse-on-surface": "#eef0ff",
+              "background": "#faf8ff",
+              "on-tertiary-container": "#ffede6",
+              "tertiary-fixed": "#ffdbcd",
+              "on-secondary-container": "#57657a",
+              "primary-fixed": "#dbe1ff",
+              "text-secondary": "#475569",
+              "text-primary": "#0F172A",
+              "border": "#E2E8F0",
+              "success": "#10B981",
+              "surface-elevated": "#FFFFFF",
+              "on-inverse-surface": "#f5f6fa",
+              "border-subtle": "#E2E8F0",
+              "surface-white": "#FFFFFF",
+              "success-emerald": "#10B981",
+              "background-main": "#FFFFFF",
+              "background-section": "#F8FAFC"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "2xl": "1rem",
+              "full": "9999px",
+              "card": "24px",
+              "button": "12px",
+              "3xl": "1.5rem"
+            },
+            "spacing": {
+              "margin-desktop": "40px",
+              "container-max": "1280px",
+              "stack-gap": "12px",
+              "margin-mobile": "20px",
+              "section-gap": "120px",
+              "gutter": "32px",
+              "section-padding": "120px",
+              "stack-lg": "24px",
+              "stack-md": "16px",
+              "stack-sm": "8px",
+              "page-margin-tablet": "40px",
+              "page-margin-desktop": "80px",
+              "page-margin-mobile": "20px",
+              "section-padding-desktop": "120px",
+              "section-padding-mobile": "64px",
+              "unit": "4px"
+            },
+            "fontFamily": {
+              "body-md": ["'Plus Jakarta Sans'", "sans-serif"],
+              "headline-section": ["'Outfit'", "sans-serif"],
+              "label-sm": ["'Plus Jakarta Sans'", "sans-serif"],
+              "display-hero": ["'Outfit'", "sans-serif"],
+              "headline-card": ["'Outfit'", "sans-serif"],
+              "code-mono": ["JetBrains Mono"],
+              "body-lg": ["'Plus Jakarta Sans'", "sans-serif"],
+              "headline-lg-mobile": ["'Outfit'", "sans-serif"],
+              "headline-md": ["'Outfit'", "sans-serif"],
+              "label-md": ["'Plus Jakarta Sans'", "sans-serif"],
+              "headline-lg": ["'Outfit'", "sans-serif"],
+              "display-xl": ["'Outfit'", "sans-serif"],
+              "display-xl-mobile": ["'Outfit'", "sans-serif"],
+              "label-lg": ["'Plus Jakarta Sans'", "sans-serif"],
+              "display-lg": ["'Outfit'", "sans-serif"],
+              "headline-xl": ["'Outfit'", "sans-serif"]
+            },
+            "fontSize": {
+              "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+              "headline-section": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+              "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
+              "display-hero": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+              "headline-card": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+              "code-mono": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+              "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+              "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+              "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+              "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+              "headline-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+              "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+              "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+              "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+              "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "headline-xl": ["36px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Premium Card Refinements */
+        .card-premium {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.02), 0 10px 30px -5px rgba(15, 23, 42, 0.03), 0 0 0 1px rgba(15, 23, 42, 0.015);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        @media (prefers-reduced-motion: no-preference) {
+            .card-premium:hover {
+                transform: translateY(-6px) scale(1.008);
+                box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.03);
+                border-color: rgba(37, 99, 235, 0.15);
+            }
+        }
+        /* Ambient Glow Blobs */
+        .glow-blob {
+            filter: blur(100px);
+            opacity: 0.15;
+            mix-blend-mode: multiply;
+            animation: pulse-slow 8s infinite alternate;
+            pointer-events: none;
+        }
+        @keyframes pulse-slow {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.1) translate(20px, -20px); }
+        }
+        
+        /* Metallic Text Shine Animation */
+        .shine-text {
+            background: linear-gradient(
+                120deg,
+                #ffffff 25%,
+                #60a5fa 40%,
+                #ffffff 50%,
+                #60a5fa 60%,
+                #ffffff 75%
+            );
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: textShine 4s linear infinite;
+        }
+        @keyframes textShine {
+            0% {
+                background-position: 200% center;
+            }
+            100% {
+                background-position: -200% center;
+            }
+        }
+        
+        /* Gold Premium Recommended Card styling */
+        .gold-card-premium {
+            border: 2px solid transparent !important;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%) !important;
+            background-origin: border-box !important;
+            background-clip: padding-box, border-box !important;
+            box-shadow: 0 10px 25px -5px rgba(191, 149, 63, 0.15), 0 8px 10px -6px rgba(191, 149, 63, 0.15) !important;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        
+        @media (prefers-reduced-motion: no-preference) {
+            .gold-card-premium:hover {
+                transform: translateY(-6px) scale(1.008) !important;
+                box-shadow: 0 25px 50px -12px rgba(191, 149, 63, 0.35), 0 0 15px 2px rgba(252, 246, 186, 0.4) !important;
+            }
+        }
+        
+        .gold-badge {
+            background: linear-gradient(
+                120deg,
+                #bf953f 0%,
+                #fcf6ba 25%,
+                #b38728 50%,
+                #fcf6ba 75%,
+                #bf953f 100%
+            ) !important;
+            background-size: 200% auto !important;
+            color: #1e1b4b !important; /* dark text for excellent contrast and premium feel */
+            font-weight: 800 !important;
+            animation: goldBadgeShine 3s linear infinite !important;
+            box-shadow: 0 4px 12px rgba(191, 149, 63, 0.4) !important;
+        }
+        
+        @keyframes goldBadgeShine {
+            0% {
+                background-position: 200% center;
+            }
+            100% {
+                background-position: -200% center;
+            }
+        }
+        
+        .gold-shine-text {
+            background: linear-gradient(
+                120deg,
+                #b38728 20%,
+                #fcf6ba 40%,
+                #bf953f 50%,
+                #fcf6ba 60%,
+                #b38728 80%
+            );
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: goldTextShine 4s linear infinite;
+            display: inline-block;
+        }
+        @keyframes goldTextShine {
+            0% {
+                background-position: 200% center;
+            }
+            100% {
+                background-position: -200% center;
+            }
+        }
+        
+        .gold-btn {
+            background: linear-gradient(135deg, #bf953f 0%, #b38728 100%) !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(191, 149, 63, 0.25) !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+        }
+        
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #bf953f 100%) !important;
+            box-shadow: 0 6px 20px rgba(191, 149, 63, 0.4) !important;
+            transform: translateY(-1px) !important;
+        }
+        
+        /* Blue-Green Hero Heading Shine Animation */
+        .blue-shine-text {
+            background: linear-gradient(
+                120deg,
+                #004ac6 20%,
+                #10b981 40%,
+                #60a5fa 50%,
+                #10b981 60%,
+                #004ac6 80%
+            );
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: blueTextShine 4s linear infinite;
+        }
+        @keyframes blueTextShine {
+            0% {
+                background-position: 200% center;
+            }
+            100% {
+                background-position: -200% center;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body class="bg-background text-text-primary font-body-md overflow-x-hidden pt-20">
+    <script id="page-transition-entry">
+        // Clean URL in address bar
+        if (window.location.pathname.endsWith('.html')) {
+            let cleanPath = window.location.pathname.slice(0, -5);
+            if (cleanPath.endsWith('/index')) {
+                cleanPath = cleanPath.slice(0, -6) || '/';
+            }
+            let search = window.location.search;
+            search = search.replace(/[?&]v=[^&]+/g, '');
+            if (search.startsWith('&')) {
+                search = '?' + search.slice(1);
+            }
+            window.history.replaceState(null, '', cleanPath + search + window.location.hash);
+        }
+
+        // Register Service Worker for clean URL refreshes
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(err => {
+                console.warn('Service worker registration failed:', err);
+            });
+        }
+
+        // Session-based splash video loading screen
+        const hasShownLoading = sessionStorage.getItem('loading-screen-shown');
+        if (!hasShownLoading) {
+            sessionStorage.setItem('loading-screen-shown', 'true');
+            
+            document.write(`
+                <style id="page-transition-preload-styles">
+                    #router-view, header, footer, #toast-container, .whatsapp-float, [id^="chatbot-"] {
+                        opacity: 0;
+                    }
+                </style>
+            `);
+            
+            window.addEventListener('DOMContentLoaded', () => {
+                const loadingScreen = document.createElement('div');
+                loadingScreen.id = 'loading-screen';
+                loadingScreen.style.cssText = 'position: fixed; inset: 0; z-index: 99999999; display: flex; align-items: center; justify-content: center; background-color: #FFFFFF; transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: all; overflow: hidden;';
+                loadingScreen.innerHTML = '<video id="loading-video" src="load.mp4" autoplay playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>';
+                document.body.appendChild(loadingScreen);
+                
+                const loadingVideo = document.getElementById('loading-video');
+                
+                function hideLoader() {
+                    clearTimeout(fallback);
+                    loadingScreen.style.opacity = '0';
+                    const elms = document.querySelectorAll('#router-view, header, footer, .whatsapp-float, [id^="chatbot-"]');
+                    elms.forEach(el => {
+                        el.style.opacity = '1';
+                        el.style.transition = 'opacity 0.8s ease';
+                    });
+                    setTimeout(() => {
+                        loadingScreen.remove();
+                        const styleNode = document.getElementById('page-transition-preload-styles');
+                        if (styleNode) styleNode.remove();
+                    }, 1000);
+                }
+                
+                const fallback = setTimeout(hideLoader, 2500);
+                loadingVideo.addEventListener('ended', hideLoader);
+                loadingVideo.addEventListener('error', hideLoader);
+            });
+        }
+    </script>
+
+    <!-- Global Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav bg-white/85">
+      <nav class="max-w-[1280px] mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <!-- SVG Logo Icon -->
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logo-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0891b2" />
+                <stop offset="100%" stop-color="#22c55e" />
+              </linearGradient>
+            </defs>
+            <path d="M50 80 C15 50 15 20 32 15 C43 12 50 24 50 24 C50 24 57 12 68 15 C85 20 85 50 50 80 Z" fill="none" stroke="url(#logo-grad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M53 28 L38 48 H48 L45 68 L58 46 H48 Z" fill="url(#logo-grad)" />
+          </svg>
+          <!-- Logo Text -->
+          <div class="flex flex-col">
+            <div class="flex items-baseline font-extrabold tracking-tight leading-none text-lg md:text-xl">
+              <span class="text-[#0F172A]">InnoVibe</span>
+              <span class="text-[#0F172A] ml-1">Care</span><span class="text-[#0891b2]">.EV</span>
+            </div>
+            <span class="text-[8px] md:text-[9px] text-[#475569] font-medium tracking-wide mt-1">Your EV, Our Expert Care</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Home</a>
+          <a href="services.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Services &amp; Bookings</a>
+          <a href="membership.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Membership</a>
+          <a href="amc.html" class="text-[#004ac6] font-bold border-b-2 border-[#004ac6] pb-1 text-sm transition-all">AMC</a>
+          <a href="about.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">About Us</a>
+          <a href="blog.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Blog</a>
+          <a href="contact.html" class="text-[#475569] hover:text-[#004ac6] font-semibold text-sm transition-colors">Contact Us</a>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="flex items-center gap-4">
+          <a href="services.html" class="hidden sm:inline-block bg-[#004ac6] hover:bg-[#2563eb] text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-95 transition-all">
+            Book Service
+          </a>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 text-[#0F172A] hover:text-[#004ac6] transition-colors">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-outline-variant/20 flex flex-col p-6 gap-4 shadow-xl md:hidden transition-all duration-300 transform scale-y-95 origin-top">
+        <a href="index.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Home</a>
+        <a href="services.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Services &amp; Bookings</a>
+        <a href="membership.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Membership</a>
+        <a href="amc.html" class="bg-blue-50 text-[#004ac6] font-bold py-2 px-3 rounded-lg transition-all">AMC</a>
+        <a href="about.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">About Us</a>
+        <a href="blog.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Blog</a>
+        <a href="contact.html" class="text-[#475569] hover:bg-gray-50 hover:text-[#004ac6] font-semibold py-2 px-3 rounded-lg transition-all">Contact Us</a>
+        <a href="services.html" class="bg-[#004ac6] hover:bg-[#2563eb] text-white text-center py-3 rounded-xl font-semibold mt-2 shadow-lg transition-all">
+          Book Service
+        </a>
+      </div>
+    </header>
+
+    <main id="router-view" class="transition-opacity duration-300">
+      
+      <!-- HERO SECTION -->
+      <section class="pt-32 pb-section-padding-mobile md:pb-section-padding-desktop px-margin-mobile md:px-gutter relative overflow-hidden bg-surface-white">
+        <!-- Ambient Glow Blobs -->
+        <div class="glow-blob absolute top-10 left-10 w-96 h-96 bg-primary/10 rounded-full"></div>
+        <div class="glow-blob absolute bottom-10 right-10 w-96 h-96 bg-[#0891b2]/5 rounded-full" style="animation-delay: 5s;"></div>
+        
+        <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="reveal active">
+            <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full font-label-sm text-label-sm mb-6">
+              Complete EV Ownership Protection
+            </span>
+            <h1 class="font-display-hero text-[42px] md:text-display-lg mb-8 leading-tight blue-shine-text">
+              Annual Maintenance Contracts
+            </h1>
+            <p class="font-body-lg text-body-lg text-text-secondary mb-10 max-w-lg">
+              Protect your electric scooter with flexible multi-year maintenance plans designed for reliability, convenience, and complete peace of mind.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a class="bg-primary text-white px-8 py-4 rounded-full font-label-md text-label-md text-center hover:shadow-lg hover:bg-primary-container active:scale-95 transition-all flex items-center justify-center shadow-lg shadow-blue-500/10" href="#plans">
+                Choose Your AMC Plan
+              </a>
+              <a class="border border-border-subtle text-[#0F172A] px-8 py-4 rounded-full font-label-md text-label-md text-center hover:bg-surface-container-low active:scale-95 transition-all flex items-center justify-center" href="#comparison">
+                Compare Benefits
+              </a>
+            </div>
+          </div>
+          <div class="reveal active flex justify-end">
+            <div class="relative w-full aspect-video md:aspect-square max-w-lg rounded-3xl overflow-hidden shadow-2xl animate-float">
+              <img alt="Premium EV scooter service with technician" class="w-full h-full object-cover" src="ev_technician_service.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+      </section>
+
+      <!-- TRUST BAR -->
+      <section class="py-8 bg-surface-container-low border-y border-border-subtle/60 relative z-10">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="flex flex-col items-center justify-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/80 shadow-sm transition-all hover:scale-105">
+              <span class="material-symbols-outlined text-primary text-[32px] mb-2">home_pin</span>
+              <span class="font-bold text-sm text-[#0F172A] tracking-tight">4 Home Visits Every Year</span>
+            </div>
+            <div class="flex flex-col items-center justify-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/80 shadow-sm transition-all hover:scale-105">
+              <span class="material-symbols-outlined text-primary text-[32px] mb-2">percent</span>
+              <span class="font-bold text-sm text-[#0F172A] tracking-tight">10% Labour &amp; Spares Discount</span>
+            </div>
+            <div class="flex flex-col items-center justify-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/80 shadow-sm transition-all hover:scale-105">
+              <span class="material-symbols-outlined text-primary text-[32px] mb-2">card_membership</span>
+              <span class="font-bold text-sm text-[#0F172A] tracking-tight">Membership Benefits Included</span>
+            </div>
+            <div class="flex flex-col items-center justify-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/80 shadow-sm transition-all hover:scale-105">
+              <span class="material-symbols-outlined text-primary text-[32px] mb-2">car_repair</span>
+              <span class="font-bold text-sm text-[#0F172A] tracking-tight">Roadside Assistance Access</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY AMC MATTERS -->
+      <section class="py-section-padding-mobile md:py-section-padding-desktop bg-background relative">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+          <div class="text-center mb-16 reveal">
+            <h2 class="font-headline-xl text-headline-xl mb-4">Why Smart EV Owners Choose AMC</h2>
+            <p class="font-body-md text-body-md text-text-secondary max-w-lg mx-auto">
+              Unlock a worry-free EV ownership experience with plans that scale up to 5 years.
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+            <!-- Card 1 -->
+            <div class="why-card card-premium p-8 rounded-3xl group cursor-pointer">
+              <div class="w-14 h-14 bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 transform group-hover:scale-110">
+                <span class="material-symbols-outlined text-[32px]">build_circle</span>
+              </div>
+              <h3 class="font-headline-lg text-xl mb-3 text-text-primary transition-colors group-hover:text-primary">Preventive Maintenance</h3>
+              <p class="font-body-md text-sm text-text-secondary leading-relaxed">
+                Keep your scooter running efficiently and avoid expensive breakdowns.
+              </p>
+            </div>
+            <!-- Card 2 -->
+            <div class="why-card card-premium p-8 rounded-3xl group cursor-pointer">
+              <div class="w-14 h-14 bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 transform group-hover:scale-110">
+                <span class="material-symbols-outlined text-[32px]">payments</span>
+              </div>
+              <h3 class="font-headline-lg text-xl mb-3 text-text-primary transition-colors group-hover:text-primary">Predictable Costs</h3>
+              <p class="font-body-md text-sm text-text-secondary leading-relaxed">
+                Know your maintenance expenses in advance with long-term protection.
+              </p>
+            </div>
+            <!-- Card 3 -->
+            <div class="why-card card-premium p-8 rounded-3xl group cursor-pointer">
+              <div class="w-14 h-14 bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 transform group-hover:scale-110">
+                <span class="material-symbols-outlined text-[32px]">support_agent</span>
+              </div>
+              <h3 class="font-headline-lg text-xl mb-3 text-text-primary transition-colors group-hover:text-primary">Priority Support</h3>
+              <p class="font-body-md text-sm text-text-secondary leading-relaxed">
+                Get faster assistance and premium service experiences.
+              </p>
+            </div>
+            <!-- Card 4 -->
+            <div class="why-card card-premium p-8 rounded-3xl group cursor-pointer">
+              <div class="w-14 h-14 bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 transform group-hover:scale-110">
+                <span class="material-symbols-outlined text-[32px]">workspace_premium</span>
+              </div>
+              <h3 class="font-headline-lg text-xl mb-3 text-text-primary transition-colors group-hover:text-primary">Membership Included</h3>
+              <p class="font-body-md text-sm text-text-secondary leading-relaxed">
+                Every AMC customer automatically receives membership privileges.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AMC PLANS SECTION -->
+      <section id="plans" class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-lowest border-t border-border-subtle">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+          <div class="text-center mb-16 reveal">
+            <h2 class="font-headline-xl text-headline-xl mb-4">Choose Your AMC Plan</h2>
+            <p class="font-body-md text-body-md text-text-secondary max-w-lg mx-auto">
+              Select a multi-year coverage duration that fits your driving pattern.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 items-stretch reveal">
+            
+            <!-- 1 Year Plan -->
+            <div class="pricing-card card-premium p-6 rounded-[24px] flex flex-col justify-between relative cursor-pointer group">
+              <div>
+                <h3 class="font-headline-lg text-lg mb-2 transition-colors group-hover:text-primary">1 Year AMC</h3>
+                <div class="mb-4">
+                  <span id="price-1year" class="text-3xl font-extrabold text-[#0F172A]">--</span>
+                  <span class="text-xs text-text-secondary">/ 1 yr</span>
+                </div>
+                <hr class="border-border-subtle mb-4"/>
+                <ul class="space-y-3 mb-6 text-xs text-text-secondary">
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>4 Home Visits Included</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Road Assistance Access</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Battery Diagnostics</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Membership Included</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Priority Support</span>
+                  </li>
+                </ul>
+              </div>
+              <button class="choose-amc-btn bg-slate-100 hover:bg-primary hover:text-white text-text-primary text-xs font-semibold py-3 px-4 rounded-xl w-full transition-all active:scale-95 group-hover:bg-primary group-hover:text-white" data-plan="1 Year AMC">
+                Buy Now
+              </button>
+            </div>
+
+            <!-- 2 Year Plan -->
+            <div class="pricing-card card-premium p-6 rounded-[24px] flex flex-col justify-between relative cursor-pointer group">
+              <div>
+                <h3 class="font-headline-lg text-lg mb-2 transition-colors group-hover:text-primary">2 Year AMC</h3>
+                <div class="mb-4">
+                  <span id="price-2year" class="text-3xl font-extrabold text-[#0F172A]">--</span>
+                  <span class="text-xs text-text-secondary">/ 2 yrs</span>
+                </div>
+                <hr class="border-border-subtle mb-4"/>
+                <ul class="space-y-3 mb-6 text-xs text-text-secondary">
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>8 Home Visits Included</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Road Assistance Access</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Battery Diagnostics</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Membership Included</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Priority Support</span>
+                  </li>
+                </ul>
+              </div>
+              <button class="choose-amc-btn bg-slate-100 hover:bg-primary hover:text-white text-text-primary text-xs font-semibold py-3 px-4 rounded-xl w-full transition-all active:scale-95 group-hover:bg-primary group-hover:text-white" data-plan="2 Year AMC">
+                Buy Now
+              </button>
+            </div>
+
+            <!-- 3 Year Plan (RECOMMENDED) -->
+            <div class="pricing-card gold-card-premium p-6 rounded-[24px] flex flex-col justify-between relative cursor-pointer group">
+              <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 gold-badge text-[10px] uppercase font-bold py-1 px-3 rounded-full tracking-wider">
+                Recommended
+              </span>
+              <div>
+                <h3 class="font-headline-lg text-lg mb-2 mt-2 transition-colors group-hover:text-[#bf953f] gold-shine-text">3 Year AMC</h3>
+                <div class="mb-4">
+                  <span id="price-3year" class="text-3xl font-extrabold gold-shine-text">--</span>
+                  <span class="text-xs text-text-secondary">/ 3 yrs</span>
+                </div>
+                <hr class="border-border-subtle mb-4"/>
+                <ul class="space-y-3 mb-6 text-xs text-text-secondary">
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[#bf953f] text-sm">check_circle</span>
+                    <span>12 Home Visits Included</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[#bf953f] text-sm">check_circle</span>
+                    <span>Road Assistance Access</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[#bf953f] text-sm">check_circle</span>
+                    <span>Battery Diagnostics</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[#bf953f] text-sm">check_circle</span>
+                    <span>Membership Included</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[#bf953f] text-sm">check_circle</span>
+                    <span>Priority Support</span>
+                  </li>
+                </ul>
+              </div>
+              <button class="choose-amc-btn gold-btn text-white text-xs font-semibold py-3 px-4 rounded-xl w-full transition-all active:scale-95" data-plan="3 Year AMC">
+                Buy Now
+              </button>
+            </div>
+
+            <!-- 4 Year Plan -->
+            <div class="pricing-card card-premium p-6 rounded-[24px] flex flex-col justify-between relative cursor-pointer group">
+              <div>
+                <h3 class="font-headline-lg text-lg mb-2 transition-colors group-hover:text-primary">4 Year AMC</h3>
+                <div class="mb-4">
+                  <span id="price-4year" class="text-3xl font-extrabold text-[#0F172A]">--</span>
+                  <span class="text-xs text-text-secondary">/ 4 yrs</span>
+                </div>
+                <hr class="border-border-subtle mb-4"/>
+                <ul class="space-y-3 mb-6 text-xs text-text-secondary">
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>16 Home Visits Included</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Road Assistance Access</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Battery Diagnostics</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Membership Included</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Priority Support</span>
+                  </li>
+                </ul>
+              </div>
+              <button class="choose-amc-btn bg-slate-100 hover:bg-primary hover:text-white text-text-primary text-xs font-semibold py-3 px-4 rounded-xl w-full transition-all active:scale-95 group-hover:bg-primary group-hover:text-white" data-plan="4 Year AMC">
+                Buy Now
+              </button>
+            </div>
+
+            <!-- 5 Year Plan -->
+            <div class="pricing-card card-premium p-6 rounded-[24px] flex flex-col justify-between relative cursor-pointer group">
+              <div>
+                <h3 class="font-headline-lg text-lg mb-2 transition-colors group-hover:text-primary">5 Year AMC</h3>
+                <div class="mb-4">
+                  <span id="price-5year" class="text-3xl font-extrabold text-[#0F172A]">--</span>
+                  <span class="text-xs text-text-secondary">/ 5 yrs</span>
+                </div>
+                <hr class="border-border-subtle mb-4"/>
+                <ul class="space-y-3 mb-6 text-xs text-text-secondary">
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>20 Home Visits Included</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Road Assistance Access</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Battery Diagnostics</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Membership Included</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                    <span>Priority Support</span>
+                  </li>
+                </ul>
+              </div>
+              <button class="choose-amc-btn bg-slate-100 hover:bg-primary hover:text-white text-text-primary text-xs font-semibold py-3 px-4 rounded-xl w-full transition-all active:scale-95 group-hover:bg-primary group-hover:text-white" data-plan="5 Year AMC">
+                Buy Now
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- VALUE BREAKDOWN SECTION -->
+      <section class="py-section-padding-mobile md:py-section-padding-desktop bg-background border-t border-border-subtle">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+          <div class="text-center mb-16 reveal">
+            <h2 class="font-headline-xl text-headline-xl mb-4">What Your AMC Includes</h2>
+            <p class="font-body-md text-body-md text-text-secondary max-w-lg mx-auto">
+              A comprehensive coverage program designed to keep your vehicle in mint condition.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+            <!-- Card 1 -->
+            <div class="value-card card-premium flex gap-6 p-8 rounded-3xl group cursor-pointer">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+                <span class="material-symbols-outlined text-2xl">home</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg text-text-primary mb-2 transition-colors group-hover:text-primary">4 Home Visits Per Year</h3>
+                <p class="text-xs text-text-secondary mb-2 leading-relaxed">
+                  Regular health checkups done right at your doorstep. We bring the garage experience directly to you.
+                </p>
+                <span class="inline-block text-xs font-bold text-primary bg-primary/5 px-2.5 py-1 rounded-lg transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                  Value: ₹250 × 4 = ₹1,000/year
+                </span>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="value-card card-premium flex gap-6 p-8 rounded-3xl group cursor-pointer">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+                <span class="material-symbols-outlined text-2xl">home_repair_service</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg text-text-primary mb-2 transition-colors group-hover:text-primary">Complete Garage Service</h3>
+                <p class="text-xs text-text-secondary mb-2 leading-relaxed">
+                  Professional vehicle servicing at our modern facilities with transparent labour and spare part billing.
+                </p>
+                <span class="inline-block text-xs font-bold text-primary bg-primary/5 px-2.5 py-1 rounded-lg transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                  10% Spare Parts &amp; Labour Off
+                </span>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="value-card card-premium flex gap-6 p-8 rounded-3xl group cursor-pointer">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+                <span class="material-symbols-outlined text-2xl">electric_scooter</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg text-text-primary mb-2 transition-colors group-hover:text-primary">Road Assistance</h3>
+                <p class="text-xs text-text-secondary mb-2 leading-relaxed">
+                  Exclusive access to on-road support for AMC customers. Stranded? We will recover your scooter.
+                </p>
+                <span class="inline-block text-xs font-bold text-primary bg-primary/5 px-2.5 py-1 rounded-lg transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                  Free Roadside Support
+                </span>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="value-card card-premium flex gap-6 p-8 rounded-3xl group cursor-pointer">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+                <span class="material-symbols-outlined text-2xl">battery_charging_full</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg text-text-primary mb-2 transition-colors group-hover:text-primary">Battery Health Diagnostics</h3>
+                <p class="text-xs text-text-secondary mb-2 leading-relaxed">
+                  Annual battery health assessments to maximize performance, track degradation, and optimize range.
+                </p>
+                <span class="inline-block text-xs font-bold text-primary bg-primary/5 px-2.5 py-1 rounded-lg transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                  Included Annually
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEMBERSHIP BENEFITS INCLUDED (Visual highlight) -->
+      <section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-lowest border-t border-border-subtle relative overflow-hidden">
+        <!-- Accent circles -->
+        <div class="absolute -right-24 top-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+          <div class="bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-[32px] p-8 md:p-16 relative overflow-hidden shadow-2xl reveal">
+            <!-- Background element -->
+            <div class="absolute -bottom-48 -right-48 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl"></div>
+            
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div class="lg:col-span-6 space-y-6">
+                <span class="inline-block bg-primary text-white text-xs font-bold uppercase py-1.5 px-4 rounded-full tracking-wider shadow-md animate-pulse">
+                  Included Free
+                </span>
+                <h2 class="font-display-hero text-3xl md:text-5xl leading-tight font-extrabold tracking-tight shine-text">
+                  Every AMC Plan Includes Membership Benefits
+                </h2>
+                <p class="text-slate-400 text-sm leading-relaxed max-w-md">
+                  You don't need to purchase a membership separately. When you buy any Annual Maintenance Contract (AMC) plan, you instantly unlock full InnoVibe Membership benefits for the entire duration.
+                </p>
+              </div>
+              
+              <div class="lg:col-span-6">
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="benefit-card flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/15 hover:border-white/20 p-4 rounded-xl transition-all duration-300 transform hover:scale-[1.03] group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-xl transition-transform duration-300 group-hover:scale-110">check_circle</span>
+                    <span class="text-sm font-semibold text-slate-100">10% Off Labour charges</span>
+                  </div>
+                  <div class="benefit-card flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/15 hover:border-white/20 p-4 rounded-xl transition-all duration-300 transform hover:scale-[1.03] group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-xl transition-transform duration-300 group-hover:scale-110">check_circle</span>
+                    <span class="text-sm font-semibold text-slate-100">10% Off Spare parts</span>
+                  </div>
+                  <div class="benefit-card flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/15 hover:border-white/20 p-4 rounded-xl transition-all duration-300 transform hover:scale-[1.03] group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-xl transition-transform duration-300 group-hover:scale-110">check_circle</span>
+                    <span class="text-sm font-semibold text-slate-100">1 Free Home Service/yr</span>
+                  </div>
+                  <div class="benefit-card flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/15 hover:border-white/20 p-4 rounded-xl transition-all duration-300 transform hover:scale-[1.03] group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-xl transition-transform duration-300 group-hover:scale-110">check_circle</span>
+                    <span class="text-sm font-semibold text-slate-100">1 Free Roadside Service/yr</span>
+                  </div>
+                  <div class="benefit-card flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/15 hover:border-white/20 p-4 rounded-xl transition-all duration-300 transform hover:scale-[1.03] group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-xl transition-transform duration-300 group-hover:scale-110">check_circle</span>
+                    <span class="text-sm font-semibold text-slate-100">Battery diagnosis benefits</span>
+                  </div>
+                  <div class="benefit-card flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/15 hover:border-white/20 p-4 rounded-xl transition-all duration-300 transform hover:scale-[1.03] group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-xl transition-transform duration-300 group-hover:scale-110">check_circle</span>
+                    <span class="text-sm font-semibold text-slate-100">Priority customer support</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEMBER EXCLUSIVE OFFER -->
+      <section class="py-section-padding-mobile md:py-section-padding-desktop bg-background border-t border-border-subtle">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+          <div id="member-offer-card" class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 hover:border-blue-300 hover:shadow-xl hover:scale-[1.005] transition-all duration-500 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 reveal group cursor-pointer">
+            <div class="space-y-4">
+              <span class="inline-block bg-primary/10 text-primary text-xs font-bold uppercase py-1 px-3.5 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                Member Exclusive Benefit
+              </span>
+              <h2 class="font-headline-xl text-2xl md:text-3xl text-text-primary transition-colors group-hover:text-primary">Already An InnoVibe Member?</h2>
+              <p class="font-body-md text-sm text-text-secondary max-w-xl">
+                Existing members receive <span class="font-bold text-primary">10% OFF</span> AMC Purchases. Your active membership automatically reduces your AMC purchase price at checkout.
+              </p>
+            </div>
+            <a class="bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-full font-label-md text-label-md transition-all text-center whitespace-nowrap active:scale-95 shadow-md shadow-blue-500/10 group-hover:scale-105" href="#plans">
+              Get Discounted AMC
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW AMC WORKS (Timeline) -->
+      <section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-lowest border-t border-border-subtle">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+          <div class="text-center mb-16 reveal">
+            <h2 class="font-headline-xl text-headline-xl mb-4">How It Works</h2>
+            <p class="font-body-md text-body-md text-text-secondary max-w-lg mx-auto">
+              Get started in four simple, automated steps.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative reveal">
+            
+            <!-- Step 1 -->
+            <div class="flex flex-col items-center text-center group cursor-pointer p-4 rounded-2xl hover:bg-slate-50 transition-all duration-300">
+              <div class="w-16 h-16 rounded-full bg-primary/5 text-primary flex items-center justify-center border-2 border-primary/20 text-xl font-bold mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 transform group-hover:scale-110">
+                1
+              </div>
+              <h3 class="font-semibold text-lg text-text-primary mb-2 transition-colors group-hover:text-primary">Choose Your AMC Duration</h3>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Select protection plans from 1 to 5 years.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col items-center text-center group cursor-pointer p-4 rounded-2xl hover:bg-slate-50 transition-all duration-300">
+              <div class="w-16 h-16 rounded-full bg-primary/5 text-primary flex items-center justify-center border-2 border-primary/20 text-xl font-bold mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 transform group-hover:scale-110">
+                2
+              </div>
+              <h3 class="font-semibold text-lg text-text-primary mb-2 transition-colors group-hover:text-primary">Benefits Activate Instantly</h3>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Enjoy premium ownership benefits instantly.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col items-center text-center group cursor-pointer p-4 rounded-2xl hover:bg-slate-50 transition-all duration-300">
+              <div class="w-16 h-16 rounded-full bg-primary/5 text-primary flex items-center justify-center border-2 border-primary/20 text-xl font-bold mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 transform group-hover:scale-110">
+                3
+              </div>
+              <h3 class="font-semibold text-lg text-text-primary mb-2 transition-colors group-hover:text-primary">Book Services Easily</h3>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Use home visits, diagnostics, and support services through InnoVibe.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flex flex-col items-center text-center group cursor-pointer p-4 rounded-2xl hover:bg-slate-50 transition-all duration-300">
+              <div class="w-16 h-16 rounded-full bg-primary/5 text-primary flex items-center justify-center border-2 border-primary/20 text-xl font-bold mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 transform group-hover:scale-110">
+                4
+              </div>
+              <h3 class="font-semibold text-lg text-text-primary mb-2 transition-colors group-hover:text-primary">Drive With Peace Of Mind</h3>
+              <p class="text-xs text-text-secondary leading-relaxed">
+                Predictable maintenance and expert EV support whenever you need it.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- COST SAVINGS SECTION -->
+      <section class="py-section-padding-mobile md:py-section-padding-desktop bg-background border-t border-border-subtle">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+          <div class="text-center mb-16 reveal">
+            <h2 class="font-headline-xl text-headline-xl mb-4">Save More With AMC Protection</h2>
+            <p class="font-body-md text-body-md text-text-secondary max-w-lg mx-auto">
+              Compare the costs and see why the Annual Maintenance Contract pays for itself.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal max-w-4xl mx-auto">
+            
+            <!-- Without AMC -->
+            <div class="savings-card card-premium p-8 rounded-3xl relative overflow-hidden group cursor-pointer hover:border-red-400/30" data-type="without">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-red-400"></div>
+              <h3 class="font-headline-lg text-lg mb-6 text-red-500 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
+                <span class="material-symbols-outlined">cancel</span> Without AMC
+              </h3>
+              <ul class="space-y-4 text-sm text-text-secondary">
+                <li class="flex justify-between border-b border-border-subtle/50 pb-2">
+                  <span>4 Home Visits:</span>
+                  <span class="font-bold text-[#0F172A]">₹1,000</span>
+                </li>
+                <li class="flex justify-between border-b border-border-subtle/50 pb-2">
+                  <span>Road Assistance:</span>
+                  <span class="font-bold text-[#0F172A]">₹199</span>
+                </li>
+                <li class="flex justify-between border-b border-border-subtle/50 pb-2">
+                  <span>Battery Diagnostics:</span>
+                  <span class="font-bold text-[#0F172A]">Additional Cost</span>
+                </li>
+                <li class="flex justify-between border-b border-border-subtle/50 pb-2">
+                  <span>Labour Discounts:</span>
+                  <span class="font-bold text-red-500">No</span>
+                </li>
+                <li class="flex justify-between pb-2">
+                  <span>Spare Part Discounts:</span>
+                  <span class="font-bold text-red-500">No</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- With AMC -->
+            <div class="savings-card card-premium p-8 rounded-3xl border-2 border-emerald-500 relative overflow-hidden shadow-lg shadow-emerald-500/5 group cursor-pointer hover:border-emerald-600" data-type="with">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-emerald-500"></div>
+              <h3 class="font-headline-lg text-lg mb-6 text-emerald-500 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
+                <span class="material-symbols-outlined">check_circle</span> With AMC
+              </h3>
+              <ul class="space-y-4 text-sm text-text-secondary">
+                <li class="flex justify-between border-b border-border-subtle/50 pb-2">
+                  <span>Home Services:</span>
+                  <span class="font-bold text-emerald-500">Included</span>
+                </li>
+                <li class="flex justify-between border-b border-border-subtle/50 pb-2">
+                  <span>Membership Benefits:</span>
+                  <span class="font-bold text-emerald-500">Included</span>
+                </li>
+                <li class="flex justify-between border-b border-border-subtle/50 pb-2">
+                  <span>Labour Discounts:</span>
+                  <span class="font-bold text-emerald-500">Included</span>
+                </li>
+                <li class="flex justify-between border-b border-border-subtle/50 pb-2">
+                  <span>Spare Parts Discounts:</span>
+                  <span class="font-bold text-emerald-500">Included</span>
+                </li>
+                <li class="flex justify-between border-b border-border-subtle/50 pb-2">
+                  <span>Road Support Access:</span>
+                  <span class="font-bold text-emerald-500">Included</span>
+                </li>
+                <li class="flex justify-between pb-2">
+                  <span>Battery Health Checks:</span>
+                  <span class="font-bold text-emerald-500">Included</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- MEMBERSHIP VS AMC TABLE -->
+      <section id="comparison" class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-lowest border-t border-border-subtle">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+          <div class="text-center mb-16 reveal">
+            <h2 class="font-headline-xl text-headline-xl mb-4">Membership vs AMC Table</h2>
+            <p class="font-body-md text-body-md text-text-secondary max-w-lg mx-auto">
+              Understand the core differences between a stand-alone Membership and our full coverage AMC plans.
+            </p>
+          </div>
+
+          <div class="overflow-x-auto rounded-3xl border border-border-subtle bg-surface-white reveal max-w-4xl mx-auto shadow-sm">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-slate-50 border-b border-border-subtle">
+                  <th class="p-6 text-sm font-bold text-text-primary uppercase tracking-wider">Feature</th>
+                  <th class="p-6 text-sm font-bold text-text-primary uppercase tracking-wider text-center">Membership</th>
+                  <th class="p-6 text-sm font-bold text-text-primary uppercase tracking-wider text-center">AMC</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-border-subtle/60 text-sm text-text-secondary">
+                <tr class="hover:bg-slate-50/80 transition-colors cursor-default">
+                  <td class="p-6 font-semibold text-text-primary">Labour Discount</td>
+                  <td class="p-6 text-center text-emerald-500 font-bold">10%</td>
+                  <td class="p-6 text-center text-emerald-500 font-bold">10%</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors cursor-default">
+                  <td class="p-6 font-semibold text-text-primary">Spare Parts Discount</td>
+                  <td class="p-6 text-center text-emerald-500 font-bold">10%</td>
+                  <td class="p-6 text-center text-emerald-500 font-bold">10%</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors cursor-default">
+                  <td class="p-6 font-semibold text-text-primary">Free Home Service</td>
+                  <td class="p-6 text-center">1/yr</td>
+                  <td class="p-6 text-center text-emerald-500 font-bold">4/yr</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors cursor-default">
+                  <td class="p-6 font-semibold text-text-primary">Road Assistance</td>
+                  <td class="p-6 text-center">1 Free Service</td>
+                  <td class="p-6 text-center text-emerald-500 font-bold">Free Access</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors cursor-default">
+                  <td class="p-6 font-semibold text-text-primary">Battery Diagnostics</td>
+                  <td class="p-6 text-center text-slate-400">Add-on cost</td>
+                  <td class="p-6 text-center text-emerald-500 font-bold">Included Annually</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors cursor-default">
+                  <td class="p-6 font-semibold text-text-primary">Priority Support</td>
+                  <td class="p-6 text-center text-emerald-500 font-bold">✓</td>
+                  <td class="p-6 text-center text-emerald-500 font-bold">✓</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors cursor-default">
+                  <td class="p-6 font-semibold text-text-primary">Multi-Year Protection</td>
+                  <td class="p-6 text-center text-slate-400">No</td>
+                  <td class="p-6 text-center text-emerald-500 font-bold">Up to 5 Years</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="py-section-padding-mobile md:py-section-padding-desktop bg-background border-t border-border-subtle">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter max-w-4xl">
+          <div class="text-center mb-16 reveal">
+            <h2 class="font-headline-xl text-headline-xl mb-4">Frequently Asked Questions</h2>
+            <p class="font-body-md text-body-md text-text-secondary max-w-lg mx-auto">
+              Have questions about our Annual Maintenance Contracts? Find quick answers below.
+            </p>
+          </div>
+
+          <div class="space-y-4 reveal">
+            <!-- Accordion 1 -->
+            <div class="border border-border-subtle rounded-2xl bg-surface-white overflow-hidden transition-all">
+              <button class="w-full p-6 text-left font-semibold text-[#0F172A] flex justify-between items-center" onclick="toggleAccordionFaq(this)">
+                <span>What is included in an AMC plan?</span>
+                <span class="material-symbols-outlined transition-transform duration-300">chevron_right</span>
+              </button>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/50">
+                <div class="p-6 text-xs text-text-secondary leading-relaxed border-t border-border-subtle/50">
+                  An AMC plan includes up to 4 home visits per year, 10% discount on labor charges and spare parts, roadside recovery assistance, annual battery health diagnostics, and priority customer support. Plus, it automatically bundles free membership privileges.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 2 -->
+            <div class="border border-border-subtle rounded-2xl bg-surface-white overflow-hidden transition-all">
+              <button class="w-full p-6 text-left font-semibold text-[#0F172A] flex justify-between items-center" onclick="toggleAccordionFaq(this)">
+                <span>How many home visits do I get?</span>
+                <span class="material-symbols-outlined transition-transform duration-300">chevron_right</span>
+              </button>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/50">
+                <div class="p-6 text-xs text-text-secondary leading-relaxed border-t border-border-subtle/50">
+                  Every AMC plan includes exactly 4 home visits per year. For a 3 Year AMC plan, this gives you a total of 12 visits that can be utilized over the course of the contract duration.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 3 -->
+            <div class="border border-border-subtle rounded-2xl bg-surface-white overflow-hidden transition-all">
+              <button class="w-full p-6 text-left font-semibold text-[#0F172A] flex justify-between items-center" onclick="toggleAccordionFaq(this)">
+                <span>Do AMC customers receive membership benefits?</span>
+                <span class="material-symbols-outlined transition-transform duration-300">chevron_right</span>
+              </button>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/50">
+                <div class="p-6 text-xs text-text-secondary leading-relaxed border-t border-border-subtle/50">
+                  Yes, absolutely! Every AMC customer automatically receives all InnoVibe membership privileges for free during the entire term of their maintenance contract.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 4 -->
+            <div class="border border-border-subtle rounded-2xl bg-surface-white overflow-hidden transition-all">
+              <button class="w-full p-6 text-left font-semibold text-[#0F172A] flex justify-between items-center" onclick="toggleAccordionFaq(this)">
+                <span>Can existing members get AMC discounts?</span>
+                <span class="material-symbols-outlined transition-transform duration-300">chevron_right</span>
+              </button>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/50">
+                <div class="p-6 text-xs text-text-secondary leading-relaxed border-t border-border-subtle/50">
+                  Yes! Active InnoVibe members automatically receive a 10% discount on any AMC purchase. The discount is applied automatically at checkout based on your profile membership status.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 5 -->
+            <div class="border border-border-subtle rounded-2xl bg-surface-white overflow-hidden transition-all">
+              <button class="w-full p-6 text-left font-semibold text-[#0F172A] flex justify-between items-center" onclick="toggleAccordionFaq(this)">
+                <span>Is roadside assistance included?</span>
+                <span class="material-symbols-outlined transition-transform duration-300">chevron_right</span>
+              </button>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/50">
+                <div class="p-6 text-xs text-text-secondary leading-relaxed border-t border-border-subtle/50">
+                  Yes, roadside assistance is fully included as part of the AMC package. If your vehicle breaks down, is punctured, or runs out of battery, our assistance team will retrieve it and support you.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 6 -->
+            <div class="border border-border-subtle rounded-2xl bg-surface-white overflow-hidden transition-all">
+              <button class="w-full p-6 text-left font-semibold text-[#0F172A] flex justify-between items-center" onclick="toggleAccordionFaq(this)">
+                <span>Can I upgrade my AMC duration later?</span>
+                <span class="material-symbols-outlined transition-transform duration-300">chevron_right</span>
+              </button>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/50">
+                <div class="p-6 text-xs text-text-secondary leading-relaxed border-t border-border-subtle/50">
+                  Yes, you can upgrade your plan duration to a higher term (e.g. from 1 year to 3 years or 5 years) at any point within the first 6 months of your active contract.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 7 -->
+            <div class="border border-border-subtle rounded-2xl bg-surface-white overflow-hidden transition-all">
+              <button class="w-full p-6 text-left font-semibold text-[#0F172A] flex justify-between items-center" onclick="toggleAccordionFaq(this)">
+                <span>What happens when my AMC expires?</span>
+                <span class="material-symbols-outlined transition-transform duration-300">chevron_right</span>
+              </button>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/50">
+                <div class="p-6 text-xs text-text-secondary leading-relaxed border-t border-border-subtle/50">
+                  Upon expiration, you will receive a notification to renew your contract. You can opt to extend it under the same terms or select a different duration, keeping your EV protected continuously.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-lowest border-t border-border-subtle relative overflow-hidden">
+        <div class="glow-blob absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] -z-10"></div>
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center reveal max-w-3xl space-y-8">
+          <h2 class="font-display-hero text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+            Drive Further. <span class="gradient-text">Worry Less.</span>
+          </h2>
+          <p class="font-body-lg text-body-lg text-text-secondary max-w-xl mx-auto">
+            Protect your EV with long-term maintenance plans built for reliability, convenience, and complete peace of mind.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a class="bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-full font-label-md text-label-md transition-all active:scale-95 shadow-lg shadow-blue-500/10" href="#plans">
+              Get AMC Protection
+            </a>
+            <a class="border border-border-subtle text-[#0F172A] px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-all active:scale-95" href="contact.html">
+              Talk To Our Team
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Unified Footer -->
+    <footer class="bg-[#0F172A] text-slate-300 pt-16 pb-8 border-t border-slate-800">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <!-- Brand Info -->
+        <div class="space-y-6">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <!-- SVG Logo Icon -->
+            <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="footer-logo-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#0891b2" />
+                  <stop offset="100%" stop-color="#22c55e" />
+                </linearGradient>
+              </defs>
+              <path d="M50 80 C15 50 15 20 32 15 C43 12 50 24 50 24 C50 24 57 12 68 15 C85 20 85 50 50 80 Z" fill="none" stroke="url(#footer-logo-grad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M53 28 L38 48 H48 L45 68 L58 46 H48 Z" fill="url(#footer-logo-grad)" />
+            </svg>
+            <!-- Logo Text -->
+            <div class="flex flex-col">
+              <div class="flex items-baseline font-extrabold tracking-tight leading-none text-lg md:text-xl">
+                <span class="text-white">InnoVibe</span>
+                <span class="text-white ml-1">Care</span><span class="text-[#0891b2]">.EV</span>
+              </div>
+              <span class="text-[8px] md:text-[9px] text-slate-400 font-medium tracking-wide mt-1">Your EV, Our Expert Care</span>
+            </div>
+          </a>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            India's leading electric vehicle service provider with comprehensive EV solutions across the nation. Precision engineering for the electric era.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+              <span class="material-symbols-outlined text-lg">public</span>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+              <span class="material-symbols-outlined text-lg">share</span>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+              <span class="material-symbols-outlined text-lg">video_library</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-bold text-white tracking-wider mb-6 text-sm uppercase">Quick Links</h4>
+          <ul class="space-y-4">
+            <li><a href="index.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">Home</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">EV Services</a></li>
+            <li><a href="membership.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">Membership Plans</a></li>
+            <li><a href="amc.html" class="text-blue-400 font-semibold text-sm transition-colors block hover:translate-x-1 duration-200">AMC Protection Plans</a></li>
+            <li><a href="about.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">About Us</a></li>
+            <li><a href="blog.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">EV Knowledge Hub</a></li>
+            <li><a href="contact.html" class="hover:text-blue-400 text-sm transition-colors block hover:translate-x-1 duration-200">Contact &amp; Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Head Office Details -->
+        <div>
+          <h4 class="font-bold text-white tracking-wider mb-6 text-sm uppercase">Head Office</h4>
+          <address class="not-italic space-y-4 text-sm text-slate-400">
+            <p>Gitam iTBI, VDA, Rushikonda,<br>Visakhapatnam, AP – 530045</p>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-blue-400 text-lg">mail</span>
+              <a href="mailto:contact@innovibemobility.com" class="hover:text-blue-400 transition-colors">contact@innovibemobility.com</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-blue-400 text-lg">call</span>
+              <a href="tel:+919014336878" class="hover:text-blue-400 transition-colors">+91 9014336878</a>
+            </div>
+          </address>
+        </div>
+
+        <!-- App Store Badge -->
+        <div>
+          <h4 class="font-bold text-white tracking-wider mb-6 text-sm uppercase">Download App</h4>
+          <p class="text-sm text-slate-400 mb-6">Manage your vehicle services and memberships from anywhere.</p>
+          <a href="#" class="block w-48 hover:opacity-80 transition-opacity">
+            <img alt="Get it on Google Play" class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="max-w-[1280px] mx-auto px-6 md:px-10 pt-8 border-t border-slate-800 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <p>© 2026 InnoVibe Mobility India Pvt Ltd. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors">Refund Policy</a>
+        </div>
+        <p class="flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">lock</span> Quantum Secured By Cryptopix.pvt.ltd
+        </p>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Action -->
+    <a class="whatsapp-float fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 active:scale-95 transition-all z-50" href="https://wa.me/919014336878" target="_blank">
+      <svg fill="white" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+    </a>
+
+    <!-- Toast container -->
+    <div id="toast-container" class="fixed bottom-24 right-8 z-50 flex flex-col gap-3"></div>
+
+    <script>
+        // FAQ Accordion Toggle
+        function toggleAccordionFaq(button) {
+            const panel = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+            
+            if (panel.style.maxHeight && panel.style.maxHeight !== '0px') {
+                panel.style.maxHeight = '0px';
+                icon.classList.remove('rotate-90');
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                icon.classList.add('rotate-90');
+            }
+        }
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal(); // Initial reveal call
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Opaque Navigation on Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (header) {
+                if (window.scrollY > 20) {
+                    header.classList.add('bg-white/95', 'shadow-md');
+                    header.classList.remove('bg-white/85');
+                } else {
+                    header.classList.add('bg-white/85');
+                    header.classList.remove('bg-white/95', 'shadow-md');
+                }
+            }
+        });
+
+        // Toast alerts
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            if (!container) return;
+            const toast = document.createElement('div');
+            toast.className = `flex items-center gap-3 px-6 py-4 rounded-xl shadow-xl border text-sm font-semibold transition-all duration-500 translate-y-10 opacity-0 ${
+                type === 'success' 
+                ? 'bg-emerald-50 border-emerald-200 text-emerald-800' 
+                : 'bg-red-50 border-red-200 text-red-800'
+            }`;
+            
+            const icon = type === 'success' ? 'check_circle' : 'error';
+            toast.innerHTML = `
+                <span class="material-symbols-outlined">${icon}</span>
+                <span>${message}</span>
+            `;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-10', 'opacity-0');
+            }, 10);
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-[-10px]');
+                setTimeout(() => toast.remove(), 500);
+            }, 4000);
+        }
+
+        // Choose AMC plan button triggers
+        document.querySelectorAll('.choose-amc-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const plan = e.currentTarget.getAttribute('data-plan');
+                const amcPurchases = JSON.parse(localStorage.getItem('innovibe_amc_purchases') || '[]');
+                amcPurchases.push({ plan, date: new Date().toISOString() });
+                localStorage.setItem('innovibe_amc_purchases', JSON.stringify(amcPurchases));
+                showToast(`Worry-free EV ownership activated! You've selected the ${plan}. We will contact you to set up your contract.`);
+            });
+        });
+
+        // Dynamic Card Interactivity Handlers
+        (function() {
+            // Why AMC Cards click handler
+            document.querySelectorAll('.why-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const title = card.querySelector('h3').textContent.strip ? card.querySelector('h3').textContent.trim() : card.querySelector('h3').textContent;
+                    showToast(`EV Ownership Tip: ${title} is key to keeping maintenance simple!`);
+                });
+            });
+
+            // Click pricing card anywhere triggers the select button click
+            document.querySelectorAll('.pricing-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    if (!e.target.closest('.choose-amc-btn')) {
+                        const btn = card.querySelector('.choose-amc-btn');
+                        if (btn) btn.click();
+                    }
+                });
+            });
+
+            // Value Breakdown Cards scroll to plans
+            document.querySelectorAll('.value-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const plansSec = document.getElementById('plans');
+                    if (plansSec) {
+                        plansSec.scrollIntoView({ behavior: 'smooth' });
+                        const title = card.querySelector('h3').textContent.trim();
+                        showToast(`Value Highlight: ${title} is included in all AMC plans! Choose below.`);
+                    }
+                });
+            });
+
+            // Membership Inclusions mini-cards confirm triggers
+            document.querySelectorAll('.benefit-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const text = card.querySelector('span:not(.material-symbols-outlined)').textContent.trim();
+                    showToast(`Membership Benefit Confirmed: ${text} is included at no extra cost!`);
+                });
+            });
+
+            // Member Promo discount card
+            const memberOfferCard = document.getElementById('member-offer-card');
+            if (memberOfferCard) {
+                memberOfferCard.addEventListener('click', (e) => {
+                    if (!e.target.closest('a')) {
+                        const plansSec = document.getElementById('plans');
+                        if (plansSec) {
+                            plansSec.scrollIntoView({ behavior: 'smooth' });
+                            showToast("Active member discount activated! Choose a plan below to claim your 10% off.");
+                        }
+                    }
+                });
+            }
+
+            // Cost Savings cards comparison notifications
+            document.querySelectorAll('.savings-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const type = card.getAttribute('data-type');
+                    const plansSec = document.getElementById('plans');
+                    if (type === 'without') {
+                        showToast("Avoid unexpected breakdown bills. Choose an AMC plan to stay fully protected!", "error");
+                    } else {
+                        if (plansSec) {
+                            plansSec.scrollIntoView({ behavior: 'smooth' });
+                            showToast("Select any AMC plan below to unlock these premium savings today!");
+                        }
+                    }
+                });
+            });
+        })();
+
+        // Load prices from amc_config.json dynamically
+        (function() {
+            function loadPrices() {
+                fetch('amc_config.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        const plans = ['1year', '2year', '3year', '4year', '5year'];
+                        plans.forEach(plan => {
+                            const el = document.getElementById(`price-${plan}`);
+                            if (el && data.prices[plan]) {
+                                el.textContent = data.prices[plan];
+                            }
+                        });
+                    })
+                    .catch(err => {
+                        console.error('Error loading AMC prices:', err);
+                        const fallbacks = {
+                            '1year': '₹1,499',
+                            '2year': '₹2,799',
+                            '3year': '₹3,999',
+                            '4year': '₹4,999',
+                            '5year': '₹5,999'
+                        };
+                        const plans = ['1year', '2year', '3year', '4year', '5year'];
+                        plans.forEach(plan => {
+                            const el = document.getElementById(`price-${plan}`);
+                            if (el) {
+                                el.textContent = fallbacks[plan];
+                            }
+                        });
+                    });
+            }
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadPrices);
+            } else {
+                loadPrices();
+            }
+        })();
+    </script>
+    <script id="page-transition-exit">
+        // InnoVibe SPA HTML Router & Transitions
+        document.addEventListener('DOMContentLoaded', () => {
+            const routerView = document.getElementById('router-view');
+            
+            function bindLinks(container = document) {
+                const links = container.querySelectorAll('a[href]');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && 
+                        !href.startsWith('#') && 
+                        !href.startsWith('tel:') && 
+                        !href.startsWith('mailto:') && 
+                        !href.startsWith('javascript:') && 
+                        link.getAttribute('target') !== '_blank'
+                    ) {
+                        try {
+                            const targetUrl = new URL(href, window.location.href);
+                            if (targetUrl.pathname !== window.location.pathname) {
+                                link.removeEventListener('click', handleNavigation);
+                                link.addEventListener('click', handleNavigation);
+                            }
+                        } catch (err) {
+                            if (href.endsWith('.html') || !href.includes('://')) {
+                                link.removeEventListener('click', handleNavigation);
+                                link.addEventListener('click', handleNavigation);
+                            }
+                        }
+                    }
+                });
+            }
+
+            function handleNavigation(e) {
+                e.preventDefault();
+                const href = e.currentTarget.getAttribute('href');
+                loadPage(href);
+            }
+
+            function loadPage(href) {
+                if (routerView) {
+                    routerView.style.opacity = '0';
+                }
+                
+                const sep = href.includes('?') ? '&' : '?';
+                const fetchUrl = href + sep + 'v=' + new Date().getTime();
+                
+                fetch(fetchUrl)
+                    .then(res => {
+                        if (!res.ok) throw new Error('Failed to load page');
+                        return res.text();
+                    })
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const newDoc = parser.parseFromString(html, 'text/html');
+                        const newContent = newDoc.getElementById('router-view');
+                        
+                        if (newContent && routerView) {
+                            routerView.innerHTML = newContent.innerHTML;
+                            routerView.className = newContent.className;
+                            window.scrollTo({ top: 0, behavior: 'instant' });
+                        }
+                        
+                        const oldDesktopNav = document.querySelector('header nav .hidden.md\\:flex');
+                        const newDesktopNav = newDoc.querySelector('header nav .hidden.md\\:flex');
+                        if (oldDesktopNav && newDesktopNav) {
+                            oldDesktopNav.innerHTML = newDesktopNav.innerHTML;
+                        }
+                        
+                        const oldMobileMenu = document.querySelector('#mobile-menu div.flex.flex-col');
+                        const newMobileMenu = newDoc.querySelector('#mobile-menu div.flex.flex-col');
+                        if (oldMobileMenu && newMobileMenu) {
+                            oldMobileMenu.innerHTML = newMobileMenu.innerHTML;
+                        }
+                        
+                        let cleanPath = href;
+                        if (cleanPath.endsWith('.html')) {
+                            cleanPath = cleanPath.slice(0, -5);
+                        }
+                        if (cleanPath.endsWith('/index')) {
+                            cleanPath = cleanPath.slice(0, -6) || '/';
+                        }
+                        window.history.pushState(null, '', cleanPath);
+                        
+                        document.title = newDoc.title;
+                        
+                        const newLinks = Array.from(newDoc.querySelectorAll('link[rel="stylesheet"]'));
+                        newLinks.forEach(link => {
+                            const cssHref = link.getAttribute('href');
+                            if (cssHref && !document.querySelector(`link[href="${cssHref}"]`)) {
+                                const newLink = document.createElement('link');
+                                newLink.rel = 'stylesheet';
+                                newLink.href = cssHref;
+                                document.head.appendChild(newLink);
+                            }
+                        });
+                        
+                        // Load missing style tags (inline styles)
+                        const newStyles = Array.from(newDoc.querySelectorAll('style'));
+                        newStyles.forEach(style => {
+                            if (style.id === 'page-transition-preload-styles') return;
+                            const exists = Array.from(document.querySelectorAll('style')).some(existingStyle => {
+                                return existingStyle.textContent === style.textContent;
+                            });
+                            if (!exists) {
+                                const newStyle = document.createElement('style');
+                                if (style.id) newStyle.id = style.id;
+                                newStyle.textContent = style.textContent;
+                                document.head.appendChild(newStyle);
+                            }
+                        });
+                        
+                        const scripts = Array.from(newDoc.querySelectorAll('script:not(#page-transition-entry):not(#page-transition-exit)'));
+                        
+                        function runScripts(index = 0) {
+                            if (index >= scripts.length) {
+                                bindLinks();
+                                setTimeout(() => {
+                                    if (routerView) routerView.style.opacity = '1';
+                                }, 50);
+                                return;
+                            }
+                            
+                            const script = scripts[index];
+                            const newScript = document.createElement('script');
+                            
+                            if (script.src) {
+                                if (document.querySelector(`script[src="${script.src}"]`)) {
+                                    runScripts(index + 1);
+                                } else {
+                                    newScript.src = script.src;
+                                    newScript.onload = () => runScripts(index + 1);
+                                    newScript.onerror = () => runScripts(index + 1);
+                                    document.head.appendChild(newScript);
+                                }
+                            } else {
+                                const scriptText = script.textContent;
+                                const originalDocAdd = document.addEventListener;
+                                const originalWinAdd = window.addEventListener;
+
+                                document.addEventListener = function(event, callback, options) {
+                                    if (event === 'DOMContentLoaded') {
+                                        callback(new Event('DOMContentLoaded'));
+                                    } else {
+                                        originalDocAdd.call(document, event, callback, options);
+                                    }
+                                };
+
+                                window.addEventListener = function(event, callback, options) {
+                                    if (event === 'DOMContentLoaded') {
+                                        callback(new Event('DOMContentLoaded'));
+                                    } else {
+                                        originalWinAdd.call(window, event, callback, options);
+                                    }
+                                };
+
+                                try {
+                                    newScript.textContent = `(function(){
+${scriptText}
+})();`;
+                                    document.body.appendChild(newScript);
+                                    newScript.remove();
+                                } catch (err) {
+                                    console.error('Error running inline script:', err);
+                                }
+
+                                document.addEventListener = originalDocAdd;
+                                window.addEventListener = originalWinAdd;
+                                runScripts(index + 1);
+                            }
+                        }
+                        
+                        runScripts();
+                    })
+                    .catch(err => {
+                        console.error('SPA router navigation failed:', err);
+                        window.location.href = href;
+                    });
+            }
+
+            bindLinks();
+
+            window.addEventListener('popstate', () => {
+                let path = window.location.pathname;
+                if (path === '/') path = 'index.html';
+                if (!path.endsWith('.html') && !path.includes('.')) {
+                    path += '.html';
+                }
+                loadPage(path);
+            });
+        });
+        
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                document.body.style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+</html>
